@@ -8,7 +8,7 @@ import pandas as pd
 import json
 
 from params import FILES, MISC, DICTIONARY
-from srd.sinhala_preprocess import sinhala_preprocess
+from main.sinhala_preprocess import sinhala_preprocess
 from data.data_loader import data_loader
 
 class tagging_tool(object):

@@ -6,7 +6,7 @@ Created on Mar 31, 2019
 import csv
 import random
 
-from srd.preprocess import preprocess
+from main.preprocess import preprocess
 from params import DICTIONARY, FILES
 from data.data_loader import data_loader
 

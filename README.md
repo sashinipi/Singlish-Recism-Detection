@@ -2,4 +2,4 @@
 
 This is project description
 
-### by Sashini Piyathilaka
+### by Sashini Piyaratne

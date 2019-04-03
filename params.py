@@ -13,7 +13,8 @@ class FILES:
     TAG_DICT_FILENAME = ''
     EXCEL_DATA_FILE_PATH = ''
     DICTIONARY_FILE_PATH = ''
-    CSV_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/Singlish-Racism-Detection/data/output.csv'
+    CSV_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/git/Singlish-Recism-Detection/data/output.csv'
+    TEST_CSV_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/git/Singlish-Recism-Detection/tests/test_output.csv'
 
 class MISC:
     TAG_SAVE_COUNT = 5

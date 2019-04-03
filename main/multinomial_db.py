@@ -8,10 +8,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 
-class MultinomialNB(classify):
+class MultinomialNBC(classify):
 
     def __init__(self):
-        super(MultinomialNB, self).__init__()
+        super(MultinomialNBC, self).__init__()
 
     def train(self, train_x, train_y):
         bow_transformer = CountVectorizer(analyzer=self.text_process).fit(train_x)
@@ -26,5 +26,5 @@ class MultinomialNB(classify):
         return spam_detect_model, bow_transformer
 
 if __name__ == '__main__':
-    MultinomialNB_obj = MultinomialNB()
+    MultinomialNB_obj = MultinomialNBC()
     MultinomialNB_obj.main()

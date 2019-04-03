@@ -7,7 +7,7 @@ import numpy as np
 import string
 import emoji
 
-from main.preprocess import preprocess
+from main.preprocess.preprocess import preprocess
 
 class singlish_preprocess(preprocess):
     LOWER_CASE = list(string.ascii_lowercase)

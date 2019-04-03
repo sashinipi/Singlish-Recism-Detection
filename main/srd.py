@@ -5,10 +5,8 @@ Created on Mar 31, 2019
 '''
 from params import FILES
 from data.data_loader import data_loader
-from main.singlish_preprocess import singlish_preprocess
+from main.preprocess.singlish_preprocess import singlish_preprocess
 from main.lstm_model import lstm_model
-
-import sys
 
 
 def main():

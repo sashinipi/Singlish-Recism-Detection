@@ -6,16 +6,12 @@ Created on Apr 01, 2019
 
 import pandas as pd
 # import seaborn as sns
-import string
-from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
 
 from params import FILES
 from sklearn.metrics import classification_report
 from random import shuffle
-import random
-from main.singlish_preprocess import singlish_preprocess
+from main.preprocess.singlish_preprocess import singlish_preprocess
 
 class classify(object):
     def __init__(self):
@@ -74,5 +70,5 @@ class classify(object):
 
         train_x, train_y, test_x, test_y = self.split_data(messages['message'], messages['label'], ratio=0.3)
 
-        model , bow_transformer= self.train(train_x, train_y)
+        model, bow_transformer= self.train(train_x, train_y)
         self.test(bow_transformer, test_x, test_y, model)

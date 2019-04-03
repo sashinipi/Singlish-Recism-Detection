@@ -43,6 +43,9 @@ class lstm_model(model):
         return model
         # ################## Deep Neural Network Model ###################### #
 
+    # def
+
+
     def train(self, x_corpus, y_corpus):
         # splitting data for 5-fold cross validation
         k_fold = StratifiedKFold(n_splits=LSTM.FOLDS_COUNT, shuffle=True, random_state=18)

@@ -18,7 +18,6 @@ from sklearn.metrics import classification_report
 from main.classify import classify
 
 class SVM(classify):
-
     def __init__(self):
         super(SVM, self).__init__()
 

@@ -8,6 +8,9 @@ class DICTIONARY:
     SINGLISH_WORD = 'singlish'
     WORD_COUNT = 'count'
 
+class DIR:
+    DEF_SAV_LOC = 'save'
+
 class FILES:
     TAG_DATA_FILENAME_EXCEL = ''
     TAG_DICT_FILENAME = ''

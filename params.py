@@ -14,13 +14,14 @@ class DIR:
 class FILES:
     TAG_DATA_FILENAME_EXCEL = ''
     TAG_DICT_FILENAME = ''
-    EXCEL_DATA_FILE_PATH = ''
-    DICTIONARY_FILE_PATH = ''
+    EXCEL_DATA_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/git/Singlish-Recism-Detection/data/final-data-set.xlsx'
+    DICTIONARY_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/git/Singlish-Recism-Detection/data/dict.json'
     CSV_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/git/Singlish-Recism-Detection/data/output.csv'
     TEST_CSV_FILE_PATH = '/home/dulan/learn/sashini-fyp/code/git/Singlish-Recism-Detection/tests/test_output.csv'
 
 class MISC:
     TAG_SAVE_COUNT = 5
+    CLASSES = ['Racist', 'Neutral']
 
 class LSTM:
     LSTM_MAX_WORD_COUNT = 20

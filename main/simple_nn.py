@@ -3,7 +3,7 @@ Created on Apr 03, 2019
 
 @author: dulan
 '''
-from main.classify import classify
+
 from params import FILES
 
 import pandas as pd
@@ -15,22 +15,19 @@ from keras.metrics import categorical_accuracy
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from main.pickel_helper import PickelHelper
+
 from params import DIR
 import os.path as osp
+from main.model import Model
+from params import DIR, MISC
 
-
-class SimpleNN(object):
-    classes = ['Racist', 'Neutral']
+class SimpleNN(Model):
+    # classes = ['Racist', 'Neutral']
     trans_file_name = 'trans'
     model_file_name = 'model.h5'
     def __init__(self):
-        self.classify = classify()
-        self.model = None  # self.create_model(input_dim)
-        self.bow_transformer = None
-        self.tfidf_transformer = None
+        super(SimpleNN, self).__init__()
         self.input_size = None
-        self.pic_obj = PickelHelper()
 
     def main(self):
         train = False
@@ -53,36 +50,21 @@ class SimpleNN(object):
             test_features = self.get_features(test_x)
             label_test_float = np.array([self.trans_val(val) for val in test_y])
             self.evaluate(test_features, label_test_float)
-            self.save_model()
-            self.save_transformers()
+            self.save_model(SimpleNN.model_file_name)
+            self.save_transformers(SimpleNN.trans_file_name)
         else:
             self.create_model(self.pic_obj.load_obj('size'))
-            self.load_model()
+            self.load_model(SimpleNN.model_file_name)
+            if self.bow_transformer is None or self.tfidf_transformer is None:
+                self.load_transformers(SimpleNN.trans_file_name)
             while(True):
                 text = input("Input:")
                 prediction = np.squeeze(self.model.predict(self.get_features([text])))
                 max_id = int(np.argmax(prediction))
                 print(prediction)
-                print("Predicted: {} Confidence: {}".format(SimpleNN.classes[max_id], prediction[max_id]))
+                print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
 
 
-    def get_features(self, data):
-        if self.bow_transformer is None or self.tfidf_transformer is None:
-            self.load_transformers()
-        bw_msg = self.bow_transformer.transform(data)
-        tfidef_msg = self.tfidf_transformer.transform(bw_msg)
-        return tfidef_msg
-
-    def evaluate(self, X, Y):
-        # evaluate the model
-        scores = self.model.evaluate(X, Y)
-        print("\n%s: %.2f%%" % (self.model.metrics_names[1], scores[1] * 100))
-
-    def trans_val(self, val):
-        if val == SimpleNN.classes[0]:
-            return [1, 0]
-        else:
-            return [0, 1]
 
     def create_model(self, input_dim):
         # create model
@@ -99,30 +81,9 @@ class SimpleNN(object):
         # Fit the model
         self.model.fit(X, Y, epochs=20, batch_size=100)
 
-    def train_feature_gen(self, msg_train):
-        bow_transformer = CountVectorizer(analyzer=self.classify.text_process).fit(msg_train)
-        messages_bow = bow_transformer.transform(msg_train)
-        tfidf_transformer = TfidfTransformer().fit(messages_bow)
-        messages_tfidf = tfidf_transformer.transform(messages_bow)
 
-        self.bow_transformer = bow_transformer
-        self.tfidf_transformer = tfidf_transformer
-        return messages_tfidf
 
-    def save_model(self, model_name=model_file_name):
-        self.model.save_weights(osp.join(DIR.DEF_SAV_LOC, model_name))
 
-    def load_model(self, weights_file=model_file_name):
-        self.model.load_weights(osp.join(DIR.DEF_SAV_LOC, weights_file))
-
-    def save_transformers(self):
-        transform = {'bow': self.bow_transformer, 'tfidf': self.tfidf_transformer}
-        self.pic_obj.save_obj(SimpleNN.trans_file_name, transform)
-
-    def load_transformers(self):
-        transform = self.pic_obj.load_obj(SimpleNN.trans_file_name)
-        self.tfidf_transformer = transform['tfidf']
-        self.bow_transformer = transform['bow']
 
 if __name__ == '__main__':
     snn = SimpleNN()

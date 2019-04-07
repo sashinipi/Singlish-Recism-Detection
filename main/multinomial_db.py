@@ -15,9 +15,7 @@ class MultinomialNBC(classify):
 
     def train(self, train_x, train_y):
         bow_transformer = CountVectorizer(analyzer=self.text_process).fit(train_x)
-        # print("Vocabulary size:", len(bow_transformer.vocabulary_))
         messages_bow = bow_transformer.transform(train_x)
-
         tfidf_transformer = TfidfTransformer().fit(messages_bow)
 
         messages_tfidf = tfidf_transformer.transform(messages_bow)

@@ -29,7 +29,7 @@ class LSTMP:
     LSTM_MAX_WORD_COUNT = 60
     FOLDS_COUNT = 5
     VALIDATION_TEST_SIZE = 0.2
-    MAX_EPOCHS = 8
+    MAX_EPOCHS = 20
     OUTPUT_DIR = 'save'
     DATA_SET_CLASSES = {
         'Neutral': [0, 1],

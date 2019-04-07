@@ -124,7 +124,7 @@ class LSTMModel(Model):
 
             # for each epoch
             for epoch in range(LSTMP.MAX_EPOCHS):
-                print("Epoch: {}/{} | Fold {}/{}".format(epoch, LSTMP.MAX_EPOCHS, fold, LSTMP.FOLDS_COUNT))
+                print("Epoch: {}/{} | Fold {}/{}".format(epoch+1, LSTMP.MAX_EPOCHS, fold, LSTMP.FOLDS_COUNT))
                 logging.info("Fold: %d/%d" % (fold, LSTMP.FOLDS_COUNT))
                 logging.info("Epoch: %d/%d" % (epoch, LSTMP.MAX_EPOCHS))
                 history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=1, validation_data=(x_valid, y_valid),
@@ -150,21 +150,21 @@ class LSTMModel(Model):
                     best_epoch = epoch
                 # end of epoch
 
-            del self.model
+            # del self.model
             model = load_model("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
 
             evaluation = model.evaluate(x=x_test, y=y_test)
             logging.info("Accuracy: %f" % evaluation[1])
+            fold += 1
 
     def main(self):
         train = True
         if train:
             messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
             messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
-            # self.classify.data_len = len(messages)
             train_x, train_y, test_x, test_y = messages_train["message"], messages_train["label"], messages_test["message"], messages_test["label"]
 
-            # TODO create old features - tfidf
+            # create old features - tfidf
             # features = self.train_feature_gen(train_x)
             # self.input_size = features.shape[1]
             # print("Feature size:", self.input_size)
@@ -183,8 +183,8 @@ class LSTMModel(Model):
             # test_features = self.get_features(test_x)
             # label_test_float = np.array([self.trans_val(val) for val in test_y])
             # self.evaluate(test_features, label_test_float)
-            self.save_model(LSTMModel.model_file_name)
-            self.save_transformers(LSTMModel.trans_file_name)
+            # self.save_model(LSTMModel.model_file_name)
+            # self.save_transformers(LSTMModel.trans_file_name)
         else:
             self.create_model(self.pic_obj.load_obj('size'))
             self.load_model(LSTMModel.model_file_name)
@@ -199,5 +199,6 @@ class LSTMModel(Model):
 
 
 if __name__ == '__main__':
+
     lstm_obj = LSTMModel()
     lstm_obj.main()

@@ -28,10 +28,7 @@ class SVM(classify):
         self.model = MultinomialNB().fit(messages_tfidf, train_y)
 
 if __name__ == '__main__':
-    svm_obj = SVM()
+    obj = SVM()
     is_train = True
-    if is_train:
-        svm_obj.train_test()
-        svm_obj.save_models(SVMF)
-    else:
-        svm_obj.load_models(SVMF)
+    obj.main(is_train, SVMF)
+

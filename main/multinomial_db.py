@@ -26,8 +26,4 @@ class MultinomialNBC(classify):
 if __name__ == '__main__':
     MultinomialNB_obj = MultinomialNBC()
     is_train = True
-    if is_train:
-        MultinomialNB_obj.train_test()
-        MultinomialNB_obj.save_models(MNB)
-    else:
-        MultinomialNB_obj.load_models(MNB)
+    MultinomialNB_obj.main(is_train, MNB)

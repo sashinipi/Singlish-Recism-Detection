@@ -72,6 +72,12 @@ class classify(object):
         self.train(train_x, train_y)
         self.test(test_x, test_y)
 
+    def predict(self, text):
+        messages_bow = self.bow_transformer.transform(text)
+        messages_tfidf = self.tfidf_transformer.transform(messages_bow)
+        predictions = self.model.predict(messages_tfidf)
+        print(predictions)
+
     def save_models(self, names):
         self.pick_obj.save_obj(names.MODEL_FILENAME, self.model)
         self.pick_obj.save_obj(names.BOW_FILENAME, self.bow_transformer)
@@ -83,3 +89,11 @@ class classify(object):
         self.bow_transformer = self.pick_obj.load_obj(names.BOW_FILENAME)
         self.tfidf_transformer = self.pick_obj.load_obj(names.TFIDF_FILENAME)
         self.data_len = self.pick_obj.load_obj(names.INPUT_FILENAME)
+
+    def main(self, is_train, Names):
+        if is_train:
+            self.train_test()
+            self.save_models(Names)
+        else:
+            self.load_models(Names)
+            self.predict("Test prediction")

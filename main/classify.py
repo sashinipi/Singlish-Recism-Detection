@@ -56,13 +56,10 @@ class classify(object):
 
         return train_x, train_y, test_x, test_y
 
-    def test(self, bow_transformer, tfidf_transformer, test_x, test_y, model):
-        messages_bow = bow_transformer.transform(test_x)
-
-        # tfidf_transformer = TfidfTransformer().fit(messages_bow)
-
-        messages_tfidf = tfidf_transformer.transform(messages_bow)
-        predictions = model.predict(messages_tfidf)
+    def test(self, test_x, test_y):
+        messages_bow = self.bow_transformer.transform(test_x)
+        messages_tfidf = self.tfidf_transformer.transform(messages_bow)
+        predictions = self.model.predict(messages_tfidf)
         print(classification_report(predictions, test_y))
 
     def train(self, train_x, train_y):
@@ -70,14 +67,10 @@ class classify(object):
 
     def train_test(self):
         messages = pd.read_csv(FILES.CSV_FILE_PATH, sep=',', names=["message", "label"])
-        print(len(messages))
         self.data_len = len(messages)
-
         train_x, train_y, test_x, test_y = self.split_data(messages['message'], messages['label'], ratio=0.3)
-
-        self.model, self.bow_transformer, self.tfidf_transformer= self.train(train_x, train_y)
-
-        self.test(self.bow_transformer, self.tfidf_transformer, test_x, test_y, self.model)
+        self.train(train_x, train_y)
+        self.test(test_x, test_y)
 
     def save_models(self, names):
         self.pick_obj.save_obj(names.MODEL_FILENAME, self.model)
@@ -90,4 +83,3 @@ class classify(object):
         self.bow_transformer = self.pick_obj.load_obj(names.BOW_FILENAME)
         self.tfidf_transformer = self.pick_obj.load_obj(names.TFIDF_FILENAME)
         self.data_len = self.pick_obj.load_obj(names.INPUT_FILENAME)
-        

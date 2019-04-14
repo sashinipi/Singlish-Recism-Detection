@@ -20,7 +20,7 @@ def apk():
         if request.method == "POST":
             data = request.get_json()
             name = data['content']
-            return jsonify({"Status":"Up", "content": name})
+            return jsonify({"Status":"Up", "content": name, "prediction": "Racist", "confidence": 0.85})
         if request.method == "GET":
             return jsonify({"Status":"Up", "method": "GET"})
 

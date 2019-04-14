@@ -3,27 +3,31 @@ Created on Mar 31, 2019
 
 @author: dulan
 '''
-from params import FILES
-from data.data_loader import data_loader
-from main.preprocess.singlish_preprocess import singlish_preprocess
-from main.lstm_model import lstm_model
+from main.simple_nn import SimpleNN
 
+from params import PRED_TYPE
 
-def main():
-    print("Running the main program...")
-    data_loader_obj = data_loader()
-    singlish_preprocess_obj = singlish_preprocess()
-    lstm_obj = lstm_model()
+class SRD(object):
+    def __init__(self):
+        # load simple NN
+        self.snn = SimpleNN()
+        self.snn.load_values()
 
-    x, y = data_loader_obj.load_data_csv(FILES.CSV_FILE_PATH)
-    # print(x[25])
-    # print(singlish_preprocess_obj.pre_process(x[25]), len(singlish_preprocess_obj.pre_process(x[25])))
-    X = [singlish_preprocess_obj.pre_process(xi) for xi in x]
-    Y = [ 1 if yi == 'Racist' else 0 for yi in y]
-    # print(X)
-    # print(Y)
-    lstm_obj.train(X, Y)
+    def predict(self, data):
+        try:
+            content, type = data['content'], data['type']
+            p_class, conf = "---", "---"
+            if PRED_TYPE.SIMPLE_NN.value == int(type):
+                p_class, conf = self.snn.predict_api(content)
 
-if __name__ == "__main__":
-    main()
+        except (ValueError):
+            return {'Prediction': "Val-Error", 'Confidence': "0", 'Content': "--",
+                    'Type': "--"}
+        except KeyError:
+            return {'Prediction': "Key-Error", 'Confidence': "0", 'Content': "--",
+                'Type': "--"}
+        else:
+            return {'Prediction': str(p_class), 'Confidence': str(conf), 'Content': content,
+                    'Type': PRED_TYPE(int(type)).name}
+
 

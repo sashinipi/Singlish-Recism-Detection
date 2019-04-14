@@ -3,6 +3,12 @@ Created on Mar 31, 2019
 
 @author: dulan
 '''
+from enum import Enum, unique
+@unique
+class PRED_TYPE(Enum):
+    SIMPLE_NN = 1
+    SVM = 2
+    MNB = 3
 
 class DICTIONARY:
     SINGLISH_WORD = 'singlish'

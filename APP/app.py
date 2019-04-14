@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, jsonify
-from main.simple_nn import SimpleNN
+from main.srd import SRD
 
 app = Flask(__name__)
 
@@ -19,37 +19,23 @@ def about():
 def apk():
     try:
         if request.method == "POST":
-            data = request.get_json()
-            name = data['content']
-            return jsonify({"Status":"Up", "content": name, "prediction": "Racist", "confidence": 0.85})
+            return jsonify(srd_obj.predict(request.json))
         if request.method == "GET":
             return jsonify({"Status":"Up", "method": "GET"})
 
     except Exception as e:
-        flash(e)
+        print(e)
         return render_template("about.html")
 
 @app.route("/srd/webapk", methods=["GET", "POST"])
 def web_apk():
     try:
-        data = request.form
-        content = str(data['content'])
-        type = str(data['type'])
-        if type == 'simpleNN':
-            p_class, conf = snn.predict_api(content)
-        else:
-            p_class, conf = "--", "--"
-        dict = {'Prediction': p_class, 'Confidence': conf, 'Content': content, 'Type': type}
-
-        return render_template("result.html", result = dict)
-
+        return render_template("result.html", result = srd_obj.predict(request.form))
     except Exception as e:
         flash(e)
         return render_template("about.html")
 
 if __name__ == "__main__":
-    snn = SimpleNN()
-    snn.load_values()
-
-    print("Test:", snn.predict_api("This is test"))
+    srd_obj = SRD()
+    print("Test:", srd_obj.predict( {"content":"This is test", "type":'1'}))
     app.run(debug=True)

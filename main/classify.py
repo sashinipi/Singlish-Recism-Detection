@@ -73,10 +73,12 @@ class classify(object):
         self.test(test_x, test_y)
 
     def predict(self, text):
-        messages_bow = self.bow_transformer.transform(text)
+        messages_bow = self.bow_transformer.transform([text])
         messages_tfidf = self.tfidf_transformer.transform(messages_bow)
-        predictions = self.model.predict(messages_tfidf)
-        print(predictions)
+        return self.model.predict(messages_tfidf)[0]
+
+    def predict_api(self, text):
+        return self.predict(text), "--"
 
     def save_models(self, names):
         self.pick_obj.save_obj(names.MODEL_FILENAME, self.model)
@@ -96,4 +98,5 @@ class classify(object):
             self.save_models(Names)
         else:
             self.load_models(Names)
-            self.predict("Test prediction")
+            print(self.predict(["Test prediction"]))
+            print(self.predict(["thambiya"]))

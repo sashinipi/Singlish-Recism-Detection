@@ -42,13 +42,13 @@ class LSTMP:
         'Racist': [1, 0]
     }
 
-class SVMF:
+class SVMF():
     BOW_FILENAME = 'svm_bow'
     TFIDF_FILENAME = 'svm_tfidf'
     MODEL_FILENAME = 'svm_model'
     INPUT_FILENAME = 'svm_input'
 
-class MNB:
+class MNB():
     BOW_FILENAME = 'mnb_bow'
     TFIDF_FILENAME = 'mnb_tfidf'
     MODEL_FILENAME = 'mnb_model'

@@ -24,8 +24,8 @@ class Model(object):
     def train(self, x_corpus, y_corpus):
         raise NotImplementedError
 
-    def predict(self):
-        pass
+    def predict(self, text):
+        raise NotImplementedError
 
     def save_model(self, model_name=''):
         self.model.save_weights(osp.join(DIR.DEF_SAV_LOC, model_name))

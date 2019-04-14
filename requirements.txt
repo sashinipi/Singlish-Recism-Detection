@@ -7,3 +7,4 @@ tensorflow==1.13.1
 xlrd==1.2.0
 emoji==0.5.1
 Flask==1.0.2
+Werkzeug

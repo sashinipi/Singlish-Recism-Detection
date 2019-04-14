@@ -19,10 +19,10 @@ def apk():
     try:
         if request.method == "POST":
             data = request.get_json()
-            name = data['name']
-            return jsonify({"method": "POST", "value": name})
+            name = data['content']
+            return jsonify({"Status":"Up", "content": name})
         if request.method == "GET":
-            return jsonify({"method": "GET"})
+            return jsonify({"Status":"Up", "method": "GET"})
 
     except Exception as e:
         flash(e)

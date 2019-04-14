@@ -34,10 +34,10 @@ def web_apk():
         data = request.form
         content = data['content']
         if len(content)>5:
-            dict = {'result': 'Racism'}
+            dict = {'Prediction': 'Racism', 'Confidence': 0.5}
         else:
-            dict = {'result': 'Neutral'}
-        return render_template("result.html",result = dict)
+            dict = {'Prediction': 'Neutral', 'Confidence': 0.4}
+        return render_template("result.html", result = dict)
 
     except Exception as e:
         flash(e)
@@ -45,4 +45,5 @@ def web_apk():
 
 
 if __name__ == "__main__":
+    app.secret_key = 'super secret key'
     app.run(debug=True)

@@ -7,8 +7,7 @@
 <body>
     {% extends "template.html" %}
     {% block content %}
-    </p>
-      <table border = 0>
+    <table border = 0>
          {% for key, value in result.items() %}
             <tr>
                <th> {{ key }} </th>
@@ -16,6 +15,13 @@
             </tr>
          {% endfor %}
       </table>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
     {% endblock %}
    </body>
 

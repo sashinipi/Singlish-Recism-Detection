@@ -12,11 +12,16 @@ from params import FILES
 from sklearn.metrics import classification_report
 from random import shuffle
 from main.preprocess.singlish_preprocess import singlish_preprocess
+from main.pickel_helper import PickelHelper
 
 class classify(object):
     def __init__(self):
         self.singlish_preprocess_obj = singlish_preprocess()
         self.data_len = None
+        self.pick_obj = PickelHelper()
+        self.model = None
+        self.bow_transformer = None
+        self.tfidf_transformer = None
 
     def text_process(self, mess):
         return self.singlish_preprocess_obj.pre_process(mess)
@@ -51,10 +56,10 @@ class classify(object):
 
         return train_x, train_y, test_x, test_y
 
-    def test(self, bow_transformer, test_x, test_y, model):
+    def test(self, bow_transformer, tfidf_transformer, test_x, test_y, model):
         messages_bow = bow_transformer.transform(test_x)
 
-        tfidf_transformer = TfidfTransformer().fit(messages_bow)
+        # tfidf_transformer = TfidfTransformer().fit(messages_bow)
 
         messages_tfidf = tfidf_transformer.transform(messages_bow)
         predictions = model.predict(messages_tfidf)
@@ -63,12 +68,26 @@ class classify(object):
     def train(self, train_x, train_y):
         raise NotImplementedError
 
-    def main(self):
+    def train_test(self):
         messages = pd.read_csv(FILES.CSV_FILE_PATH, sep=',', names=["message", "label"])
         print(len(messages))
         self.data_len = len(messages)
 
         train_x, train_y, test_x, test_y = self.split_data(messages['message'], messages['label'], ratio=0.3)
 
-        model, bow_transformer= self.train(train_x, train_y)
-        self.test(bow_transformer, test_x, test_y, model)
+        self.model, self.bow_transformer, self.tfidf_transformer= self.train(train_x, train_y)
+
+        self.test(self.bow_transformer, self.tfidf_transformer, test_x, test_y, self.model)
+
+    def save_models(self, names):
+        self.pick_obj.save_obj(names.MODEL_FILENAME, self.model)
+        self.pick_obj.save_obj(names.BOW_FILENAME, self.bow_transformer)
+        self.pick_obj.save_obj(names.TFIDF_FILENAME, self.tfidf_transformer)
+        self.pick_obj.save_obj(names.INPUT_FILENAME, self.data_len)
+
+    def load_models(self, names):
+        self.model = self.pick_obj.load_obj(names.MODEL_FILENAME)
+        self.bow_transformer = self.pick_obj.load_obj(names.BOW_FILENAME)
+        self.tfidf_transformer = self.pick_obj.load_obj(names.TFIDF_FILENAME)
+        self.data_len = self.pick_obj.load_obj(names.INPUT_FILENAME)
+        

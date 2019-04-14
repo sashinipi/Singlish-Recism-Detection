@@ -7,6 +7,7 @@ from main.classify import classify
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
+from params import MNB
 
 class MultinomialNBC(classify):
 
@@ -21,8 +22,13 @@ class MultinomialNBC(classify):
         messages_tfidf = tfidf_transformer.transform(messages_bow)
         spam_detect_model = MultinomialNB().fit(messages_tfidf, train_y)
 
-        return spam_detect_model, bow_transformer
+        return spam_detect_model, bow_transformer, tfidf_transformer
 
 if __name__ == '__main__':
     MultinomialNB_obj = MultinomialNBC()
-    MultinomialNB_obj.main()
+    is_train = True
+    if is_train:
+        MultinomialNB_obj.train_test()
+        MultinomialNB_obj.save_models(MNB)
+    else:
+        MultinomialNB_obj.load_models(MNB)

@@ -40,4 +40,5 @@ def web_apk():
 if __name__ == "__main__":
     srd_obj = SRD()
     print("Test:", srd_obj.predict( {"content":"This is test", "type":'1'}))
-    app.run(debug=True)
+    # app.run(debug=True, host = '0.0.0.0', port=5000) # use this for docker
+    app.run(debug=True, host = '127.0.0.1', port=5000)

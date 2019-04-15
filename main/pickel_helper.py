@@ -6,17 +6,18 @@ Created on Apr 06, 2019
 import os
 import pickle
 import os.path as osp
+from params import DIR
+
 
 class PickelHelper(object):
-    DEF_SAV_LOC = 'save'
     def __init__(self):
-        if not osp.exists(PickelHelper.DEF_SAV_LOC):
-            os.makedirs(PickelHelper.DEF_SAV_LOC)
+        if not osp.exists(DIR.DEF_SAV_LOC):
+            os.makedirs(DIR.DEF_SAV_LOC)
 
     def save_obj(self, name, obj):
-        with open(osp.join(PickelHelper.DEF_SAV_LOC, name+'.pkl'), 'wb') as f:
+        with open(osp.join(DIR.DEF_SAV_LOC, name+'.pkl'), 'wb') as f:
             pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
     def load_obj(self, name):
-        with open(osp.join(PickelHelper.DEF_SAV_LOC, name+'.pkl'), 'rb') as f:
+        with open(osp.join(DIR.DEF_SAV_LOC, name+'.pkl'), 'rb') as f:
             return pickle.load(f)

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,19 +12,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/srd/preprocess.py">
+        <entry file="file://$PROJECT_DIR$/main/srd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="30" column="19" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="19" />
+            <state relative-caret-position="68">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/srd/singlish_preprocess.py">
+        <entry file="file://$PROJECT_DIR$/params.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="115">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/APP/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+              <folding>
+                <element signature="e#48#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -33,6 +67,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -46,6 +81,10 @@
       <find>load_dict</find>
       <find>dict_filename</find>
       <find>data_filename</find>
+      <find>classify</find>
+      <find>logging</find>
+      <find>.dat</find>
+      <find>text_process</find>
     </findStrings>
     <replaceStrings>
       <replace>preprocess</replace>
@@ -60,12 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/requrements.txt" />
-        <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/srd/srd.py" />
-        <option value="$PROJECT_DIR$/srd/model.py" />
-        <option value="$PROJECT_DIR$/srd/preprocess.py" />
-        <option value="$PROJECT_DIR$/tests/test_data_loader.py" />
         <option value="$PROJECT_DIR$/srd/data_loader.py" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -76,57 +109,102 @@
         <option value="$PROJECT_DIR$/srd/data_generator.py" />
         <option value="$PROJECT_DIR$/data/process.py" />
         <option value="$PROJECT_DIR$/srd/data_loader.py" />
-        <option value="$PROJECT_DIR$/params.py" />
         <option value="$PROJECT_DIR$/data/data_loader.py" />
         <option value="$PROJECT_DIR$/tools/tagging_tool.py" />
         <option value="$PROJECT_DIR$/srd/singlish_preprocess.py" />
+        <option value="$PROJECT_DIR$/main/multinomial_nb.py" />
+        <option value="$PROJECT_DIR$/main/SVM.py" />
         <option value="$PROJECT_DIR$/data/data_generator.py" />
+        <option value="$PROJECT_DIR$/web/templates/about.html.py" />
+        <option value="$PROJECT_DIR$/main/main.py" />
+        <option value="$PROJECT_DIR$/web/templates/result.html" />
+        <option value="$PROJECT_DIR$/web/main.py" />
+        <option value="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" />
+        <option value="$PROJECT_DIR$/web/templates/home.html" />
+        <option value="$PROJECT_DIR$/web/templates/about.html" />
+        <option value="$PROJECT_DIR$/web/templates/template.html" />
+        <option value="$PROJECT_DIR$/web/static/css/template.css" />
+        <option value="$PROJECT_DIR$/templates/template.html" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/templates/result.html" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/appengine_config.py" />
+        <option value="$PROJECT_DIR$/requrements.txt" />
+        <option value="$PROJECT_DIR$/app.yaml" />
+        <option value="$PROJECT_DIR$/APP/requirements.txt" />
+        <option value="$PROJECT_DIR$/APP/deploy.sh" />
+        <option value="$PROJECT_DIR$/APP/install.sh" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/main/multinomial_nb__.py" />
+        <option value="$PROJECT_DIR$/main/model.py" />
+        <option value="$PROJECT_DIR$/main/lstm_model.py" />
+        <option value="$PROJECT_DIR$/APP/main.py" />
+        <option value="$PROJECT_DIR$/APP/templates/home.html" />
+        <option value="$PROJECT_DIR$/main/svm.py" />
+        <option value="$PROJECT_DIR$/main/multinomial_db.py" />
+        <option value="$PROJECT_DIR$/main/classify.py" />
+        <option value="$PROJECT_DIR$/main/simple_nn.py" />
+        <option value="$PROJECT_DIR$/main/srd.py" />
+        <option value="$PROJECT_DIR$/Docker/Dockerfile" />
+        <option value="$PROJECT_DIR$/main/pickel_helper.py" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/APP/app.py" />
+        <option value="$PROJECT_DIR$/params.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
+    <option name="x" value="1622" />
     <option name="width" value="1356" />
-    <option name="height" value="690" />
+    <option name="height" value="517" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Singlish-Racism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Racism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Singlish-Racism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Racism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Racism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Racism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="srd" type="462c0819:PsiDirectoryNode" />
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="BuildoutCfg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Docker" />
+      <recent name="$PROJECT_DIR$/APP" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,24 +219,128 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Unittests in test_data_loader.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Singlish-Racisim-Detection" />
+  <component name="RunManager" selected="Docker.Dockerfile">
+    <configuration name="APP" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../../../env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/APP/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="multinomial_db" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../../../env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/multinomial_db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="simple_nn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_data_loader.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/simple_nn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="srd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/srd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="srd" />
+          <option name="entrypoint" value="" />
+          <option name="imageTag" value="srd:1.0" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="5000" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="5000" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Python.multinomial_db" />
+      <item itemvalue="Python.simple_nn" />
+      <item itemvalue="Python.APP" />
+      <item itemvalue="Python.srd" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in test_data_loader.py" />
+        <item itemvalue="Python.APP" />
+        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Python.srd" />
+        <item itemvalue="Python.simple_nn" />
+        <item itemvalue="Python.multinomial_db" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +355,105 @@
       <option name="presentableId" value="Default" />
       <updated>1554033559461</updated>
     </task>
+    <task id="LOCAL-00001" summary="temp stash">
+      <created>1554547789973</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554547789975</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lstm model added">
+      <created>1554630458220</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554630458220</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updates">
+      <created>1554633126891</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554633126891</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updates to web application">
+      <created>1555217101050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555217101051</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updates to web application - GCP integration">
+      <created>1555220785168</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555220785168</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updates">
+      <created>1555224234418</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555224234419</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updates - prediction added">
+      <created>1555241798704</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555241798704</updated>
+    </task>
+    <task id="LOCAL-00008" summary="SRD class now manage all the predictions">
+      <created>1555260920130</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555260920130</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Save and load models - SVM and MNB">
+      <created>1555262797139</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1555262797139</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Simplify code">
+      <created>1555263599894</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555263599894</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updates">
+      <created>1555264114135</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1555264114135</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Load all three models (SVM, MNB, NN) and predict according to the type">
+      <created>1555267227525</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555267227525</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Docker integration">
+      <created>1555302588614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555302588614</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Docker integration - update">
+      <created>1555599044039</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555599044039</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -217,153 +498,485 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="1366" y="-2" width="1920" height="1031" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25372022" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.20084344" />
+      <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.401487" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924242" weight="0.32899627" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49776787" weight="0.94271684" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Docker" order="0" weight="0.4944238" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32962963" />
+      <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32899627" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.38847584" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.47397768" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.42007434" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.43866172" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32899627" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.28369322" />
+      <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32962963" />
+      <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32899627" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.38847584" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.47397768" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.42007434" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.43866172" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32899627" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/../Singlish-Racism-Detection" />
     </ignored-roots>
+    <MESSAGE value="temp stash" />
+    <MESSAGE value="Lstm model added" />
+    <MESSAGE value="updates to web application" />
+    <MESSAGE value="updates to web application - GCP integration" />
+    <MESSAGE value="updates - prediction added" />
+    <MESSAGE value="SRD class now manage all the predictions" />
+    <MESSAGE value="Save and load models - SVM and MNB" />
+    <MESSAGE value="Simplify code" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="Load all three models (SVM, MNB, NN) and predict according to the type" />
+    <MESSAGE value="Docker integration" />
+    <MESSAGE value="Docker integration - update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docker integration - update" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>names.BOW_FILENAME</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.model</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>names.MODEL_FILENAME</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>conf</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>str(content)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>content</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>p_class</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>train</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>totals[i] * split_dict['train']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/srd/srd.py">
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/tensorflow/python/framework/ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="65">
+          <caret line="1658" selection-start-line="1658" selection-end-line="1658" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srd/model.py">
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/xlrd/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="197">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_data_loader.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="143">
+          <caret line="1740" selection-start-line="1740" selection-end-line="1740" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srd/sinhala_preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-402">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#49#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-end-line="5" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requrements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_output.csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/data/data_loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="192">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/params.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state relative-caret-position="39">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/tagging_tool.py">
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="602" selection-start-line="602" selection-end-line="602" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="2893" selection-start-line="2893" selection-end-line="2893" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/scipy/sparse/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/genericpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/sklearn/model_selection/_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-303">
+          <caret line="298" column="8" selection-start-line="298" selection-start-column="8" selection-end-line="298" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/keras/engine/training_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/keras/engine/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-259">
+          <caret line="1050" column="8" selection-start-line="1050" selection-start-column="8" selection-end-line="1050" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/lstm.log" />
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/keras/engine/saving.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="378" selection-start-line="378" selection-end-line="378" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/logs/lstm-1.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/template.css" />
+    <entry file="file://$PROJECT_DIR$/APP/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/template.css" />
+    <entry file="file://$PROJECT_DIR$/APP/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/templates/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="75" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/templates/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" selection-start-line="2" selection-end-line="2" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/appengine_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/werkzeug/datastructures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="426" selection-start-line="426" selection-end-line="426" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/preprocess/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="160" column="20" selection-start-line="160" selection-start-column="20" selection-end-line="160" selection-end-column="20" />
+          <folding>
+            <element signature="e#82#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="1798" selection-start-line="1798" selection-end-line="1798" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1033">
+          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+          <folding>
+            <element signature="e#48#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/sklearn/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="244" selection-start-line="244" selection-end-line="244" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/multinomial_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/preprocess/singlish_preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#48#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
+    <entry file="file://$PROJECT_DIR$/main/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#48#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simple_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#49#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding>
+            <element signature="e#48#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/classify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#49#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/sklearn/feature_extraction/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18054">
+          <caret line="1084" selection-start-line="1084" selection-end-line="1084" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cfg" />
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="9" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srd/preprocess.py">
+    <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srd/singlish_preprocess.py">
+    <entry file="file://$PROJECT_DIR$/APP/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="384">
+          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/srd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/params.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -15,8 +15,8 @@ class DICTIONARY:
     WORD_COUNT = 'count'
 
 class DIR:
-    # HOST_MACHINE_LOC = '/root/SRD/main/' # Use this for docker
-    HOST_MACHINE_LOC = ''
+    HOST_MACHINE_LOC = '/root/SRD/main/' # Use this for docker
+    # HOST_MACHINE_LOC = ''
     DEF_SAV_LOC = HOST_MACHINE_LOC+'save'
     LOGS_DIR = HOST_MACHINE_LOC+'logs'
 

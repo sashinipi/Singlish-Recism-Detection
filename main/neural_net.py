@@ -28,8 +28,6 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import train_test_split
 
 class NeuralNet(Model):
-    trans_file_name = 'trans2'
-    model_file_name = 'model2.h5'
     def __init__(self):
         super(NeuralNet, self).__init__()
         self.input_size = None
@@ -44,8 +42,10 @@ class NeuralNet(Model):
 
         self.input_size = f_train_x.shape[1]
         print("Feature size:", self.input_size)
-        self.pic_obj.save_obj('size-nn', self.input_size)
+        self.pic_obj.save_obj(NN.INPUT_FILENAME, self.input_size)
         self.create_model(self.input_size)
+
+        self.save_transformers(NN.TRANS_FILENAME)
 
         self.train(f_train_x, f_train_y)
 
@@ -71,10 +71,10 @@ class NeuralNet(Model):
         # self.save_transformers(NeuralNet.trans_file_name)
 
     def load_values(self):
-        self.create_model(self.pic_obj.load_obj('size-nn'))
-        self.load_model(NeuralNet.model_file_name)
+        self.create_model(self.pic_obj.load_obj(NN.INPUT_FILENAME))
+        self.load_model(NN.MODEL_FILENAME)
         if self.bow_transformer is None or self.tfidf_transformer is None:
-            self.load_transformers(NeuralNet.trans_file_name)
+            self.load_transformers(NN.TRANS_FILENAME)
 
     def predict_api(self, text):
         prediction = np.squeeze(self.predict(text))
@@ -84,18 +84,14 @@ class NeuralNet(Model):
     def predict_cli(self):
         while(True):
             text = input("Input:")
-            # prediction = np.squeeze(self.predict(text))
-            # max_id = int(np.argmax(prediction))
-            # print(prediction)
-            p_clas, conf = self.predict_api(text)
-            print("Predicted: {} Confidence: {}".format(p_clas, conf))
+            p_class, conf = self.predict_api(text)
+            print("Predicted: {} Confidence: {}".format(p_class, conf))
 
     def create_model(self, input_dim):
         # create model
         model = Sequential()
         model.add(Dense(256, input_dim=input_dim, activation='relu'))
         model.add(Dense(64, activation='relu'))
-        # model.add(Dense(1, activation='sigmoid'))
         model.add(Dense(2, activation='softmax'))
         model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
@@ -151,6 +147,7 @@ class NeuralNet(Model):
                 if accuracy >= best_accuracy and loss < best_loss + 0.01:
                     logging.info("Saving model")
                     self.model.save("%s/model_fold_%d.h5" % (NN.OUTPUT_DIR, fold))
+                    self.model.save("%s/%s" % (NN.OUTPUT_DIR, NN.MODEL_FILENAME))
 
                     best_accuracy = accuracy
                     best_loss = loss
@@ -173,7 +170,7 @@ class NeuralNet(Model):
 
 if __name__ == '__main__':
     snn = NeuralNet()
-    is_train = True
+    is_train = False
     if is_train:
         snn.training_stage()
     else:

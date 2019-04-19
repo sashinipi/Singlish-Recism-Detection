@@ -47,6 +47,12 @@ class LSTMP:
         'Racist': [1, 0]
     }
 
+class SNN:
+    TRANS_FILENAME = 'snn_trans'
+    MODEL_FILENAME = 'snn_model.h5'
+    INPUT_FILENAME = 'snn_input'
+
+
 class NN:
     FOLDS_COUNT             = 5
     VALIDATION_TEST_SIZE    = 0.2
@@ -56,6 +62,9 @@ class NN:
         'Neutral': [0, 1],
         'Racist': [1, 0]
     }
+    TRANS_FILENAME = 'nn_trans'
+    MODEL_FILENAME = 'nn_model.h5'
+    INPUT_FILENAME = 'nn_input'
 
 class SVMF():
     BOW_FILENAME    = 'svm_bow'

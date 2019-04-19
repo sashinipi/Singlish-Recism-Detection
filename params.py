@@ -47,6 +47,16 @@ class LSTMP:
         'Racist': [1, 0]
     }
 
+class NN:
+    FOLDS_COUNT             = 5
+    VALIDATION_TEST_SIZE    = 0.2
+    MAX_EPOCHS              = 10
+    OUTPUT_DIR              = 'save'
+    DATA_SET_CLASSES = {
+        'Neutral': [0, 1],
+        'Racist': [1, 0]
+    }
+
 class SVMF():
     BOW_FILENAME    = 'svm_bow'
     TFIDF_FILENAME  = 'svm_tfidf'

@@ -70,6 +70,7 @@ class data_generator(object):
                             line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
 
                 self.write_to_csv([line, tags[i]],type=_type)
+                self.write_to_csv([line, tags[i]],type='all')
             logging.debug(line, tags[i])
         logging.info(self.type_count)
 

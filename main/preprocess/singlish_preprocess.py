@@ -38,6 +38,7 @@ class singlish_preprocess(preprocess):
     def pre_process(self, sentence):
         words = []
         for word in sentence.split():
+            word = self.convert_to_lowercase(word)
             word = self.remove_letters_in_words(word, singlish_preprocess.CONTAIN_STRINGS_REMOVE)  # before
             if self.remove_words_starting(word, singlish_preprocess.REMOVE_WORDS_STARTING):
                 continue

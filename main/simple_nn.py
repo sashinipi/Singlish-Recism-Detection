@@ -84,7 +84,7 @@ class SimpleNN(Model):
 
 if __name__ == '__main__':
     snn = SimpleNN()
-    is_train = True
+    is_train = False
     if is_train:
         snn.training_stage()
     else:

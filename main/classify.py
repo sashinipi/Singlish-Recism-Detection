@@ -77,7 +77,10 @@ class classify(object):
         messages_bow = self.bow_transformer.transform([text])
         print(messages_bow)
         messages_tfidf = self.tfidf_transformer.transform(messages_bow)
-        return self.model.predict(messages_tfidf)[0]
+        print(messages_tfidf)
+        ret = self.model.predict(messages_tfidf)[0]
+        print(ret)
+        return ret
 
     def predict_api(self, text):
         return self.predict(text), "--"

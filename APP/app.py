@@ -17,7 +17,7 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/srd/apk", methods=["GET", "POST"])
+@app.route("/srd/api", methods=["GET", "POST"])
 def apk():
     try:
         if request.method == "POST":
@@ -29,7 +29,7 @@ def apk():
         print(e)
         return render_template("about.html")
 
-@app.route("/srd/webapk", methods=["GET", "POST"])
+@app.route("/srd/webapi", methods=["GET", "POST"])
 def web_apk():
     try:
         return render_template("result.html", result = srd_obj.predict(request.form))
@@ -39,6 +39,7 @@ def web_apk():
 
 if __name__ == "__main__":
     srd_obj = SRD()
-    print("Test:", srd_obj.predict( {"content":"This is test", "type":'1'}))
-    app.run(debug=True, host = '0.0.0.0', port=5000) # use this for docker
-    # app.run(debug=True, host = '127.0.0.1', port=5000)
+    print("Test:", srd_obj.predict( {"content":"This is test - Simple NN", "type":'1'}))
+    print("Test:", srd_obj.predict( {"content":"This is test - SVM", "type":'2'}))
+    print("Test:", srd_obj.predict( {"content":"This is test - MNB", "type":'3'}))
+    app.run(debug=True, host = '0.0.0.0', port=5000)

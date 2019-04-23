@@ -8,6 +8,9 @@ class preprocess(object):
     def __init__(self):
         pass
 
+    def convert_to_lowercase(self, word):
+        return word.lower()
+
     def remove_words_starting(self, word, starting_words):
         flag = False
         for let_part in starting_words:

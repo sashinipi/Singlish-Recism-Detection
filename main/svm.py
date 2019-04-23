@@ -3,11 +3,7 @@ Created on Apr 01, 2019
 
 @author: dulan
 '''
-import nltk
-from nltk.corpus import stopwords
-import pandas as pd
-# import seaborn as sns
-import string
+
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
@@ -29,6 +25,6 @@ class SVM(classify):
 
 if __name__ == '__main__':
     obj = SVM()
-    is_train = True
+    is_train = False
     obj.main(is_train, SVMF)
 

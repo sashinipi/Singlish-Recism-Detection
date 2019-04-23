@@ -35,6 +35,7 @@ class singlish_preprocess(preprocess):
                 word = word.replace(emo, ' '+emo+' ')
         return word
 
+    # def remove
     def pre_process(self, sentence):
         words = []
         for word in sentence.split():

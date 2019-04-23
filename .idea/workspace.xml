@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main/save/snn_input.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/snn_model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/snn_trans.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/neural_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/neural_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/simple_nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/simple_nn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,115 +17,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/srd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding>
-                <element signature="e#48#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/params.py">
+        <entry file="file://$PROJECT_DIR$/APP/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-              <folding>
-                <element signature="e#48#77#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="82">
+              <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/simple_nn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-              <folding>
-                <element signature="e#49#73#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/pipeline.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/preprocess/preprocess.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="28" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/preprocess/singlish_preprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="31" column="29" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="29" />
-              <folding>
-                <element signature="e#48#66#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="578">
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/svm.py">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#49#108#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="27" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/neural_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="157" column="17" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="17" />
-              <folding>
-                <element signature="e#97#121#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="35" column="25" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="25" />
-              <folding>
-                <element signature="e#48#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/logs/nn.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="1646">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/main/preprocess/sinhala_preprocess.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -163,6 +90,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -207,24 +139,24 @@
         <option value="$PROJECT_DIR$/Docker/Dockerfile" />
         <option value="$PROJECT_DIR$/main/pickel_helper.py" />
         <option value="$PROJECT_DIR$/APP/app.py" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/APP/templates/home.html" />
         <option value="$PROJECT_DIR$/APP/templates/about.html" />
         <option value="$PROJECT_DIR$/main/classify.py" />
         <option value="$PROJECT_DIR$/data/data_generator.py" />
         <option value="$PROJECT_DIR$/main/svm.py" />
         <option value="$PROJECT_DIR$/main/preprocess/preprocess.py" />
-        <option value="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" />
         <option value="$PROJECT_DIR$/main/neural_net.py" />
         <option value="$PROJECT_DIR$/params.py" />
         <option value="$PROJECT_DIR$/main/simple_nn.py" />
+        <option value="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1614" />
-    <option name="width" value="1346" />
-    <option name="height" value="517" />
+    <option name="y" value="27" />
+    <option name="width" value="1356" />
+    <option name="height" value="529" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -234,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,69 +182,13 @@
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="preprocess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="save" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="save" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,7 +198,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -350,7 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.simple_nn">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="data_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -467,11 +342,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Python.simple_nn" />
         <item itemvalue="Python.neural_net" />
         <item itemvalue="Python.data_generator" />
         <item itemvalue="Python.svm" />
-        <item itemvalue="Docker.Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -647,7 +522,7 @@
       <configuration name="Unittests in test_data_loader.py" configurationId="tests" />
     </history-entry>
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -657,9 +532,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-2" width="1920" height="1031" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="692" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.20084344" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.20327625" />
+      <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" weight="0.5074074" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32962963" />
+      <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32777777" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49924242" weight="0.37037036" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4732041" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.42007434" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" visible="true" weight="0.5650558" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.5148148" />
+      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.20327625" />
       <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" weight="0.8048327" />
@@ -671,30 +567,9 @@
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.42007434" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.43686005" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.56296295" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
-      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32899627" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.28369322" />
-      <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Docker" order="0" visible="true" weight="0.8048327" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32962963" />
-      <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32899627" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49924242" weight="0.38847584" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.47397768" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.42007434" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.43686005" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
-      <window_info anchor="bottom" id="Python Console" order="11" weight="0.32899627" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="11" visible="true" weight="0.5148148" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -723,7 +598,8 @@
     <MESSAGE value="simple neural net with cross validation added&#10;Pipeline code added" />
     <MESSAGE value="pre-processing - lowercase" />
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="added models" />
+    <option name="LAST_COMMIT_MESSAGE" value="added models" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -775,16 +651,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/data_loader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#48#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/posixpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -844,41 +710,10 @@
     <entry file="file://$PROJECT_DIR$/main/lstm.log" />
     <entry file="file://$PROJECT_DIR$/web/templates/template.css" />
     <entry file="file://$PROJECT_DIR$/web/template.css" />
-    <entry file="file://$PROJECT_DIR$/APP/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="75" selection-start-line="5" selection-start-column="75" selection-end-line="5" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" selection-start-line="2" selection-end-line="2" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/static/css/main.css" />
+    <entry file="file://$PROJECT_DIR$/APP/templates/template.html" />
+    <entry file="file://$PROJECT_DIR$/APP/requirements.txt" />
+    <entry file="file://$PROJECT_DIR$/APP/deploy.sh" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -886,20 +721,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/APP/install.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/appengine_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/install.sh" />
+    <entry file="file://$PROJECT_DIR$/APP/appengine_config.py" />
     <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/werkzeug/datastructures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -943,64 +766,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/multinomial_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#48#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/classify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-          <folding>
-            <element signature="e#49#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/templates/result.html" />
+    <entry file="file://$PROJECT_DIR$/APP/templates/about.html" />
+    <entry file="file://$PROJECT_DIR$/APP/templates/home.html" />
+    <entry file="file://$PROJECT_DIR$/main/multinomial_db.py" />
+    <entry file="file://$PROJECT_DIR$/main/classify.py" />
     <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1015,16 +785,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-          <folding>
-            <element signature="e#48#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/pickel_helper.py" />
     <entry file="file://$PROJECT_DIR$/main/logs/lstm-1.log">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -1042,16 +803,6 @@
         <state relative-caret-position="-496" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="92" />
-          <folding>
-            <element signature="e#82#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1062,50 +813,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#49#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/srd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding>
-            <element signature="e#48#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/preprocess/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/pipeline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/preprocess/singlish_preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <element signature="e#48#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/svm.py" />
+    <entry file="file://$PROJECT_DIR$/main/srd.py" />
+    <entry file="file://$PROJECT_DIR$/main/preprocess/preprocess.py" />
+    <entry file="file://$PROJECT_DIR$/main/pipeline.py" />
     <entry file="file://$PROJECT_DIR$/main/logs/nn.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="1646">
@@ -1113,36 +824,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="25" />
-          <folding>
-            <element signature="e#48#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="157" column="17" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="17" />
-          <folding>
-            <element signature="e#97#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/simple_nn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-          <folding>
-            <element signature="e#49#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model.py" />
+    <entry file="file://$PROJECT_DIR$/main/neural_net.py" />
+    <entry file="file://$PROJECT_DIR$/main/simple_nn.py" />
     <entry file="file://$PROJECT_DIR$/params.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
@@ -1150,6 +834,36 @@
           <folding>
             <element signature="e#48#77#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/app.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/preprocess/singlish_preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/preprocess/sinhala_preprocess.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="27" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
         </state>
       </provider>
     </entry>

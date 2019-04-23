@@ -3,21 +3,44 @@ Created on Mar 31, 2019
 
 @author: dulan
 '''
+import logging
+import string
 
 class preprocess(object):
     def __init__(self):
-        pass
+        logging.basicConfig(level=logging.DEBUG)
 
     def convert_to_lowercase(self, word):
         return word.lower()
 
-    def remove_words_starting(self, word, starting_words):
-        flag = False
+    def remove_punc(self, word):
+        exclude = set(string.punctuation)
+        return ''.join(ch for ch in word if ch not in exclude)
+
+    def remove_numbers(self, word):
+        return ''.join(ch for ch in word if not ch.isdigit())
+
+    def add_spaces_for_emojis(self, word, emojis):
+        for emo in emojis:
+            if emo in word:
+                word = word.replace(emo, ' '+emo+' ')
+        return word
+
+    def is_words_starting(self, word, starting_words):
+        ret = None
         for let_part in starting_words:
             if word[0:len(let_part)] == let_part:
-                flag = True
+                ret = let_part
                 break
-        return flag
+        return ret
+
+    def is_words_ending(self, word, ending_words):
+        ret = None
+        for let_part in ending_words:
+            if word[-len(let_part):] == let_part:
+                ret = let_part
+                break
+        return ret
 
     def remove_by_length(self, word, length):
         flag = False
@@ -31,5 +54,31 @@ class preprocess(object):
                 word = word.replace(let, ' ')
         return word
 
-    def pre_process(self, sentance):
+    def suffix_replace(self, word, suffixes):
+        for key in suffixes.keys():
+            part = self.is_words_ending(word, suffixes[key])
+            if part is not None:
+                logging.debug('suffix replace input:'+ word)
+                ret = word[:-len(part)]+key
+                logging.debug('suffix replace output:'+ret)
+                return ret
+        return word
+
+    def suffix_stripping(self, word, suffixes):
+        part = self.is_words_ending(word, suffixes)
+        if part is not None:
+            logging.debug('suffix {} stripping input:{}'.format(part, word))
+            ret = word[:-len(part)]
+            logging.debug('suffix stripping output:' +ret)
+            return ret
+        return word
+
+    def lemmatization(self, word, lemmatization_words):
+        for key in lemmatization_words.keys():
+            if word in lemmatization_words[key]:
+                logging.debug('Lemmatized word: {} to {}'.format(word, key))
+                return key
+        return word
+
+    def pre_process(self, sentence):
         raise NotImplementedError

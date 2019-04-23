@@ -27,5 +27,5 @@ class PRE_PRO:
 
     SINGLISH_STOP_WORDS = ['eth', 'RT']
     SINGLISH_SUFFIX_STRIP = ['da']
-    SINGLISH_SUFFIX_REPLACE = {' ':['da'], 'a':['aa', 'aaa']}
+    SINGLISH_SUFFIX_REPLACE = {' ':['da'], 'a':['aa', 'aaa'], 'e':['ee', 'ee'], 'o':['oo', 'ooo']}
     SINGLISH_LEMMATIZATION = {'mama': ['mame', 'man'], 'oya':['oa', 'oy', 'ohe'], 'uta':['uuta']}

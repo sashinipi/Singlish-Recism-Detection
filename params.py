@@ -38,14 +38,20 @@ class MISC:
 
 class LSTMP:
     LSTM_MAX_WORD_COUNT     = 60
-    FOLDS_COUNT             = 5
-    VALIDATION_TEST_SIZE    = 0.2
-    MAX_EPOCHS              = 20
+    FOLDS_COUNT             = 4
+    VALIDATION_TEST_SIZE    = 0.3
+    MAX_EPOCHS              = 8
+    BATCH_SIZE              = 4
     OUTPUT_DIR              = 'save'
     DATA_SET_CLASSES = {
         'Neutral': [0, 1],
         'Racist': [1, 0]
     }
+
+    DICTIONARY_FILENAME = 'lstm_dict'
+    MODEL_FILENAME = 'lstm_model.h5'
+    MODEL_FILENAME_ACC = 'lstm_model_{}.h5'
+
 
 class SNN:
     TRANS_FILENAME = 'snn_trans'

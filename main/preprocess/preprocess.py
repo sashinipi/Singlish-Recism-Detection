@@ -8,7 +8,7 @@ import string
 
 class preprocess(object):
     def __init__(self):
-        logging.basicConfig(level=logging.DEBUG)
+        logging.basicConfig(level=logging.WARNING)
 
     def convert_to_lowercase(self, word):
         return word.lower()

@@ -24,6 +24,9 @@ class Model(object):
     def train(self, x_corpus, y_corpus):
         raise NotImplementedError
 
+    def train_with_test(self, x_corpus, y_corpus, x_corpus_, y_corpus_):
+        raise NotImplementedError
+
     def predict(self, text):
         raise NotImplementedError
 
@@ -67,3 +70,4 @@ class Model(object):
         # evaluate the model
         scores = self.model.evaluate(X, Y)
         print("\n%s: %.2f%%" % (self.model.metrics_names[1], scores[1] * 100))
+        return scores[1]

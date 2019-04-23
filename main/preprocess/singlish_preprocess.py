@@ -14,7 +14,7 @@ class singlish_preprocess(preprocess):
 
     def __init__(self):
         super(singlish_preprocess, self).__init__()
-        logging.basicConfig(level=logging.DEBUG)
+        logging.basicConfig(level=logging.WARNING)
 
     def remove_stop_words(self, word):
         return word in PRE_PRO.SINGLISH_STOP_WORDS

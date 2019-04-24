@@ -51,6 +51,7 @@ class LSTMP:
     DICTIONARY_FILENAME = 'lstm_dict'
     MODEL_FILENAME = 'lstm_model.h5'
     MODEL_FILENAME_ACC = 'lstm_model_{}.h5'
+    LOG_FILE_NAME = 'lstm-model'
 
 
 class SNN:

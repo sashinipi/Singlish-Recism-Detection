@@ -23,6 +23,7 @@ import logging
 from params import FILES, MISC, DIR
 from main.preprocess.singlish_preprocess import singlish_preprocess
 import os.path as osp
+from main.logger import Logger
 
 class LSTMModel(Model):
     def __init__(self):
@@ -33,9 +34,11 @@ class LSTMModel(Model):
         self.tfidf_transformer = None
         self.dictionary = None
         self.pre_pro = singlish_preprocess()
-        print("LOGS DIR:{}".format(DIR.LOGS_DIR))
-        logging.basicConfig(filename=osp.join(DIR.LOGS_DIR, 'lstm.log'),
-                            filemode='w', level=logging.INFO)
+        # print("LOGS DIR:{}".format(DIR.LOGS_DIR))
+        # logging.basicConfig(filename=osp.join(DIR.LOGS_DIR, 'lstm.log'),
+        #                     filemode='w', level=logging.INFO)
+
+        self.logger = Logger.get_logger(LSTMP.LOG_FILE_NAME)
 
 
     def transform_to_dictionary_values(self, corpus_token: list, dictionary: dict) -> list:
@@ -175,7 +178,7 @@ class LSTMModel(Model):
         return self.evaluate(x_corpus, y_corpus)
 
     def main(self):
-        train = True
+        train = False
         if train:
             messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
             messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])

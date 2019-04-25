@@ -4,7 +4,7 @@ Created on Mar 31, 2019
 @author: dulan
 '''
 
-from main.preprocess import preprocess
+from main.preprocess.preprocess import preprocess
 import string
 import emoji
 import numpy as np
@@ -32,7 +32,8 @@ class sinhala_preprocess(preprocess):
         words = []
         for word in sentance.split():
             word = self.remove_letters_in_words(word, sinhala_preprocess.CONTAIN_STRINGS_REMOVE)# before
-            if self.remove_words_starting(word,sinhala_preprocess.CONTAIN_STRINGS_REMOVE):
+
+            if self.is_words_starting(word, sinhala_preprocess.REMOVE_WORDS_STARTING) is not None:
                 continue
             if self.remove_by_length(word, sinhala_preprocess.LENGTH):
                 continue
@@ -45,3 +46,4 @@ class sinhala_preprocess(preprocess):
         words_np = np.array(words)
 
         return words_np
+

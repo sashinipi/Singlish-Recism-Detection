@@ -8,11 +8,13 @@ import random
 
 from main.preprocess.preprocess import preprocess
 from main.preprocess.singlish_preprocess import singlish_preprocess
+from main.preprocess.sinhala_preprocess import sinhala_preprocess
 from params import DICTIONARY, FILES
 from data.data_loader import data_loader
 from params import MISC
 import logging
 import numpy as np
+# from Object import Object as Parent
 
 class data_generator(object):
     def __init__(self):
@@ -20,7 +22,8 @@ class data_generator(object):
         self.output_basename = 'output_{}.csv'
         self.data_loader_obj = data_loader()
         self.dictionary = self.data_loader_obj.load_dict(FILES.DICTIONARY_FILE_PATH)
-        self.pre_process_o = singlish_preprocess()
+        self.sinhala_pre_process_o = sinhala_preprocess()
+        self.singlish_pre_process_o = singlish_preprocess()
         # self.convert_to_singlish()
         self.type_count = None
 
@@ -61,13 +64,18 @@ class data_generator(object):
         content, tags = self.data_loader_obj.load_data_from_excel(FILES.EXCEL_DATA_FILE_PATH)
         self.set_count(split_dict, tags)
         for i, line in enumerate(content):
-            words = self.pre_process_o.pre_process(line)
+            words = self.sinhala_pre_process_o.pre_process(line)
             _type = self.get_type(tags[i])
             for j in range(augment):
                 for word in words:
                     if word in self.dictionary.keys():
                         if not self.dictionary[word][DICTIONARY.SINGLISH_WORD] == []:
                             line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
+
+                is_singlish_pre = False
+                if is_singlish_pre:
+                    line = self.singlish_pre_process_o.pre_process(line)
+                    line = " ".join(line)
 
                 self.write_to_csv([line, tags[i]],type=_type)
                 self.write_to_csv([line, tags[i]],type='all')
@@ -76,4 +84,4 @@ class data_generator(object):
 
 if __name__ == '__main__':
     dg_obj = data_generator()
-    dg_obj.convert_to_singlish(split_dict = {'train':0.8, 'test':0.2}, augment=2)
+    dg_obj.convert_to_singlish(split_dict = {'train':0.8, 'test':0.2}, augment=1)

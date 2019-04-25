@@ -63,3 +63,7 @@ class singlish_preprocess(preprocess):
         words_np = np.array(words)
 
         return words_np
+
+if __name__ == '__main__':
+    singlish_preprocess_obj = singlish_preprocess()
+    print(singlish_preprocess_obj.pre_process('eyla kiyanneee meka 123 testing ekk witharai kila123'))

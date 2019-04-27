@@ -111,6 +111,7 @@ class LSTMModel(Model):
 
         y_train_corpus = self.transform_class_to_one_hot_representation(y_train_corpus)
         dictionary_length = len(self.dictionary) + 2
+        print("Dictionary Length: {}".format(dictionary_length))
         self.model = self.create_model(dictionary_length)
         y_corpus_raw = ([0 if cls[0] == 1 else 1 for cls in y_train_corpus])
 

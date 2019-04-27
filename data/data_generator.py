@@ -6,7 +6,6 @@ Created on Mar 31, 2019
 import csv
 import random
 
-from main.preprocess.preprocess import preprocess
 from main.preprocess.singlish_preprocess import singlish_preprocess
 from main.preprocess.sinhala_preprocess import sinhala_preprocess
 from params import DICTIONARY, FILES
@@ -15,7 +14,7 @@ from params import MISC
 import logging
 import numpy as np
 import os
-# from Object import Object as Parent
+
 
 class data_generator(object):
     def __init__(self):
@@ -82,7 +81,6 @@ class data_generator(object):
                 if is_singlish_pre:
                     line = self.singlish_pre_process_o.pre_process(line)
                     line = " ".join(line)
-
                 # Remove emojis
                 # line = self.singlish_pre_process_o.remove_emojis(line)
                 self.write_to_csv([line, tags[i]],type=_type)
@@ -103,35 +101,34 @@ class data_generator(object):
             for j in range(augment):
                 for word in words[sorted_word_len]:
                     if word in self.dictionary.keys():
-                        # print(word, self.dictionary[word][DICTIONARY.SINGLISH_WORD] )
                         if not self.dictionary[word][DICTIONARY.SINGLISH_WORD] == []:
-                            # print(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
-                            # word_with_spaces = ' ' + word + ' '
-                            # random_word_with_spaces = ' ' + self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]) + ' '
-
                             line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
-                            # print (line)
 
-                if line is None:
+                if len(line) < 2:
+                    print("{} : {}".format(i, line))
                     continue
                 self.write_to_csv([line, tags[i]], type='all')
                 line = self.singlish_pre_process_o.pre_process(line)
                 line = " ".join(line)
-                self.write_to_csv([line, tags[i]], type='all_prepro')
+
+                self.write_to_csv([str(line), tags[i]], type='all_prepro')
 
     def split_data(self, split_dict = None):
-        content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all'))
+        for key in split_dict.keys():
+            self.delete_file(self.output_basename.format(key))
+        content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all_prepro'))
         content = np.array(content)
         tags = np.array(tags)
         self.set_count(split_dict, tags)
         for i, line in enumerate(content):
+            if i < 10:
+                print("{} : {}".format(i, line))
             self.write_to_csv([line, tags[i]], type=self.get_type(tags[i]))
         logging.info(self.type_count)
 
 if __name__ == '__main__':
     dg_obj = data_generator()
 
-    # dg_obj.convert_to_singlish(split_dict = {'train':0.85, 'test':0.15}, augment=1)
     content, tags = dg_obj.load_sinhala_data()
     # content = ['යුදෙව්වන් යනු පරම්පරාවෙන් පැවත එන පරපෝෂිතයන් නිසා ඔවුන් විනාශ විය යුතුය. පෘථිවිය පිරිසිදු කිරීම සඳහා වූ ජාතික සමාජවාදය සාතන්ගේ නියෝගයෙන් නැවත නැඟිටින්න! 666blacksun.com']
     # tags = ['Racist']

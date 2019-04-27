@@ -148,7 +148,7 @@ class NeuralNet(Model):
             del self.model
             self.model = load_model("%s/model_fold_%d.h5" % (NN.OUTPUT_DIR, fold))
             logging.info("========== Fold {} : Accuracy for test data set in data/output_test.csv =========".format(fold))
-            total_acc = self.test_accuracy()
+            total_acc = self.test_accuracy(self.get_features)
             if best_overall_accuracy < total_acc:
                 best_overall_accuracy = total_acc
                 self.logger.info("Model saved; Best accuracy: {}".format(best_overall_accuracy))
@@ -165,5 +165,5 @@ if __name__ == '__main__':
         snn.training_stage()
     else:
         snn.load_values()
-        snn.test_accuracy()
+        snn.test_accuracy(snn.get_features)
         snn.predict_cli()

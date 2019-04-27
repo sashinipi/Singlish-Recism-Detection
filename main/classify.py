@@ -5,25 +5,24 @@ Created on Apr 01, 2019
 '''
 
 import pandas as pd
-# import seaborn as sns
-from sklearn.feature_extraction.text import TfidfTransformer
-
 from params import FILES
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from random import shuffle
 from main.preprocess.singlish_preprocess import singlish_preprocess
 from main.pickel_helper import PickelHelper
+import logging
 
 class classify(object):
-    def __init__(self):
+    def __init__(self, name='logs.log'):
+        logging.basicConfig(filename=name, level=logging.DEBUG)
         self.singlish_preprocess_obj = singlish_preprocess()
         self.data_len = None
         self.pick_obj = PickelHelper()
         self.model = None
         self.bow_transformer = None
         self.tfidf_transformer = None
-        self.logger = None
+
 
     def text_process(self, mess):
         return self.singlish_preprocess_obj.pre_process(mess)
@@ -65,9 +64,9 @@ class classify(object):
 
         mat = confusion_matrix(predictions, test_y)
         total_acc = 1.0 * (mat[0][0] + mat[1][1]) / (mat[0][0] + mat[0][1] + mat[1][0] + mat[1][1])
-        # self.logger.info("==== Actual ====\n\t\tclass 1\t class 2\nclass1\t{}\t{}\nclass2\t{}\t{}\nAccuracy{}"
-        #                  .format(mat[0][0], mat[0][1], mat[1][0], mat[1][1], total_acc))
-        # self.logger.info(classification_report(predictions, test_y))
+        logging.info("==== Actual ====\n\t\tclass 1\t class 2\nclass1\t{}\t{}\nclass2\t{}\t{}\nAccuracy{}\n\n{}"
+                         .format(mat[0][0], mat[0][1], mat[1][0], mat[1][1], total_acc,
+                                 classification_report(predictions, test_y)))
 
     def train(self, train_x, train_y):
         raise NotImplementedError
@@ -102,6 +101,7 @@ class classify(object):
         self.pick_obj.save_obj(names.BOW_FILENAME, self.bow_transformer)
         self.pick_obj.save_obj(names.TFIDF_FILENAME, self.tfidf_transformer)
         self.pick_obj.save_obj(names.INPUT_FILENAME, self.data_len)
+        # pass
 
     def load_models(self, names):
         self.model = self.pick_obj.load_obj(names.MODEL_FILENAME)

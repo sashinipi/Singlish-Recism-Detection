@@ -14,13 +14,13 @@ class singlish_preprocess(preprocess):
 
     def __init__(self):
         super(singlish_preprocess, self).__init__()
-        logging.basicConfig(level=logging.INFO)
+        # logging.basicConfig(level=logging.INFO)
 
     def remove_stop_words(self, word):
         return word in PRE_PRO.SINGLISH_STOP_WORDS
 
     def pre_process(self, sentence):
-        logging.debug('Before pre-processing:'+ sentence)
+        # logging.debug('Before pre-processing:'+ sentence)
         words = []
         for word in sentence.split():
             # remove words starting from this letters
@@ -61,8 +61,8 @@ class singlish_preprocess(preprocess):
                 _word = _word.strip()
                 words.append(_word)
 
-        logging.debug('After preprocessing:')
-        logging.debug(words)
+        # logging.debug('After preprocessing:')
+        # logging.debug(words)
         # Create a numpy and send
         words_np = np.array(words)
 

@@ -96,8 +96,8 @@ if __name__ == '__main__':
     is_train = False
     if is_train:
         snn.training_stage()
-        snn.test_accuracy()
+        snn.test_accuracy(snn.get_features)
     else:
         snn.load_values()
-        snn.test_accuracy()
+        snn.test_accuracy(snn.get_features)
         snn.predict_cli()

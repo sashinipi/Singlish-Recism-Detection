@@ -9,7 +9,9 @@ import emoji
 
 class preprocess(object):
     def __init__(self):
-        logging.basicConfig(level=logging.INFO)
+        # logging.basicConfig(level=logging.WARNING)
+        # self.logger = Logger.get_logger('preprocess.log')
+        pass
 
     def convert_to_lowercase(self, word):
         return word.lower()
@@ -39,7 +41,7 @@ class preprocess(object):
         ret = None
         for let_part in starting_words:
             if word[0:len(let_part)] == let_part:
-                logging.debug('Word is starting : {} Word: {}'.format(let_part, word))
+                # logger.debug('Word is starting : {} Word: {}'.format(let_part, word))
                 ret = let_part
                 break
         return ret
@@ -68,25 +70,25 @@ class preprocess(object):
         for key in suffixes.keys():
             part = self.is_words_ending(word, suffixes[key])
             if part is not None:
-                logging.debug('suffix replace input:'+ word)
+                # self.logger.debug('suffix replace input:'+ word)
                 ret = word[:-len(part)]+key
-                logging.debug('suffix replace output:'+ret)
+                # self.logger.debug('suffix replace output:'+ret)
                 return ret
         return word
 
     def suffix_stripping(self, word, suffixes):
         part = self.is_words_ending(word, suffixes)
         if part is not None:
-            logging.debug('suffix {} stripping input:{}'.format(part, word))
+            # self.logger.debug('suffix {} stripping input:{}'.format(part, word))
             ret = word[:-len(part)]
-            logging.debug('suffix stripping output:' +ret)
+            # self.logger.debug('suffix stripping output:' +ret)
             return ret
         return word
 
     def lemmatization(self, word, lemmatization_words):
         for key in lemmatization_words.keys():
             if word in lemmatization_words[key]:
-                logging.debug('Lemmatized word: {} to {}'.format(word, key))
+                # self.logger.debug('Lemmatized word: {} to {}'.format(word, key))
                 return key
         return word
 

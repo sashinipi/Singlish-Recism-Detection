@@ -7,9 +7,7 @@ import logging
 import os.path as osp
 from params import DIR
 
-class Logger():
-    def __init__(self):
-        pass
+class Logger(object):
 
     @staticmethod
     def get_logger(name):

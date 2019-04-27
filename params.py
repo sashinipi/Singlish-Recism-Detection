@@ -80,11 +80,11 @@ class SVMF():
     TFIDF_FILENAME  = 'svm_tfidf'
     MODEL_FILENAME  = 'svm_model'
     INPUT_FILENAME  = 'svm_input'
-    LOG_FILE_NAME   = 'svm'
+    LOG_FILE_NAME   = osp.join(ABS_PATH_TO_FILE, DIR.LOGS_DIR, 'svm.log')
 
 class MNB():
     BOW_FILENAME    = 'mnb_bow'
     TFIDF_FILENAME  = 'mnb_tfidf'
     MODEL_FILENAME  = 'mnb_model'
     INPUT_FILENAME  = 'mnb_input'
-    LOG_FILE_NAME   = 'mnb'
+    LOG_FILE_NAME   = osp.join(ABS_PATH_TO_FILE, DIR.LOGS_DIR, 'mnb.log')

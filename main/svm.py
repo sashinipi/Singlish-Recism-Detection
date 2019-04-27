@@ -14,9 +14,7 @@ from main.classify import classify
 
 class SVM(classify):
     def __init__(self):
-        self.logger = Logger.get_logger(SVMF.LOG_FILE_NAME)
-        super(SVM, self).__init__()
-
+        super(SVM, self).__init__(SVMF.LOG_FILE_NAME)
 
     def train(self, train_x, train_y):
         self.bow_transformer = CountVectorizer(analyzer=self.text_process).fit(train_x)

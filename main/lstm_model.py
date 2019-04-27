@@ -99,11 +99,16 @@ class LSTMModel(Model):
     def train(self, x_train_corpus, y_train_corpus):
         pass
 
+    def feature_gen(self, x_corpus):
+        x_train_corpus = self.transform_to_dictionary_values(x_corpus, self.dictionary)
+        return sequence.pad_sequences(x_train_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+
     def train_n_test(self, x_train_corpus, y_train_corpus, x_test_corpus, y_test_corpus):
         self.dictionary = self.build_dictionary(x_train_corpus, dictionary_size=LSTMP.DICT_SIZE)
         self.pic_obj.save_obj(LSTMP.DICTIONARY_FILENAME, self.dictionary)
-        x_train_corpus = self.transform_to_dictionary_values(x_train_corpus, self.dictionary)
-        x_train_corpus = sequence.pad_sequences(x_train_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+        # x_train_corpus = self.transform_to_dictionary_values(x_train_corpus, self.dictionary)
+        # x_train_corpus = sequence.pad_sequences(x_train_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+        x_train_corpus = self.feature_gen(x_train_corpus)
 
         y_train_corpus = self.transform_class_to_one_hot_representation(y_train_corpus)
         dictionary_length = len(self.dictionary) + 2
@@ -177,7 +182,7 @@ class LSTMModel(Model):
             self.model = load_model("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
             logging.info(
                 "========== Fold {} : Accuracy for test data set in data/output_test.csv =========".format(fold))
-            total_acc = self.test_accuracy()
+            total_acc = self.test_accuracy(self.feature_gen)
             if best_overall_accuracy < total_acc:
                 best_overall_accuracy = total_acc
                 self.logger.info("Model saved; Best accuracy: {}".format(best_overall_accuracy))
@@ -207,7 +212,7 @@ class LSTMModel(Model):
             # self.model = self.create_model(dictionary_length)
             # self.load_model(LSTMP.MODEL_FILENAME)
 
-            acc = self.test_accuracy()
+            acc = self.test_accuracy(self.feature_gen)
             self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME_ACC.format(acc)))
 
         else:

@@ -44,7 +44,7 @@ class data_generator(object):
         else:
             return list_of_words[random.randint(0, length_of_list - 1)]
 
-    def set_count(self, split_dict, tags):
+    def set_count(self, split_dict, tags, balanced=[]):
 
         totals = [np.count_nonzero(tags == MISC.CLASSES[0]), np.count_nonzero(tags == MISC.CLASSES[1])]
         print(totals)
@@ -54,7 +54,10 @@ class data_generator(object):
             self.type_count[type] = {}
             for i in range(2):
                 self.type_count[type][MISC.CLASSES[i]] = {}
-                self.type_count[type][MISC.CLASSES[i]]['limit'] = int(float(split_dict[type]) * int(totals[i]))
+                if type in balanced:
+                    self.type_count[type][MISC.CLASSES[i]]['limit'] = int(float(split_dict[type]) * int(min(totals)))
+                else:
+                    self.type_count[type][MISC.CLASSES[i]]['limit'] = int(float(split_dict[type]) * int(totals[i]))
                 self.type_count[type][MISC.CLASSES[i]]['count'] = 0
 
         logging.info(self.type_limit)
@@ -64,6 +67,7 @@ class data_generator(object):
             if self.type_count[key][clas]['count'] < self.type_count[key][clas]['limit']:
                 self.type_count[key][clas]['count'] += 1
                 return key
+        return 'other'
 
     def convert_to_singlish(self, split_dict = None, augment=1):
         content, tags = self.data_loader_obj.load_data_from_excel(FILES.EXCEL_DATA_FILE_PATH)
@@ -119,7 +123,7 @@ class data_generator(object):
         content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all_prepro'))
         content = np.array(content)
         tags = np.array(tags)
-        self.set_count(split_dict, tags)
+        self.set_count(split_dict, tags, balanced=['test'])
         # print(self.type_count, len(tags))
         for i, line in enumerate(content):
             _type=self.get_type(tags[i])
@@ -131,8 +135,8 @@ class data_generator(object):
 if __name__ == '__main__':
     dg_obj = data_generator()
 
-    content, tags = dg_obj.load_sinhala_data()
+    # content, tags = dg_obj.load_sinhala_data()
     # content = ['යුදෙව්වන් යනු පරම්පරාවෙන් පැවත එන පරපෝෂිතයන් නිසා ඔවුන් විනාශ විය යුතුය. පෘථිවිය පිරිසිදු කිරීම සඳහා වූ ජාතික සමාජවාදය සාතන්ගේ නියෝගයෙන් නැවත නැඟිටින්න! 666blacksun.com']
     # tags = ['Racist']
-    dg_obj.convert_to_singlish_2(content, tags, augment=1)
+    # dg_obj.convert_to_singlish_2(content, tags, augment=1)
     dg_obj.split_data(split_dict = {'train':0.85, 'test':0.15})

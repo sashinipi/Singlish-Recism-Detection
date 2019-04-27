@@ -66,7 +66,7 @@ class classify(object):
         raise NotImplementedError
 
     def train_test(self):
-        messages = pd.read_csv(FILES.CSV_FILE_PATH, sep=',', names=["message", "label"])
+        messages = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('all'), sep=',', names=["message", "label"])
         self.data_len = len(messages)
         train_x, train_y, test_x, test_y = self.split_data(messages['message'], messages['label'], ratio=0.3)
         self.train(train_x, train_y)

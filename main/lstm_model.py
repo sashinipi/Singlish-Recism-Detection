@@ -55,17 +55,17 @@ class LSTMModel(Model):
         x_corpus.append([self.dictionary[token] if token in self.dictionary else 1 for token in processed_para])
         return x_corpus
 
-    def build_dictionary(self, corpus_token: list) -> dict:
+    def build_dictionary(self, corpus_token: list, dictionary_size=-1):
         word_frequency = {}
         dictionary = {}
 
-        for tweet in corpus_token:
-            print(tweet)
-            for token in tweet.split(' '):
-                if token in word_frequency:
-                    word_frequency[token] += 1
+        for sentence in corpus_token:
+            print(sentence)
+            for word in sentence.split(' '):
+                if word in word_frequency:
+                    word_frequency[word] += 1
                 else:
-                    word_frequency[token] = 1
+                    word_frequency[word] = 1
 
         frequencies = list(word_frequency.values())
         unique_words = list(word_frequency.keys())
@@ -74,6 +74,8 @@ class LSTMModel(Model):
         frequency_indexes = np.argsort(frequencies)[::-1]  # reverse for descending
         for index, frequency_index in enumerate(frequency_indexes):
             # 0 is not used and 1 is for UNKNOWN
+            if index == dictionary_size:
+                break
             dictionary[unique_words[frequency_index]] = index + 2
 
         return dictionary
@@ -102,7 +104,7 @@ class LSTMModel(Model):
         pass
 
     def train_n_test(self, x_train_corpus, y_train_corpus, x_test_corpus, y_test_corpus):
-        self.dictionary = self.build_dictionary(x_train_corpus)
+        self.dictionary = self.build_dictionary(x_train_corpus, dictionary_size=LSTMP.DICT_SIZE)
         self.pic_obj.save_obj(LSTMP.DICTIONARY_FILENAME, self.dictionary)
         x_train_corpus = self.transform_to_dictionary_values(x_train_corpus, self.dictionary)
         x_train_corpus = sequence.pad_sequences(x_train_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
@@ -178,7 +180,7 @@ class LSTMModel(Model):
         return self.evaluate(x_corpus, y_corpus)
 
     def main(self):
-        train = False
+        train = True
         if train:
             messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
             messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
@@ -197,6 +199,7 @@ class LSTMModel(Model):
         else:
             self.dictionary = self.pic_obj.load_obj(LSTMP.DICTIONARY_FILENAME)
             dictionary_length = len(self.dictionary) + 2
+            print(dictionary_length)
             self.model = self.create_model(dictionary_length)
             self.load_model(LSTMP.MODEL_FILENAME)
             while(True):

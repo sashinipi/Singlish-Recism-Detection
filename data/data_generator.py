@@ -42,7 +42,8 @@ class data_generator(object):
 
     def set_count(self, split_dict, tags):
 
-        totals = [np.count_nonzero(tags == MISC.CLASSES[0]), np.count_nonzero(tags == MISC.CLASSES[1])]
+        totals = [np.count_nonzero(tags == 'Racist'), np.count_nonzero(tags == MISC.CLASSES[1])]
+        print(totals)
         self.type_count = {}
         self.type_limit = {}
         for type in split_dict.keys():
@@ -72,16 +73,43 @@ class data_generator(object):
                         if not self.dictionary[word][DICTIONARY.SINGLISH_WORD] == []:
                             line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
 
-                is_singlish_pre = False
+                is_singlish_pre = True
                 if is_singlish_pre:
                     line = self.singlish_pre_process_o.pre_process(line)
                     line = " ".join(line)
 
+                # Remove emojis
+                # line = self.singlish_pre_process_o.remove_emojis(line)
                 self.write_to_csv([line, tags[i]],type=_type)
                 self.write_to_csv([line, tags[i]],type='all')
             logging.debug(line, tags[i])
         logging.info(self.type_count)
 
+    def convert_to_singlish_2(self, augment=1):
+        content, tags = self.data_loader_obj.load_data_from_excel(FILES.EXCEL_DATA_FILE_PATH)
+        for i, line in enumerate(content):
+            words = self.sinhala_pre_process_o.pre_process(line)
+            for j in range(augment):
+                for word in words:
+                    if word in self.dictionary.keys():
+                        if not self.dictionary[word][DICTIONARY.SINGLISH_WORD] == []:
+                            line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
+
+                self.write_to_csv([line, tags[i]], type='all')
+
+    def split_data(self, split_dict = None):
+        content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all'))
+        content = np.array(content)
+        tags = np.array(tags)
+        self.set_count(split_dict, tags)
+        for i, line in enumerate(content):
+            self.write_to_csv([line, tags[i]], type=self.get_type(tags[i]))
+        logging.info(self.type_count)
+
 if __name__ == '__main__':
     dg_obj = data_generator()
-    dg_obj.convert_to_singlish(split_dict = {'train':0.8, 'test':0.2}, augment=1)
+
+    # dg_obj.convert_to_singlish(split_dict = {'train':0.85, 'test':0.15}, augment=1)
+
+    # dg_obj.convert_to_singlish_2(augment=1)
+    dg_obj.split_data(split_dict = {'train':0.85, 'test':0.15})

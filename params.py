@@ -42,6 +42,7 @@ class LSTMP:
     VALIDATION_TEST_SIZE    = 0.3
     MAX_EPOCHS              = 8
     BATCH_SIZE              = 4
+    DICT_SIZE               = 2500
     OUTPUT_DIR              = 'save'
     DATA_SET_CLASSES = {
         'Neutral': [0, 1],

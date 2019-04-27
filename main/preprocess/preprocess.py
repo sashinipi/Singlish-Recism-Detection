@@ -5,6 +5,7 @@ Created on Mar 31, 2019
 '''
 import logging
 import string
+import emoji
 
 class preprocess(object):
     def __init__(self):
@@ -19,6 +20,14 @@ class preprocess(object):
 
     def remove_numbers(self, word):
         return ''.join(ch for ch in word if not ch.isdigit())
+
+    def remove_emojis(self, sentence):
+        str_sen = str(sentence)
+        EMO = list(emoji.UNICODE_EMOJI.keys())
+        for ch in str_sen:
+            if ch in EMO:
+                str_sen.replace(ch, ' ')
+        return str_sen
 
     def add_spaces_for_emojis(self, word, emojis):
         for emo in emojis:

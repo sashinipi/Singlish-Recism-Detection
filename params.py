@@ -24,8 +24,8 @@ class DIR:
     LOGS_DIR        = osp.join(ABS_PATH_TO_FILE, 'main/logs')
 
 class FILES:
-    TAG_DATA_FILENAME_EXCEL = ''
-    TAG_DICT_FILENAME = ''
+    TAG_DATA_FILENAME_EXCEL = osp.join(ABS_PATH_TO_FILE, 'data/final-data-set.xlsx')
+    TAG_DICT_FILENAME = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
     EXCEL_DATA_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/final-data-set.xlsx')
     DICTIONARY_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
     CSV_FILE_PATH           = osp.join(ABS_PATH_TO_FILE, 'data/output.csv')

@@ -14,6 +14,7 @@ from data.data_loader import data_loader
 from params import MISC
 import logging
 import numpy as np
+import os
 # from Object import Object as Parent
 
 class data_generator(object):
@@ -26,6 +27,10 @@ class data_generator(object):
         self.singlish_pre_process_o = singlish_preprocess()
         # self.convert_to_singlish()
         self.type_count = None
+
+    def delete_file(self, filename):
+        if os.path.exists(filename):
+            os.remove(filename)
 
     def write_to_csv(self, write_this_list, type=''):
         with open(self.output_basename.format(type), 'a') as writeFile:
@@ -85,17 +90,34 @@ class data_generator(object):
             logging.debug(line, tags[i])
         logging.info(self.type_count)
 
-    def convert_to_singlish_2(self, augment=1):
-        content, tags = self.data_loader_obj.load_data_from_excel(FILES.EXCEL_DATA_FILE_PATH)
+    def load_sinhala_data(self):
+        return self.data_loader_obj.load_data_from_excel(FILES.EXCEL_DATA_FILE_PATH)
+
+    def convert_to_singlish_2(self,content, tags, augment=1):
+        self.delete_file(self.output_basename.format('all'))
+        self.delete_file(self.output_basename.format('all_prepro'))
         for i, line in enumerate(content):
             words = self.sinhala_pre_process_o.pre_process(line)
+            word_len = np.array([len(word) for word in words])
+            sorted_word_len = np.argsort(word_len)[::-1]
             for j in range(augment):
-                for word in words:
+                for word in words[sorted_word_len]:
                     if word in self.dictionary.keys():
+                        # print(word, self.dictionary[word][DICTIONARY.SINGLISH_WORD] )
                         if not self.dictionary[word][DICTIONARY.SINGLISH_WORD] == []:
-                            line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
+                            # print(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
+                            # word_with_spaces = ' ' + word + ' '
+                            # random_word_with_spaces = ' ' + self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]) + ' '
 
+                            line = line.replace(word, self.get_random_word(self.dictionary[word][DICTIONARY.SINGLISH_WORD]))
+                            # print (line)
+
+                if line is None:
+                    continue
                 self.write_to_csv([line, tags[i]], type='all')
+                line = self.singlish_pre_process_o.pre_process(line)
+                line = " ".join(line)
+                self.write_to_csv([line, tags[i]], type='all_prepro')
 
     def split_data(self, split_dict = None):
         content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all'))
@@ -110,6 +132,8 @@ if __name__ == '__main__':
     dg_obj = data_generator()
 
     # dg_obj.convert_to_singlish(split_dict = {'train':0.85, 'test':0.15}, augment=1)
-
-    # dg_obj.convert_to_singlish_2(augment=1)
+    content, tags = dg_obj.load_sinhala_data()
+    # content = ['යුදෙව්වන් යනු පරම්පරාවෙන් පැවත එන පරපෝෂිතයන් නිසා ඔවුන් විනාශ විය යුතුය. පෘථිවිය පිරිසිදු කිරීම සඳහා වූ ජාතික සමාජවාදය සාතන්ගේ නියෝගයෙන් නැවත නැඟිටින්න! 666blacksun.com']
+    # tags = ['Racist']
+    dg_obj.convert_to_singlish_2(content, tags, augment=1)
     dg_obj.split_data(split_dict = {'train':0.85, 'test':0.15})

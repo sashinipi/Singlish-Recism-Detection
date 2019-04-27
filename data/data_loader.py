@@ -14,6 +14,8 @@ class data_loader(object):
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
 
+
+
     def load_dict(self, filename):
         if os.path.exists(filename):
             with open(filename, 'r') as fp:

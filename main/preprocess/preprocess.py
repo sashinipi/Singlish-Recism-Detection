@@ -9,7 +9,7 @@ import emoji
 
 class preprocess(object):
     def __init__(self):
-        logging.basicConfig(level=logging.WARNING)
+        logging.basicConfig(level=logging.INFO)
 
     def convert_to_lowercase(self, word):
         return word.lower()
@@ -39,6 +39,7 @@ class preprocess(object):
         ret = None
         for let_part in starting_words:
             if word[0:len(let_part)] == let_part:
+                logging.debug('Word is starting : {} Word: {}'.format(let_part, word))
                 ret = let_part
                 break
         return ret

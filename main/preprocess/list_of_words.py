@@ -18,5 +18,5 @@ class PRE_PRO:
 
     SINGLISH_STOP_WORDS = ['eth', 'rt', 'ekk']
     SINGLISH_SUFFIX_STRIP = ['da']
-    SINGLISH_SUFFIX_REPLACE = {'a':['aa', 'aaa'], 'e':['ee', 'ee'], 'o':['oo', 'ooo']}
+    SINGLISH_SUFFIX_REPLACE = {'a':['aa', 'aaa'], 'e':['ee', 'eee'], 'o':['oo', 'ooo']}
     SINGLISH_LEMMATIZATION = pick_help.load_obj('singlish_lemmas')

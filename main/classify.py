@@ -10,6 +10,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 from params import FILES
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 from random import shuffle
 from main.preprocess.singlish_preprocess import singlish_preprocess
 from main.pickel_helper import PickelHelper
@@ -22,6 +23,7 @@ class classify(object):
         self.model = None
         self.bow_transformer = None
         self.tfidf_transformer = None
+        self.logger = None
 
     def text_process(self, mess):
         return self.singlish_preprocess_obj.pre_process(mess)
@@ -60,15 +62,25 @@ class classify(object):
         messages_bow = self.bow_transformer.transform(test_x)
         messages_tfidf = self.tfidf_transformer.transform(messages_bow)
         predictions = self.model.predict(messages_tfidf)
-        print(classification_report(predictions, test_y))
+
+        mat = confusion_matrix(predictions, test_y)
+        total_acc = 1.0 * (mat[0][0] + mat[1][1]) / (mat[0][0] + mat[0][1] + mat[1][0] + mat[1][1])
+        # self.logger.info("==== Actual ====\n\t\tclass 1\t class 2\nclass1\t{}\t{}\nclass2\t{}\t{}\nAccuracy{}"
+        #                  .format(mat[0][0], mat[0][1], mat[1][0], mat[1][1], total_acc))
+        # self.logger.info(classification_report(predictions, test_y))
 
     def train(self, train_x, train_y):
         raise NotImplementedError
 
     def train_test(self):
-        messages = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('all'), sep=',', names=["message", "label"])
-        self.data_len = len(messages)
-        train_x, train_y, test_x, test_y = self.split_data(messages['message'], messages['label'], ratio=0.3)
+        # messages = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('all'), sep=',', names=["message", "label"])
+        # self.data_len = len(messages)
+        # train_x, train_y, test_x, test_y = self.split_data(messages['message'], messages['label'], ratio=0.3)
+
+        messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
+        messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
+        self.data_len = len(messages_train) + len(messages_test)
+        train_x, train_y, test_x, test_y = messages_train['message'], messages_train['label'], messages_test['message'], messages_test['label']
         self.train(train_x, train_y)
         self.test(test_x, test_y)
 

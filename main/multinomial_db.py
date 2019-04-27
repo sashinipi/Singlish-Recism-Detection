@@ -8,11 +8,14 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 from params import MNB
+from main.logger import Logger
 
 class MultinomialNBC(classify):
 
     def __init__(self):
+        self.logger = Logger.get_logger(MNB.LOG_FILE_NAME)
         super(MultinomialNBC, self).__init__()
+
 
     def train(self, train_x, train_y):
         self.bow_transformer = CountVectorizer(analyzer=self.text_process).fit(train_x)

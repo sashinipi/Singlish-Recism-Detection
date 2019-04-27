@@ -14,31 +14,45 @@ from keras.layers import Dense
 
 from main.model import Model
 from params import DIR, MISC, SNN
+from main.logger import Logger
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+
 
 class SimpleNN(Model):
     def __init__(self):
-        super(SimpleNN, self).__init__()
         self.input_size = None
+        super(SimpleNN, self).__init__()
+        self.logger = Logger.get_logger(SNN.LOG_FILE_NAME)
+
 
     def training_stage(self):
-        messages = pd.read_csv(FILES.CSV_FILE_PATH, sep=',', names=["message", "label"])
-        self.classify.data_len = len(messages)
-        train_x, train_y, test_x, test_y = self.classify.split_data(messages['message'], messages['label'],
-                                                                    ratio=0.3)
+        # messages = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('all'), sep=',', names=["message", "label"])
+        # self.classify.data_len = len(messages)
+        # train_x, train_y, test_x, test_y = self.classify.split_data(messages['message'], messages['label'],
+        #                                                             ratio=0.3)
+        messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
+        messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
+        self.data_len = len(messages_train) + len(messages_test)
+        train_x, train_y, test_x, test_y = messages_train['message'], messages_train['label'], messages_test['message'], \
+                                           messages_test['label']
+
         features = self.train_feature_gen(train_x)
         self.input_size = features.shape[1]
-        print("Feature size:", self.input_size)
+        self.logger.info("Feature size:", self.input_size)
         self.pic_obj.save_obj(SNN.INPUT_FILENAME, self.input_size)
         self.create_model(self.input_size)
 
         label_train_float = np.array([self.trans_val(val) for val in train_y])
-        print(len(label_train_float))
-        print(label_train_float[5:15])
+        # print(len(label_train_float))
+        # print(label_train_float[5:15])
         self.train(features, label_train_float)
 
         test_features = self.get_features(test_x)
         label_test_float = np.array([self.trans_val(val) for val in test_y])
         self.evaluate(test_features, label_test_float)
+
+
         self.save_model(SNN.MODEL_FILENAME)
         self.save_transformers(SNN.TRANS_FILENAME)
 
@@ -82,6 +96,8 @@ if __name__ == '__main__':
     is_train = False
     if is_train:
         snn.training_stage()
+        snn.test_accuracy()
     else:
         snn.load_values()
+        snn.test_accuracy()
         snn.predict_cli()

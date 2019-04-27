@@ -34,10 +34,6 @@ class LSTMModel(Model):
         self.tfidf_transformer = None
         self.dictionary = None
         self.pre_pro = singlish_preprocess()
-        # print("LOGS DIR:{}".format(DIR.LOGS_DIR))
-        # logging.basicConfig(filename=osp.join(DIR.LOGS_DIR, 'lstm.log'),
-        #                     filemode='w', level=logging.INFO)
-
         self.logger = Logger.get_logger(LSTMP.LOG_FILE_NAME)
 
 
@@ -60,7 +56,6 @@ class LSTMModel(Model):
         dictionary = {}
 
         for sentence in corpus_token:
-            print(sentence)
             for word in sentence.split(' '):
                 if word in word_frequency:
                     word_frequency[word] += 1
@@ -93,7 +88,8 @@ class LSTMModel(Model):
         adam_optimizer = Adam(lr=0.001, decay=0.0001)
         model.compile(loss='categorical_crossentropy', optimizer=adam_optimizer, metrics=['accuracy'])
 
-        print(model.summary())
+        self.logger.info("Model Architecture")
+        self.logger.info(model.summary())
         return model
 
 
@@ -117,6 +113,7 @@ class LSTMModel(Model):
 
         k_fold = StratifiedKFold(n_splits=LSTMP.FOLDS_COUNT, shuffle=True, random_state=18)
         fold = 0
+        best_overall_accuracy = 0
         for train_n_validation_indexes, test_indexes in k_fold.split(x_train_corpus, y_corpus_raw):
             x_train_n_validation = x_train_corpus[train_n_validation_indexes]
             y_train_n_validation = y_train_corpus[train_n_validation_indexes]
@@ -140,8 +137,8 @@ class LSTMModel(Model):
             # for each epoch
             for epoch in range(LSTMP.MAX_EPOCHS):
                 print("Epoch: {}/{} | Fold {}/{}".format(epoch+1, LSTMP.MAX_EPOCHS, fold, LSTMP.FOLDS_COUNT))
-                logging.info("Fold: %d/%d" % (fold, LSTMP.FOLDS_COUNT))
-                logging.info("Epoch: %d/%d" % (epoch, LSTMP.MAX_EPOCHS))
+                # logging.info("Fold: %d/%d" % (fold, LSTMP.FOLDS_COUNT))
+                # logging.info("Epoch: %d/%d" % (epoch, LSTMP.MAX_EPOCHS))
                 history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=LSTMP.BATCH_SIZE, validation_data=(x_valid, y_valid),
                                     verbose=1, shuffle=False)
 
@@ -155,25 +152,41 @@ class LSTMModel(Model):
                 epoch_history['loss'].append(history.history['loss'][0])
                 epoch_history['val_loss'].append(history.history['val_loss'][0])
 
+                self.logger.info("Fold: {} Epoch: {} | loss: {} - acc: {} - val_loss: {} - val_acc: {}".format(
+                    fold, epoch,
+                    history.history['loss'][0],
+                    history.history['acc'][0],
+                    history.history['val_loss'][0],
+                    history.history['val_acc'][0]
+                ))
+
                 # select best epoch and save to disk
                 if accuracy >= best_accuracy and loss < best_loss + 0.01:
-                    print("Saving model")
-                    print("fold_{}\nEpoch_{}\nAcc_{}\nLoss_{}\n".format(fold, epoch, accuracy, loss))
-                    self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
+                    self.logger.info("Saving model....")
+                    self.model.save("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
                     best_accuracy = accuracy
                     best_loss = loss
                     best_epoch = epoch
 
                     evaluation = self.model.evaluate(x=x_test, y=y_test)
-                    print("Accuracy: %f" % evaluation[1])
+                    logging.info(
+                        "========== Fold {} : Accuracy for split test data =========".format(fold))
                     logging.info("Accuracy: %f" % evaluation[1])
 
-            self.model = load_model(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
-            self.test_accuracy(x_test_corpus, y_test_corpus)
+            del self.model
+            self.model = load_model("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
+            logging.info(
+                "========== Fold {} : Accuracy for test data set in data/output_test.csv =========".format(fold))
+            total_acc = self.test_accuracy()
+            if best_overall_accuracy < total_acc:
+                best_overall_accuracy = total_acc
+                self.logger.info("Model saved; Best accuracy: {}".format(best_overall_accuracy))
+                self.model.save("%s/%s" % (LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
+
+            self.test_accuracy_lstm(x_test_corpus, y_test_corpus)
             fold += 1
 
-
-    def test_accuracy(self, x_test_corpus, y_test_corpus):
+    def test_accuracy_lstm(self, x_test_corpus, y_test_corpus):
         print('Final Accuracy')
         x_corpus = sequence.pad_sequences(self.transform_to_dictionary_values(x_test_corpus, self.dictionary),
                                           maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
@@ -194,7 +207,7 @@ class LSTMModel(Model):
             # self.model = self.create_model(dictionary_length)
             # self.load_model(LSTMP.MODEL_FILENAME)
 
-            acc = self.test_accuracy(test_x, test_y)
+            acc = self.test_accuracy()
             self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME_ACC.format(acc)))
 
         else:

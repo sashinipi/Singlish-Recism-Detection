@@ -46,7 +46,7 @@ class data_generator(object):
 
     def set_count(self, split_dict, tags):
 
-        totals = [np.count_nonzero(tags == 'Racist'), np.count_nonzero(tags == MISC.CLASSES[1])]
+        totals = [np.count_nonzero(tags == MISC.CLASSES[0]), np.count_nonzero(tags == MISC.CLASSES[1])]
         print(totals)
         self.type_count = {}
         self.type_limit = {}
@@ -120,10 +120,12 @@ class data_generator(object):
         content = np.array(content)
         tags = np.array(tags)
         self.set_count(split_dict, tags)
+        # print(self.type_count, len(tags))
         for i, line in enumerate(content):
-            if i < 10:
-                print("{} : {}".format(i, line))
-            self.write_to_csv([line, tags[i]], type=self.get_type(tags[i]))
+            _type=self.get_type(tags[i])
+            # print(tags[i], _type)
+            # print(self.type_count)
+            self.write_to_csv([line, tags[i]], type=_type)
         logging.info(self.type_count)
 
 if __name__ == '__main__':

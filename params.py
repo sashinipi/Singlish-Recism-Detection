@@ -39,7 +39,7 @@ class MISC:
 class LSTMP:
     LSTM_MAX_WORD_COUNT     = 60
     FOLDS_COUNT             = 4
-    VALIDATION_TEST_SIZE    = 0.3
+    VALIDATION_TEST_SIZE    = 0.2
     MAX_EPOCHS              = 8
     BATCH_SIZE              = 4
     DICT_SIZE               = -1
@@ -59,13 +59,14 @@ class SNN:
     TRANS_FILENAME = 'snn_trans'
     MODEL_FILENAME = 'snn_model.h5'
     INPUT_FILENAME = 'snn_input'
-
+    LOG_FILE_NAME   = 'snn'
 
 class NN:
     FOLDS_COUNT             = 5
     VALIDATION_TEST_SIZE    = 0.2
     MAX_EPOCHS              = 10
     OUTPUT_DIR              = 'save'
+    LOG_FILE_NAME           = 'neural-net'
     DATA_SET_CLASSES = {
         'Neutral': [0, 1],
         'Racist': [1, 0]
@@ -79,9 +80,11 @@ class SVMF():
     TFIDF_FILENAME  = 'svm_tfidf'
     MODEL_FILENAME  = 'svm_model'
     INPUT_FILENAME  = 'svm_input'
+    LOG_FILE_NAME   = 'svm'
 
 class MNB():
     BOW_FILENAME    = 'mnb_bow'
     TFIDF_FILENAME  = 'mnb_tfidf'
     MODEL_FILENAME  = 'mnb_model'
     INPUT_FILENAME  = 'mnb_input'
+    LOG_FILE_NAME   = 'mnb'

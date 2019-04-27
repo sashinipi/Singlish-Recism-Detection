@@ -9,6 +9,12 @@ from main.pickel_helper import PickelHelper
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from main.classify import classify
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+import pandas as pd
+import numpy as np
+from params import FILES
+
 
 class Model(object):
     def __init__(self):
@@ -17,6 +23,7 @@ class Model(object):
         self.tfidf_transformer = None
         self.pic_obj = PickelHelper()
         self.classify = classify()
+        self.logger = None
 
     def create_model(self, input_dim):
         raise NotImplementedError
@@ -69,5 +76,17 @@ class Model(object):
     def evaluate(self, X, Y):
         # evaluate the model
         scores = self.model.evaluate(X, Y)
-        print("\n%s: %.2f%%" % (self.model.metrics_names[1], scores[1] * 100))
+        self.logger.info("\n%s: %.2f%%" % (self.model.metrics_names[1], scores[1] * 100))
         return scores[1]
+
+    def test_accuracy(self):
+        messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
+        test_x, test_y = messages_test['message'], messages_test['label']
+        test_features = self.get_features(test_x)
+        predictions = ["Racist" if np.argmax(pred) == 0 else "Neutral" for pred in self.model.predict(test_features)]
+        mat = confusion_matrix(predictions, test_y)
+        total_acc = 1.0*(mat[0][0]+mat[1][1])/(mat[0][0]+ mat[0][1]+ mat[1][0]+ mat[1][1])
+        self.logger.info("==== Actual ====\n\t\tclass 1\t class 2\nclass1\t{}\t{}\nclass2\t{}\t{}\nAccuracy{}"
+              .format(mat[0][0], mat[0][1], mat[1][0], mat[1][1], total_acc))
+        self.logger.info(classification_report(predictions, test_y))
+        return total_acc

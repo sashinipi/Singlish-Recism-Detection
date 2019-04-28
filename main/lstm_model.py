@@ -3,9 +3,12 @@ Created on Mar 31, 2019
 
 @author: dulan
 '''
-# import matplotlib.pyplot as plt
+
 import numpy as np
 import pandas as pd
+import logging
+import os.path as osp
+
 from keras import regularizers
 from keras.layers import Dense, LSTM
 from keras.layers.embeddings import Embedding
@@ -15,14 +18,11 @@ from keras.optimizers import Adam
 from keras.preprocessing import sequence
 from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import train_test_split
-from params import LSTMP
-from keras.preprocessing import sequence
 
+from params import LSTMP
 from main.model import Model
-import logging
-from params import FILES, MISC, DIR
+from params import FILES, MISC
 from main.preprocess.singlish_preprocess import singlish_preprocess
-import os.path as osp
 from main.logger import Logger
 
 class LSTMModel(Model):
@@ -106,14 +106,15 @@ class LSTMModel(Model):
     def train_n_test(self, x_train_corpus, y_train_corpus, x_test_corpus, y_test_corpus):
         self.dictionary = self.build_dictionary(x_train_corpus, dictionary_size=LSTMP.DICT_SIZE)
         self.pic_obj.save_obj(LSTMP.DICTIONARY_FILENAME, self.dictionary)
-        # x_train_corpus = self.transform_to_dictionary_values(x_train_corpus, self.dictionary)
-        # x_train_corpus = sequence.pad_sequences(x_train_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
         x_train_corpus = self.feature_gen(x_train_corpus)
-
         y_train_corpus = self.transform_class_to_one_hot_representation(y_train_corpus)
         dictionary_length = len(self.dictionary) + 2
+
         print("Dictionary Length: {}".format(dictionary_length))
+
         self.model = self.create_model(dictionary_length)
+
+        # For Kfold split
         y_corpus_raw = ([0 if cls[0] == 1 else 1 for cls in y_train_corpus])
 
         k_fold = StratifiedKFold(n_splits=LSTMP.FOLDS_COUNT, shuffle=True, random_state=18)
@@ -142,8 +143,6 @@ class LSTMModel(Model):
             # for each epoch
             for epoch in range(LSTMP.MAX_EPOCHS):
                 print("Epoch: {}/{} | Fold {}/{}".format(epoch+1, LSTMP.MAX_EPOCHS, fold, LSTMP.FOLDS_COUNT))
-                # logging.info("Fold: %d/%d" % (fold, LSTMP.FOLDS_COUNT))
-                # logging.info("Epoch: %d/%d" % (epoch, LSTMP.MAX_EPOCHS))
                 history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=LSTMP.BATCH_SIZE, validation_data=(x_valid, y_valid),
                                     verbose=1, shuffle=False)
 
@@ -207,11 +206,6 @@ class LSTMModel(Model):
 
             self.train_n_test(train_x, train_y, test_x, test_y)
 
-            # self.dictionary = self.pic_obj.load_obj(LSTMP.DICTIONARY_FILENAME)
-            # dictionary_length = len(self.dictionary) + 2
-            # self.model = self.create_model(dictionary_length)
-            # self.load_model(LSTMP.MODEL_FILENAME)
-
             acc = self.test_accuracy(self.feature_gen)
             self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME_ACC.format(acc)))
 
@@ -232,6 +226,5 @@ class LSTMModel(Model):
 
 
 if __name__ == '__main__':
-
     lstm_obj = LSTMModel()
     lstm_obj.main()

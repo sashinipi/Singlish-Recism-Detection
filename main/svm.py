@@ -9,7 +9,6 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.svm import SVC
 
 from params import SVMF
-from main.logger import Logger
 from main.classify import classify
 
 class SVM(classify):

@@ -4,8 +4,6 @@ Created on Apr 03, 2019
 @author: dulan
 '''
 
-from params import FILES
-
 import pandas as pd
 import numpy as np
 
@@ -13,10 +11,8 @@ from keras.models import Sequential
 from keras.layers import Dense
 
 from main.model import Model
-from params import DIR, MISC, SNN
+from params import MISC, SNN, FILES
 from main.logger import Logger
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
 
 
 class SimpleNN(Model):
@@ -44,8 +40,6 @@ class SimpleNN(Model):
         self.create_model(self.input_size)
 
         label_train_float = np.array([self.trans_val(val) for val in train_y])
-        # print(len(label_train_float))
-        # print(label_train_float[5:15])
         self.train(features, label_train_float)
 
         test_features = self.get_features(test_x)
@@ -71,7 +65,7 @@ class SimpleNN(Model):
         while(True):
             text = input("Input:")
             p_clas, conf = self.predict_api(text)
-            print("Predicted: {} Confidence: {}".format(p_clas, conf))
+            self.logger.info("Predicted: {} Confidence: {}".format(p_clas, conf))
 
     def create_model(self, input_dim):
         # create model
@@ -85,7 +79,6 @@ class SimpleNN(Model):
         self.model = model
 
     def train(self, X, Y ):
-        # Fit the model
         self.model.fit(X, Y, epochs=20, batch_size=100)
 
     def predict(self, text):

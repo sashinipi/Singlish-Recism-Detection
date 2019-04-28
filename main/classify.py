@@ -28,7 +28,6 @@ class classify(object):
         return self.singlish_preprocess_obj.pre_process(mess)
 
     def split_data(self, x, y, ratio=0.2):
-
         test_x = []
         test_y = []
         train_x = []
@@ -84,13 +83,9 @@ class classify(object):
         self.test(test_x, test_y)
 
     def predict(self, text):
-        print(text)
         messages_bow = self.bow_transformer.transform([text])
-        print(messages_bow)
         messages_tfidf = self.tfidf_transformer.transform(messages_bow)
-        print(messages_tfidf)
         ret = self.model.predict(messages_tfidf)[0]
-        print(ret)
         return ret
 
     def predict_api(self, text):
@@ -101,7 +96,6 @@ class classify(object):
         self.pick_obj.save_obj(names.BOW_FILENAME, self.bow_transformer)
         self.pick_obj.save_obj(names.TFIDF_FILENAME, self.tfidf_transformer)
         self.pick_obj.save_obj(names.INPUT_FILENAME, self.data_len)
-        # pass
 
     def load_models(self, names):
         self.model = self.pick_obj.load_obj(names.MODEL_FILENAME)

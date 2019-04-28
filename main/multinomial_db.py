@@ -8,10 +8,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
 from params import MNB
-from main.logger import Logger
+
 
 class MultinomialNBC(classify):
-
     def __init__(self):
         super(MultinomialNBC, self).__init__(MNB.LOG_FILE_NAME)
 
@@ -19,10 +18,7 @@ class MultinomialNBC(classify):
         self.bow_transformer = CountVectorizer(analyzer=self.text_process).fit(train_x)
         messages_bow = self.bow_transformer.transform(train_x)
         self.tfidf_transformer = TfidfTransformer().fit(messages_bow)
-
-        messages_tfidf = self.tfidf_transformer.transform(messages_bow)
-        self.model = MultinomialNB().fit(messages_tfidf, train_y)
-
+        self.model = MultinomialNB().fit(self.tfidf_transformer.transform(messages_bow), train_y)
 
 if __name__ == '__main__':
     MultinomialNB_obj = MultinomialNBC()

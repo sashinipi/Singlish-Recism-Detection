@@ -53,14 +53,10 @@ class Model(object):
         self.bow_transformer = transform['bow']
 
     def train_feature_gen(self, msg_train):
-        bow_transformer = CountVectorizer(analyzer=self.classify.text_process).fit(msg_train)
-        messages_bow = bow_transformer.transform(msg_train)
-        tfidf_transformer = TfidfTransformer().fit(messages_bow)
-        messages_tfidf = tfidf_transformer.transform(messages_bow)
-
-        self.bow_transformer = bow_transformer
-        self.tfidf_transformer = tfidf_transformer
-        return messages_tfidf
+        self.bow_transformer = CountVectorizer(analyzer=self.classify.text_process).fit(msg_train)
+        messages_bow = self.bow_transformer.transform(msg_train)
+        self.tfidf_transformer = TfidfTransformer().fit(messages_bow)
+        return self.tfidf_transformer.transform(messages_bow)
 
     def trans_val(self, val):
         if val == MISC.CLASSES[0]:

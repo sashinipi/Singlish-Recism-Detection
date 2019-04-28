@@ -12,7 +12,6 @@ from params import PRED_TYPE
 
 class SRD(object):
     def __init__(self):
-        # load simple NN
         self.snn = SimpleNN()
         self.snn.load_values()
 

@@ -43,7 +43,7 @@ class NeuralNet(Model):
         f_train_y = np.array([self.trans_val(val) for val in train_y])
 
         self.input_size = f_train_x.shape[1]
-        print("Feature size:", self.input_size)
+        self.logger.info("Feature size:", self.input_size)
         self.pic_obj.save_obj(NN.INPUT_FILENAME, self.input_size)
         self.model = self.create_model(self.input_size)
 
@@ -66,7 +66,7 @@ class NeuralNet(Model):
         while(True):
             text = input("Input:")
             p_class, conf = self.predict_api(text)
-            print("Predicted: {} Confidence: {}".format(p_class, conf))
+            self.logger.info("Predicted: {} Confidence: {}".format(p_class, conf))
 
     def create_model(self, input_dim):
         # create model
@@ -107,7 +107,7 @@ class NeuralNet(Model):
             # for each epoch
             for epoch in range(NN.MAX_EPOCHS):
                 print("Epoch: {}/{} | Fold {}/{}".format(epoch + 1, NN.MAX_EPOCHS, fold, NN.FOLDS_COUNT))
-                # self.logger.info("Epoch: {}/{} | Fold {}/{}".format(epoch + 1, NN.MAX_EPOCHS, fold, NN.FOLDS_COUNT))
+                self.logger.info("Epoch: {}/{} | Fold {}/{}".format(epoch + 1, NN.MAX_EPOCHS, fold, NN.FOLDS_COUNT))
 
                 history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=1,
                                          validation_data=(x_valid, y_valid),

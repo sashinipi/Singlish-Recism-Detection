@@ -4,10 +4,10 @@ Created on Apr 25, 2019
 @author: dulan
 '''
 import json
-from main.pickel_helper import PickelHelper
+from params import PREPRO
+
 def extract():
     filename = 'dict.json'
-    pick_help = PickelHelper()
     with open(filename, 'r') as fp:
         dict = json.load(fp)
 
@@ -20,8 +20,9 @@ def extract():
             count += 1
 
     print("Total : {}".format(count))
-    print(lemma)
-    pick_help.save_obj('singlish_lemmas', lemma)
+
+    with open(PREPRO.LEMMAS_FILENAME, 'w') as fp:
+        json.dump(lemma, fp, indent=4, sort_keys=True)
 
 if __name__ == '__main__':
     extract()

@@ -5,11 +5,10 @@ Created on Apr 23, 2019
 '''
 import string
 import emoji
-from main.pickel_helper import PickelHelper
+import json
+from params import PREPRO
 
-class PRE_PRO:
-    pick_help = PickelHelper()
-
+class PRE_PRO():
     SPECIAL = ['…', '⁉️', ]
     EMOTIONS = list(emoji.UNICODE_EMOJI.keys())
     REMOVE_WORDS_STARTING = ['@', '#', 'http']
@@ -19,4 +18,11 @@ class PRE_PRO:
     SINGLISH_STOP_WORDS = ['eth', 'rt', 'ekk']
     SINGLISH_SUFFIX_STRIP = ['da']
     SINGLISH_SUFFIX_REPLACE = {'a':['aa', 'aaa'], 'e':['ee', 'eee'], 'o':['oo', 'ooo']}
-    SINGLISH_LEMMATIZATION = pick_help.load_obj('singlish_lemmas')
+
+    @staticmethod
+    def load_lemmas():
+        with open(PREPRO.LEMMAS_FILENAME, 'r') as fp:
+            ret = json.load(fp)
+        return ret
+
+    SINGLISH_LEMMATIZATION = load_lemmas()

@@ -32,6 +32,9 @@ class FILES:
     SEP_CSV_FILE_PATHS      = osp.join(ABS_PATH_TO_FILE, 'data/output_{}.csv')
     TEST_CSV_FILE_PATH      = osp.join(ABS_PATH_TO_FILE, 'tests/test_output.csv')
 
+class PREPRO:
+    LEMMAS_FILENAME = osp.join(ABS_PATH_TO_FILE, 'main/preprocess/lemmas.json')
+
 class MISC:
     TAG_SAVE_COUNT = 5
     CLASSES = ['Racist', 'Neutral']

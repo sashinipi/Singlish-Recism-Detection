@@ -33,7 +33,7 @@ class FILES:
     TEST_CSV_FILE_PATH      = osp.join(ABS_PATH_TO_FILE, 'tests/test_output.csv')
 
 class PREPRO:
-    LEMMAS_FILENAME = osp.join(ABS_PATH_TO_FILE, 'main/preprocess/lemmas.json')
+    LEMMAS_FILENAME = osp.join(ABS_PATH_TO_FILE, 'main/preprocess/lemmas')
 
 class MISC:
     TAG_SAVE_COUNT = 5
@@ -47,6 +47,7 @@ class LSTMP:
     BATCH_SIZE              = 4
     DICT_SIZE               = -1
     OUTPUT_DIR              = 'save'
+    N_GRAM_LEN              = 1
     DATA_SET_CLASSES = {
         'Neutral': [0, 1],
         'Racist': [1, 0]

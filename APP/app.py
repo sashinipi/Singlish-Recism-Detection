@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, flash, jsonify
 from main.srd import SRD
-from main.multinomial_db import MultinomialNBC
-from main.svm import SVM
 
 app = Flask(__name__)
 

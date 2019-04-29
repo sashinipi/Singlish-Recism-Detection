@@ -36,19 +36,38 @@ class LSTMModel(Model):
         self.pre_pro = singlish_preprocess()
         self.logger = Logger.get_logger(LSTMP.LOG_FILE_NAME)
 
+    def trandform_to_ngram(self, paragraph):
+        if LSTMP.N_GRAM_LEN > 1:
+            n_gram_para = []
+
+            for e, word in enumerate(paragraph):
+                n_gram_word = ''
+                for i in range(LSTMP.N_GRAM_LEN):
+                    if np.shape(paragraph)[0] > e + i:
+                        n_gram_word += paragraph[e + i]
+                    else:
+                        n_gram_word = ''
+                if n_gram_word is not '':
+                    n_gram_para.append(n_gram_word + ' ')
+            return  n_gram_para
+        else:
+            return paragraph
 
     def transform_to_dictionary_values(self, corpus_token: list, dictionary: dict) -> list:
         x_corpus = []
         for para in corpus_token:
-            processed_para = self.pre_pro.pre_process(para)
-            x_corpus.append([dictionary[token] if token in self.dictionary else 1 for token in processed_para])
+            # processed_para = self.pre_pro.pre_process(para)
+            # n_gram_para = self.trandform_to_ngram(processed_para)
+            # x_corpus.append([dictionary[token] if token in self.dictionary else 1 for token in n_gram_para])
+            x_corpus.append(self.transform_to_dictionary_values_one(para))
 
         return x_corpus
 
     def transform_to_dictionary_values_one(self, paragraph):
         x_corpus = []
         processed_para = self.pre_pro.pre_process(paragraph)
-        x_corpus.append([self.dictionary[token] if token in self.dictionary else 1 for token in processed_para])
+        n_gram_para = self.trandform_to_ngram(processed_para)
+        x_corpus.append([self.dictionary[token] if token in self.dictionary else 1 for token in n_gram_para])
         return x_corpus
 
     def build_dictionary(self, corpus_token: list, dictionary_size=-1):
@@ -56,11 +75,25 @@ class LSTMModel(Model):
         dictionary = {}
 
         for sentence in corpus_token:
-            for word in sentence.split(' '):
-                if word in word_frequency:
-                    word_frequency[word] += 1
+            list_of_words = sentence.split(' ')
+            for e, word in enumerate(list_of_words):
+                if LSTMP.N_GRAM_LEN is not 1:
+                    ngram = ''
+                    for i in range(LSTMP.N_GRAM_LEN):
+                        if len(list_of_words) > e + i:
+                            ngram += list_of_words[e + i]
+                        else:
+                            ngram = ''
+                    if ngram is not '':
+                        if ngram in word_frequency:
+                            word_frequency[ngram] += 1
+                        else:
+                            word_frequency[ngram] = 1
                 else:
-                    word_frequency[word] = 1
+                    if word in word_frequency:
+                        word_frequency[word] += 1
+                    else:
+                        word_frequency[word] = 1
 
         frequencies = list(word_frequency.values())
         unique_words = list(word_frequency.keys())
@@ -106,6 +139,7 @@ class LSTMModel(Model):
     def train_n_test(self, x_train_corpus, y_train_corpus, x_test_corpus, y_test_corpus):
         self.dictionary = self.build_dictionary(x_train_corpus, dictionary_size=LSTMP.DICT_SIZE)
         self.pic_obj.save_obj(LSTMP.DICTIONARY_FILENAME, self.dictionary)
+
         x_train_corpus = self.feature_gen(x_train_corpus)
         y_train_corpus = self.transform_class_to_one_hot_representation(y_train_corpus)
         dictionary_length = len(self.dictionary) + 2
@@ -187,15 +221,15 @@ class LSTMModel(Model):
                 self.logger.info("Model saved; Best accuracy: {}".format(best_overall_accuracy))
                 self.model.save("%s/%s" % (LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
 
-            self.test_accuracy_lstm(x_test_corpus, y_test_corpus)
+            # self.test_accuracy_lstm(x_test_corpus, y_test_corpus)
             fold += 1
 
-    def test_accuracy_lstm(self, x_test_corpus, y_test_corpus):
-        print('Final Accuracy')
-        x_corpus = sequence.pad_sequences(self.transform_to_dictionary_values(x_test_corpus, self.dictionary),
-                                          maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
-        y_corpus = self.transform_class_to_one_hot_representation(y_test_corpus)
-        return self.evaluate(x_corpus, y_corpus)
+    # def test_accuracy_lstm(self, x_test_corpus, y_test_corpus):
+    #     print('Final Accuracy')
+    #     x_corpus = sequence.pad_sequences(self.transform_to_dictionary_values(x_test_corpus, self.dictionary),
+    #                                       maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+    #     y_corpus = self.transform_class_to_one_hot_representation(y_test_corpus)
+    #     return self.evaluate(x_corpus, y_corpus)
 
     def main(self):
         train = True

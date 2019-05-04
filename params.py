@@ -21,6 +21,7 @@ class DICTIONARY:
 
 class DIR:
     DEF_SAV_LOC     = osp.join(ABS_PATH_TO_FILE, 'main/save')
+    GRAPH_SAV_LOC     = osp.join(ABS_PATH_TO_FILE, 'main/save/graphs')
     LOGS_DIR        = osp.join(ABS_PATH_TO_FILE, 'main/logs')
 
 class FILES:

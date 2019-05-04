@@ -28,12 +28,14 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import train_test_split
 
 from main.logger import Logger
+from main.graph import Graph
 
 class NeuralNet(Model):
     def __init__(self):
         super(NeuralNet, self).__init__()
         self.input_size = None
         self.logger = Logger.get_logger(NN.LOG_FILE_NAME)
+        self.graph_obj_1 = Graph('lstm-graph')
 
     def training_stage(self):
         messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
@@ -153,6 +155,16 @@ class NeuralNet(Model):
                 best_overall_accuracy = total_acc
                 self.logger.info("Model saved; Best accuracy: {}".format(best_overall_accuracy))
                 self.model.save("%s/%s" % (NN.OUTPUT_DIR, NN.MODEL_FILENAME))
+
+            # self.test_accuracy_lstm(x_test_corpus, y_test_corpus)
+            self.graph_obj_1.set_lables('Neural Net Fold-{}'.format(fold + 1), 'No of Epoches', 'error', 'Percentage')
+            self.graph_obj_1.set_legends('Loss', 'Training-Acc', 'Validation-Acc')
+            self.graph_obj_1.plot_3sub(epoch_history['loss'], epoch_history['acc'],
+                                       epoch_history['val_acc'], 'nn-graph-fold-{}'.format(fold))
+
+            del self.model
+            self.model = self.create_model(self.input_size)
+
             fold += 1
 
     def predict(self, text):

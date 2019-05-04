@@ -1,0 +1,11 @@
+Go to data folder
+Run data_generator.py
+This will create training and testing data in the same place
+
+Go to main folder
+Four models are there
+1 - SVM - svm.py
+2 - MNB - Multinomial Naive Bays
+3 - NN  - Neural Netowrk
+4 - LSTM - lstm_model.py
+

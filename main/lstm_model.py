@@ -24,6 +24,7 @@ from main.model import Model
 from params import FILES, MISC
 from main.preprocess.singlish_preprocess import singlish_preprocess
 from main.logger import Logger
+from main.graph import Graph
 
 class LSTMModel(Model):
     def __init__(self):
@@ -35,6 +36,7 @@ class LSTMModel(Model):
         self.dictionary = None
         self.pre_pro = singlish_preprocess()
         self.logger = Logger.get_logger(LSTMP.LOG_FILE_NAME)
+        self.graph_obj_1 = Graph('lstm-graph')
 
     def trandform_to_ngram(self, paragraph):
         if LSTMP.N_GRAM_LEN > 1:
@@ -59,7 +61,7 @@ class LSTMModel(Model):
             # processed_para = self.pre_pro.pre_process(para)
             # n_gram_para = self.trandform_to_ngram(processed_para)
             # x_corpus.append([dictionary[token] if token in self.dictionary else 1 for token in n_gram_para])
-            x_corpus.append(self.transform_to_dictionary_values_one(para))
+            x_corpus.append(self.transform_to_dictionary_values_one(para)[0])
 
         return x_corpus
 
@@ -222,6 +224,14 @@ class LSTMModel(Model):
                 self.model.save("%s/%s" % (LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
 
             # self.test_accuracy_lstm(x_test_corpus, y_test_corpus)
+            self.graph_obj_1.set_lables('Fold-{}'.format(fold+1), 'No of Epoches', 'error', 'Percentage')
+            self.graph_obj_1.set_legends('Loss', 'Training-Acc', 'Validation-Acc')
+            self.graph_obj_1.plot_3sub(epoch_history['loss'], epoch_history['acc'],
+                                       epoch_history['val_acc'], 'lstm-graph-fold-{}'.format(fold))
+
+            del self.model
+            self.model = self.create_model(dictionary_length)
+
             fold += 1
 
     # def test_accuracy_lstm(self, x_test_corpus, y_test_corpus):

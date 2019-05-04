@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="Enable and disable n-gram&#10;Json Helper">
-      <change beforePath="$PROJECT_DIR$/APP/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/lstm_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/pickel_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/pickel_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/preprocess/list_of_words.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/preprocess/list_of_words.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/neural_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/neural_net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_bow.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_bow.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_input.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_model.pkl" afterDir="false" />
@@ -32,54 +33,43 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/APP/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+            <state relative-caret-position="1129">
+              <caret line="229" column="61" selection-start-line="229" selection-start-column="61" selection-end-line="229" selection-end-column="61" />
               <folding>
-                <element signature="e#0#65#0" expanded="true" />
+                <element signature="e#49#67#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/logs/console-lstm-n-gram.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="272">
-              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/logs/console-lstm.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="130">
-              <caret line="879" selection-start-line="879" selection-end-line="879" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/logs/lstm-model-normal.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/preprocess/list_of_words.py">
+        <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/keras_preprocessing/sequence.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="1029">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/graph.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
               <folding>
-                <element signature="e#48#61#0" expanded="true" />
+                <element signature="e#48#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="161" column="80" selection-start-line="161" selection-start-column="77" selection-end-line="161" selection-end-column="80" />
+              <folding>
+                <element signature="e#97#121#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,46 +78,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/params.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+            <state relative-caret-position="85">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="17" />
               <folding>
                 <element signature="e#48#77#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/extract_dict.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="53" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="53" />
-              <folding>
-                <element signature="e#48#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="e#48#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
-              <folding>
-                <element signature="e#48#76#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,9 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/srd/data_loader.py" />
-        <option value="$PROJECT_DIR$/srd/singlish_preprocess.py" />
-        <option value="$PROJECT_DIR$/main/multinomial_nb.py" />
         <option value="$PROJECT_DIR$/main/SVM.py" />
         <option value="$PROJECT_DIR$/web/templates/about.html.py" />
         <option value="$PROJECT_DIR$/main/main.py" />
@@ -223,7 +174,6 @@
         <option value="$PROJECT_DIR$/main/logger.py" />
         <option value="$PROJECT_DIR$/main/model.py" />
         <option value="$PROJECT_DIR$/main/multinomial_db.py" />
-        <option value="$PROJECT_DIR$/main/neural_net.py" />
         <option value="$PROJECT_DIR$/main/simple_nn.py" />
         <option value="$PROJECT_DIR$/main/srd.py" />
         <option value="$PROJECT_DIR$/main/svm.py" />
@@ -231,8 +181,12 @@
         <option value="$PROJECT_DIR$/main/pickel_helper.py" />
         <option value="$PROJECT_DIR$/main/preprocess/list_of_words.py" />
         <option value="$PROJECT_DIR$/APP/app.py" />
+        <option value="$PROJECT_DIR$/docs/README" />
+        <option value="$PROJECT_DIR$/main/save/graph.py" />
         <option value="$PROJECT_DIR$/params.py" />
+        <option value="$PROJECT_DIR$/main/neural_net.py" />
         <option value="$PROJECT_DIR$/main/lstm_model.py" />
+        <option value="$PROJECT_DIR$/main/graph.py" />
       </list>
     </option>
   </component>
@@ -259,12 +213,50 @@
             <path>
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="APP" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="save" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 (sashini-fyp) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="save" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -283,14 +275,14 @@
     <property name="settings.editor.selected.configurable" value="Docker" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Docker" />
       <recent name="$PROJECT_DIR$/APP" />
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/web/templates" />
     </key>
@@ -342,6 +334,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/extract_dict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/graph.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -489,14 +502,15 @@
       <item itemvalue="Python.svm" />
       <item itemvalue="Python.multinomial_db" />
       <item itemvalue="Python.extract_dict" />
+      <item itemvalue="Python.graph" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.graph" />
         <item itemvalue="Python.extract_dict" />
         <item itemvalue="Python.svm" />
         <item itemvalue="Python.multinomial_db" />
         <item itemvalue="Python.data_generator" />
-        <item itemvalue="Python.neural_net" />
       </list>
     </recent_temporary>
   </component>
@@ -735,7 +749,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556426847760</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Enable and disable n-gram&#10;Json Helper">
+      <created>1556549864132</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1556549864132</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -780,21 +801,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-2" width="1920" height="1031" extended-state="6" />
+    <frame x="0" y="337" width="1366" height="692" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.18977332" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.19731943" />
       <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" weight="0.5074074" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32962963" />
       <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32611173" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49924242" weight="0.29532498" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.47206384" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.19144982" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.70817846" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.41961232" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.23048328" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.29553902" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.31784385" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -803,19 +825,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.18977332" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" weight="0.19731943" />
       <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" weight="0.5074074" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32962963" />
       <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32611173" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.4082098" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.47206384" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.35315984" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.70817846" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.42007434" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.23048328" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.41961232" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.29553902" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.31784385" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -869,7 +891,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../Singlish-Racism-Detection" />
     </ignored-roots>
-    <MESSAGE value="Simplify code" />
     <MESSAGE value="updates" />
     <MESSAGE value="Load all three models (SVM, MNB, NN) and predict according to the type" />
     <MESSAGE value="Docker integration" />
@@ -894,7 +915,8 @@
     <MESSAGE value="Improvements to logging&#10;Testing code fix" />
     <MESSAGE value="Code clean" />
     <MESSAGE value="Lemma - store as a dictionary" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lemma - store as a dictionary" />
+    <MESSAGE value="Enable and disable n-gram&#10;Json Helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enable and disable n-gram&#10;Json Helper" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -946,17 +968,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/APP/app.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output_None.csv" />
     <entry file="file://$PROJECT_DIR$/main/logs/lstm-1.log" />
     <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -977,9 +988,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/output_all_prepro.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2536">
           <caret line="428" column="24" selection-start-line="428" selection-start-column="24" selection-end-line="428" selection-end-column="24" />
@@ -988,31 +996,19 @@
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="-6944" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output_all.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_all.csv">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-4063">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output_train.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/APP/templates/home.html">
@@ -1028,19 +1024,6 @@
     <entry file="file://$PROJECT_DIR$/APP/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-670" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output_test.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-759" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="138" selection-start-column="132" selection-end-column="138" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/logs/snn.log">
@@ -1142,16 +1125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="e#97#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/pipeline.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
@@ -1209,33 +1182,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/extract_dict.py">
+    <entry file="file://$PROJECT_DIR$/docs/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="53" />
-          <folding>
-            <element signature="e#48#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#48#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/preprocess/list_of_words.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#48#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -1256,19 +1206,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
-          <folding>
-            <element signature="e#48#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/logs/console-lstm.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="130">
+        <state relative-caret-position="14943">
           <caret line="879" selection-start-line="879" selection-end-line="879" />
         </state>
       </provider>
@@ -1276,20 +1216,118 @@
     <entry file="file://$PROJECT_DIR$/main/logs/lstm-model-normal.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/preprocess/list_of_words.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#48#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/extract_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="53" />
+          <folding>
+            <element signature="e#48#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+          <folding>
+            <element signature="e#48#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_test.csv">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-759" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="138" selection-start-column="132" selection-end-column="138" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_train.csv">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-5499">
+          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/params.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="85">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="17" />
           <folding>
             <element signature="e#48#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../env/lib/python3.6/site-packages/keras_preprocessing/sequence.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1029">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="161" column="80" selection-start-line="161" selection-start-column="77" selection-end-line="161" selection-end-column="80" />
+          <folding>
+            <element signature="e#97#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#48#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="1129">
+          <caret line="229" column="61" selection-start-line="229" selection-start-column="61" selection-end-line="229" selection-end-column="61" />
+          <folding>
+            <element signature="e#49#67#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

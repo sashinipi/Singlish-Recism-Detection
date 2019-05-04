@@ -25,6 +25,7 @@ from params import FILES, MISC
 from main.preprocess.singlish_preprocess import singlish_preprocess
 from main.logger import Logger
 from main.graph import Graph
+from main.perfomance_test import PerformanceTest
 
 class LSTMModel(Model):
     def __init__(self):
@@ -37,6 +38,7 @@ class LSTMModel(Model):
         self.pre_pro = singlish_preprocess()
         self.logger = Logger.get_logger(LSTMP.LOG_FILE_NAME)
         self.graph_obj_1 = Graph('lstm-graph')
+        self.perf_test_o = PerformanceTest('LSTM')
 
     def trandform_to_ngram(self, paragraph):
         if LSTMP.N_GRAM_LEN > 1:
@@ -234,15 +236,13 @@ class LSTMModel(Model):
 
             fold += 1
 
-    # def test_accuracy_lstm(self, x_test_corpus, y_test_corpus):
-    #     print('Final Accuracy')
-    #     x_corpus = sequence.pad_sequences(self.transform_to_dictionary_values(x_test_corpus, self.dictionary),
-    #                                       maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
-    #     y_corpus = self.transform_class_to_one_hot_representation(y_test_corpus)
-    #     return self.evaluate(x_corpus, y_corpus)
+    def predict(self, text):
+        x_corpus = self.transform_to_dictionary_values_one(text)
+        x_corpus_padded = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+        return np.squeeze(self.model.predict([x_corpus_padded]))
 
     def main(self):
-        train = True
+        train = False
         if train:
             messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
             messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
@@ -259,14 +259,20 @@ class LSTMModel(Model):
             print(dictionary_length)
             self.model = self.create_model(dictionary_length)
             self.load_model(LSTMP.MODEL_FILENAME)
-            while(True):
-                text = input("Input:")
-                x_corpus = self.transform_to_dictionary_values_one(text)
-                x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
-                prediction = np.squeeze(self.model.predict([x_corpus]))
-                max_id = int(np.argmax(prediction))
-                print(prediction)
-                print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
+
+            is_cli = False
+            self.perf_test_o.perform_test(self.predict)
+            if is_cli:
+                while(True):
+                    text = input("Input:")
+                    x_corpus = self.transform_to_dictionary_values_one(text)
+                    x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+                    prediction = np.squeeze(self.model.predict([x_corpus]))
+                    max_id = int(np.argmax(prediction))
+                    print(prediction)
+                    print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
+
+
 
 
 if __name__ == '__main__':

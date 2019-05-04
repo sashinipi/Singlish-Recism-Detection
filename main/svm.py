@@ -10,10 +10,12 @@ from sklearn.svm import SVC
 
 from params import SVMF
 from main.classify import classify
+from main.perfomance_test import PerformanceTest
 
 class SVM(classify):
     def __init__(self):
         super(SVM, self).__init__(SVMF.LOG_FILE_NAME)
+        self.perf_test_o = PerformanceTest('SVM')
 
     def train(self, train_x, train_y):
         self.bow_transformer = CountVectorizer(analyzer=self.text_process).fit(train_x)
@@ -24,6 +26,6 @@ class SVM(classify):
 
 if __name__ == '__main__':
     obj = SVM()
-    is_train = True
+    is_train = False
     obj.main(is_train, SVMF)
 

@@ -20,7 +20,6 @@ from keras.layers import Dense
 from main.model import Model
 from params import DIR, MISC, NN
 import logging
-import os.path as osp
 
 from keras.models import load_model
 
@@ -29,6 +28,7 @@ from sklearn.model_selection import train_test_split
 
 from main.logger import Logger
 from main.graph import Graph
+from main.perfomance_test import PerformanceTest
 
 class NeuralNet(Model):
     def __init__(self):
@@ -36,6 +36,7 @@ class NeuralNet(Model):
         self.input_size = None
         self.logger = Logger.get_logger(NN.LOG_FILE_NAME)
         self.graph_obj_1 = Graph('lstm-graph')
+        self.perf_test_o = PerformanceTest('Neural-Net')
 
     def training_stage(self):
         messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
@@ -172,10 +173,11 @@ class NeuralNet(Model):
 
 if __name__ == '__main__':
     snn = NeuralNet()
-    is_train = True
+    is_train = False
     if is_train:
         snn.training_stage()
     else:
         snn.load_values()
-        snn.test_accuracy(snn.get_features)
-        snn.predict_cli()
+        # snn.test_accuracy(snn.get_features)
+        # snn.predict_cli()
+        snn.perf_test_o.perform_test(snn.predict)

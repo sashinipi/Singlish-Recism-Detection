@@ -40,14 +40,22 @@ class Graph(object):
         plt.title(self.title)
 
     def plot(self, a_list, filename=None):
+        self.set_names()
         plt.plot(a_list)
         if filename is not None:
-            self.filename = filename
+            self.set_filename(filename)
         if self.legend_1 is not None:
             plt.gca().legend((self.legend_1))
         plt.savefig(self.filename+'.png')
         plt.clf()
 
+    def plot_xy(self, x_list, y_list, filename=None):
+        self.set_names()
+        plt.plot(y_list, x_list)
+        if filename is not None:
+            self.set_filename(filename)
+        plt.savefig(self.filename+'.png')
+        plt.clf()
 
     def plot_2(self, a_list, b_list, filename=None):
         self.set_names()
@@ -56,7 +64,7 @@ class Graph(object):
         if self.legend_1 is not None and self.legend_2 is not None:
             plt.gca().legend((self.legend_1, self.legend_2))
         if filename is not None:
-            self.filename = filename
+            self.set_filename(filename)
         plt.savefig(self.filename+'.png')
         plt.clf()
 
@@ -116,6 +124,10 @@ class Graph(object):
 
 if __name__ == '__main__':
     gr_obj = Graph('hello3')
-    gr_obj.set_lables('this is title', 'x label', 'y label')
-    gr_obj.set_legends('legend 1', 'legend_2', 'legend_3')
-    gr_obj.plot_3sub([1, 2, 3], [10, 25, 30], [5, 35, 30])
+    # gr_obj.set_lables('this is title', 'x label', 'y label')
+    # gr_obj.set_legends('legend 1', 'legend_2', 'legend_3')
+    # gr_obj.plot_3sub([1, 2, 3], [10, 25, 30], [5, 35, 30])
+
+    list1 = [5, 10, 15]
+    list2 = [2, 4, 6]
+    gr_obj.plot_xy(list1, list2, 'plot-xy')

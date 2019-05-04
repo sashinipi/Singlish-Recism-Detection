@@ -22,6 +22,7 @@ class classify(object):
         self.model = None
         self.bow_transformer = None
         self.tfidf_transformer = None
+        self.perf_test_o = None
 
 
     def text_process(self, mess):
@@ -109,5 +110,6 @@ class classify(object):
             self.save_models(Names)
         else:
             self.load_models(Names)
-            print(self.predict([["Test prediction"]]))
-            print(self.predict([["thambiya"]]))
+            self.perf_test_o.perform_test(self.predict)
+            # print(self.predict([["Test prediction"]]))
+            # print(self.predict([["thambiya"]]))

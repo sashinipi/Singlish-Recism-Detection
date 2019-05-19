@@ -75,6 +75,10 @@ class Model(object):
         self.logger.info("\n%s: %.2f%%" % (self.model.metrics_names[1], scores[1] * 100))
         return scores[1]
 
+    def log_n_print(self, msg):
+        self.logger.info(msg)
+        print(msg)
+
     def test_accuracy(self, feature_generator):
         messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
         test_x, test_y = messages_test['message'], messages_test['label']
@@ -82,7 +86,7 @@ class Model(object):
         predictions = ["Racist" if np.argmax(pred) == 0 else "Neutral" for pred in self.model.predict(test_features)]
         mat = confusion_matrix(predictions, test_y)
         total_acc = 1.0*(mat[0][0]+mat[1][1])/(mat[0][0]+ mat[0][1]+ mat[1][0]+ mat[1][1])
-        self.logger.info("==== Actual ====\n\t\tclass 1\t class 2\nclass1\t{}\t{}\nclass2\t{}\t{}\nAccuracy{}"
+        self.log_n_print("==== Actual ====\n\t\tclass 1\t class 2\nclass1\t{}\t{}\nclass2\t{}\t{}\nAccuracy{}"
               .format(mat[0][0], mat[0][1], mat[1][0], mat[1][1], total_acc))
-        self.logger.info(classification_report(predictions, test_y))
+        self.log_n_print(classification_report(predictions, test_y))
         return total_acc

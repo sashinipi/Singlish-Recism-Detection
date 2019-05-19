@@ -48,7 +48,7 @@ class NeuralNet(Model):
         self.input_size = f_train_x.shape[1]
         self.logger.info("Feature size:", self.input_size)
         self.pic_obj.save_obj(NN.INPUT_FILENAME, self.input_size)
-        self.model = self.create_model(self.input_size)
+        # self.model = self.create_model(self.input_size)
 
         self.save_transformers(NN.TRANS_FILENAME)
 
@@ -69,7 +69,7 @@ class NeuralNet(Model):
         while(True):
             text = input("Input:")
             p_class, conf = self.predict_api(text)
-            self.logger.info("Predicted: {} Confidence: {}".format(p_class, conf))
+            self.log_n_print("Text: {}\nPredicted: {} Confidence: {}".format(text, p_class, conf))
 
     def create_model(self, input_dim):
         # create model
@@ -90,6 +90,7 @@ class NeuralNet(Model):
         fold = 0
         best_overall_accuracy = 0
         for train_n_validation_indexes, test_indexes in k_fold.split(x_corpus, y_corpus_raw):
+            self.model = self.create_model(self.input_size)
             x_train_n_validation = x_corpus[train_n_validation_indexes]
             y_train_n_validation = y_corpus[train_n_validation_indexes]
             x_test = x_corpus[test_indexes]
@@ -163,21 +164,24 @@ class NeuralNet(Model):
             self.graph_obj_1.plot_3sub(epoch_history['loss'], epoch_history['acc'],
                                        epoch_history['val_acc'], 'nn-graph-fold-{}'.format(fold))
 
-            del self.model
-            self.model = self.create_model(self.input_size)
 
             fold += 1
+            if fold == NN.BREAK_AFTER_FOLD:
+                break
+
+            del self.model
 
     def predict(self, text):
         return self.model.predict(self.get_features([text]))
 
 if __name__ == '__main__':
     snn = NeuralNet()
-    is_train = False
+    is_train = True
     if is_train:
         snn.training_stage()
+        snn.predict_cli()
     else:
         snn.load_values()
         # snn.test_accuracy(snn.get_features)
-        # snn.predict_cli()
-        snn.perf_test_o.perform_test(snn.predict)
+        snn.predict_cli()
+        # snn.perf_test_o.perform_test(snn.predict)

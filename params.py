@@ -44,8 +44,8 @@ class LSTMP:
     LSTM_MAX_WORD_COUNT     = 60
     FOLDS_COUNT             = 4
     VALIDATION_TEST_SIZE    = 0.2
-    MAX_EPOCHS              = 8
-    BATCH_SIZE              = 4
+    MAX_EPOCHS              = 25
+    BATCH_SIZE              = 1
     DICT_SIZE               = -1
     OUTPUT_DIR              = 'save'
     N_GRAM_LEN              = 1
@@ -53,6 +53,7 @@ class LSTMP:
         'Neutral': [0, 1],
         'Racist': [1, 0]
     }
+    BREAK_AFTER_FOLD        = 1
 
     DICTIONARY_FILENAME = 'lstm_dict'
     MODEL_FILENAME = 'lstm_model.h5'
@@ -69,13 +70,14 @@ class SNN:
 class NN:
     FOLDS_COUNT             = 5
     VALIDATION_TEST_SIZE    = 0.2
-    MAX_EPOCHS              = 10
+    MAX_EPOCHS              = 20
     OUTPUT_DIR              = 'save'
     LOG_FILE_NAME           = 'neural-net'
     DATA_SET_CLASSES = {
         'Neutral': [0, 1],
         'Racist': [1, 0]
     }
+    BREAK_AFTER_FOLD        = 1
     TRANS_FILENAME = 'nn_trans'
     MODEL_FILENAME = 'nn_model.h5'
     INPUT_FILENAME = 'nn_input'

@@ -77,28 +77,31 @@ class LSTMModel(Model):
     def build_dictionary(self, corpus_token: list, dictionary_size=-1):
         word_frequency = {}
         dictionary = {}
-
-        for sentence in corpus_token:
-            list_of_words = sentence.split(' ')
-            for e, word in enumerate(list_of_words):
-                if LSTMP.N_GRAM_LEN is not 1:
-                    ngram = ''
-                    for i in range(LSTMP.N_GRAM_LEN):
-                        if len(list_of_words) > e + i:
-                            ngram += list_of_words[e + i]
-                        else:
-                            ngram = ''
-                    if ngram is not '':
-                        if ngram in word_frequency:
-                            word_frequency[ngram] += 1
-                        else:
-                            word_frequency[ngram] = 1
-                else:
-                    if word in word_frequency:
-                        word_frequency[word] += 1
+        sentence = ""
+        try:
+            for sentence in corpus_token:
+                list_of_words = sentence.split(' ')
+                for e, word in enumerate(list_of_words):
+                    if LSTMP.N_GRAM_LEN is not 1:
+                        ngram = ''
+                        for i in range(LSTMP.N_GRAM_LEN):
+                            if len(list_of_words) > e + i:
+                                ngram += list_of_words[e + i]
+                            else:
+                                ngram = ''
+                        if ngram is not '':
+                            if ngram in word_frequency:
+                                word_frequency[ngram] += 1
+                            else:
+                                word_frequency[ngram] = 1
                     else:
-                        word_frequency[word] = 1
-
+                        if word in word_frequency:
+                            word_frequency[word] += 1
+                        else:
+                            word_frequency[word] = 1
+        except(AttributeError):
+            print(sentence)
+            raise AttributeError
         frequencies = list(word_frequency.values())
         unique_words = list(word_frequency.keys())
 
@@ -150,7 +153,7 @@ class LSTMModel(Model):
 
         print("Dictionary Length: {}".format(dictionary_length))
 
-        self.model = self.create_model(dictionary_length)
+        # self.model = self.create_model(dictionary_length)
 
         # For Kfold split
         y_corpus_raw = ([0 if cls[0] == 1 else 1 for cls in y_train_corpus])
@@ -159,6 +162,7 @@ class LSTMModel(Model):
         fold = 0
         best_overall_accuracy = 0
         for train_n_validation_indexes, test_indexes in k_fold.split(x_train_corpus, y_corpus_raw):
+            self.model = self.create_model(dictionary_length)
             x_train_n_validation = x_train_corpus[train_n_validation_indexes]
             y_train_n_validation = y_train_corpus[train_n_validation_indexes]
             x_test = x_train_corpus[test_indexes]
@@ -215,6 +219,7 @@ class LSTMModel(Model):
                         "========== Fold {} : Accuracy for split test data =========".format(fold))
                     logging.info("Accuracy: %f" % evaluation[1])
 
+
             del self.model
             self.model = load_model("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
             logging.info(
@@ -231,50 +236,56 @@ class LSTMModel(Model):
             self.graph_obj_1.plot_3sub(epoch_history['loss'], epoch_history['acc'],
                                        epoch_history['val_acc'], 'lstm-graph-fold-{}'.format(fold))
 
-            del self.model
-            self.model = self.create_model(dictionary_length)
-
             fold += 1
+            if fold == LSTMP.BREAK_AFTER_FOLD:
+                break
+
+            del self.model
 
     def predict(self, text):
         x_corpus = self.transform_to_dictionary_values_one(text)
         x_corpus_padded = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
         return np.squeeze(self.model.predict([x_corpus_padded]))
 
-    def main(self):
-        train = False
-        if train:
-            messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"])
-            messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
-            train_x, train_y, test_x, test_y = messages_train["message"], messages_train["label"], messages_test["message"], messages_test["label"]
+    def train_now(self):
+        messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"], squeeze=True)
+        messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
+        train_x, train_y, test_x, test_y = messages_train["message"], messages_train["label"], messages_test["message"], messages_test["label"]
 
-            self.train_n_test(train_x, train_y, test_x, test_y)
+        self.train_n_test(train_x, train_y, test_x, test_y)
 
-            acc = self.test_accuracy(self.feature_gen)
-            self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME_ACC.format(acc)))
+        acc = self.test_accuracy(self.feature_gen)
+        self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME_ACC.format(acc)))
 
-        else:
-            self.dictionary = self.pic_obj.load_obj(LSTMP.DICTIONARY_FILENAME)
-            dictionary_length = len(self.dictionary) + 2
-            print(dictionary_length)
-            self.model = self.create_model(dictionary_length)
-            self.load_model(LSTMP.MODEL_FILENAME)
 
-            is_cli = False
-            self.perf_test_o.perform_test(self.predict)
-            if is_cli:
-                while(True):
-                    text = input("Input:")
-                    x_corpus = self.transform_to_dictionary_values_one(text)
-                    x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
-                    prediction = np.squeeze(self.model.predict([x_corpus]))
-                    max_id = int(np.argmax(prediction))
-                    print(prediction)
-                    print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
+    def load_values(self):
+        self.dictionary = self.pic_obj.load_obj(LSTMP.DICTIONARY_FILENAME)
+        dictionary_length = len(self.dictionary) + 2
+        print(dictionary_length)
+        self.model = self.create_model(dictionary_length)
+        self.load_model(LSTMP.MODEL_FILENAME)
+
+        # self.perf_test_o.perform_test(self.predict)
+
+    def predict_cli(self):
+        while(True):
+            text = input("Input:")
+            x_corpus = self.transform_to_dictionary_values_one(text)
+            x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+            prediction = np.squeeze(self.model.predict([x_corpus]))
+            max_id = int(np.argmax(prediction))
+            print(prediction)
+            print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
 
 
 
 
 if __name__ == '__main__':
     lstm_obj = LSTMModel()
-    lstm_obj.main()
+    train = True
+    if train:
+        lstm_obj.train_now()
+        lstm_obj.predict_cli()
+    else:
+        lstm_obj.load_values()
+        lstm_obj.predict_cli()

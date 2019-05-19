@@ -89,15 +89,19 @@ class data_generator(object):
                     print("{} : {}".format(i, line))
                     continue
                 self.write_to_csv([line, tags[i]], type='all')
-                line = self.singlish_pre_process_o.pre_process(line)
-                line = " ".join(line)
-
-                self.write_to_csv([str(line), tags[i]], type='all_prepro')
+                # line = self.singlish_pre_process_o.pre_process(line)
+                # line = " ".join(line)
+                #
+                # self.write_to_csv([str(line), tags[i]], type='all_prepro')
 
     def split_data(self, split_dict = None):
         for key in split_dict.keys():
             self.delete_file(self.output_basename.format(key))
         content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all_prepro'))
+        mapIndexPosition = list(zip(content, tags))
+        random.shuffle(mapIndexPosition)
+        content, tags = zip(*mapIndexPosition)
+
         content = np.array(content)
         tags = np.array(tags)
         self.set_count(split_dict, tags, balanced=['test'])
@@ -106,11 +110,30 @@ class data_generator(object):
             self.write_to_csv([line, tags[i]], type=_type)
         logging.info(self.type_count)
 
+    def preprocess_csv(self):
+        self.delete_file(self.output_basename.format('all_prepro'))
+        content, tags = self.data_loader_obj.load_data_csv(self.output_basename.format('all'))
+        for i, text in enumerate(content):
+            line = self.singlish_pre_process_o.pre_process(text)
+            line = " ".join(line)
+            self.write_to_csv([str(line), tags[i]], type='all_prepro')
+
+    def data_dump(self):
+        self.delete_file(self.output_basename.format('all'))
+        lines, tags = self.data_loader_obj.load_data_from_excel('final-data-set-singlish.xlsx',0,1)
+        for line, tag in zip(lines, tags):
+            self.write_to_csv([str(line), tag], type='all')
+
+
+
 if __name__ == '__main__':
     dg_obj = data_generator()
-
-    content, tags = dg_obj.load_sinhala_data()
+    # content, tags = dg_obj.load_sinhala_data()
     # content = ['යුදෙව්වන් යනු පරම්පරාවෙන් පැවත එන පරපෝෂිතයන් නිසා ඔවුන් විනාශ විය යුතුය. පෘථිවිය පිරිසිදු කිරීම සඳහා වූ ජාතික සමාජවාදය සාතන්ගේ නියෝගයෙන් නැවත නැඟිටින්න! 666blacksun.com']
     # tags = ['Racist']
-    dg_obj.convert_to_singlish(content, tags, augment=1)
-    dg_obj.split_data(split_dict = {'train':0.85, 'test':0.15})
+    # dg_obj.convert_to_singlish(content, tags, augment=1)
+    dg_obj.data_dump()
+    dg_obj.preprocess_csv()
+    dg_obj.split_data(split_dict = {'train':0.8, 'test':0.2})
+
+

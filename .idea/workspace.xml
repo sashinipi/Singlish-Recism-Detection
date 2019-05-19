@@ -4,11 +4,6 @@
     <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="Enable and disable n-gram&#10;Json Helper">
       <change afterPath="$PROJECT_DIR$/data/output_train2.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data/output_train3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/rnd_datagen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/gru_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/lstm_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/neural_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/neural_net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_bow.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_bow.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_input.pkl" afterDir="false" />
@@ -22,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/main/save/svm_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_input.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/svm_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_model.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/svm_tfidf.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_tfidf.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -832,7 +826,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558260457629</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="GRU - model added&#10;Data Generation for testing - RnD-Datagen - added">
+      <created>1558276439262</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1558276439262</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -967,7 +968,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../Singlish-Racism-Detection" />
     </ignored-roots>
-    <MESSAGE value="Docker integration - update" />
     <MESSAGE value="Added model files in order to create docker image" />
     <MESSAGE value="Absolute path fix&#10;apk -&gt; api" />
     <MESSAGE value="simple neural net with cross validation added&#10;Pipeline code added" />
@@ -992,7 +992,8 @@
     <MESSAGE value="Added Graphs&#10;Reset models after every fold" />
     <MESSAGE value="Performance test added" />
     <MESSAGE value="updates - Fold limit, log print" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates - Fold limit, log print" />
+    <MESSAGE value="GRU - model added&#10;Data Generation for testing - RnD-Datagen - added" />
+    <option name="LAST_COMMIT_MESSAGE" value="GRU - model added&#10;Data Generation for testing - RnD-Datagen - added" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

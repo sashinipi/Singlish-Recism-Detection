@@ -4,14 +4,11 @@
     <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="Enable and disable n-gram&#10;Json Helper">
       <change afterPath="$PROJECT_DIR$/data/output_train2.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data/output_train3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/rnd_datagen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/gru_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/dict.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/final-data-set.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/final-data-set.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/lstm_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/neural_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/neural_net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_bow.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_bow.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/save/mnb_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_input.pkl" afterDir="false" />
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="250" column="75" selection-start-line="250" selection-start-column="75" selection-end-line="250" selection-end-column="75" />
+            <state relative-caret-position="-16">
+              <caret line="256" column="50" selection-start-line="256" selection-start-column="50" selection-end-line="256" selection-end-column="50" />
               <folding>
                 <element signature="e#49#67#0" expanded="true" />
               </folding>
@@ -49,58 +46,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/output_train3.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+        <entry file="file://$PROJECT_DIR$/main/graph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
+            <state relative-caret-position="173">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
               <folding>
-                <element signature="e#97#121#0" expanded="true" />
+                <element signature="e#48#79#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/output_all.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="-3419">
-              <caret line="388" column="31" selection-start-line="388" selection-start-column="31" selection-end-line="388" selection-end-column="31" />
+        <entry file="file://$PROJECT_DIR$/main/logs/gru-model.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="5100">
+              <caret line="300" selection-start-line="300" selection-end-line="300" />
             </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/output_all_prepro.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="77" column="19" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="19" />
+            <state relative-caret-position="273">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="e#48#76#0" expanded="true" />
               </folding>
@@ -109,34 +79,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/output_train1.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/output_train2.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/output_test.csv">
           <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="376">
+              <caret line="276" column="54" selection-start-line="276" selection-start-column="54" selection-end-line="276" selection-end-column="54" />
             </state>
           </provider>
           <provider editor-type-id="csv-table-editor">
@@ -145,14 +91,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/gru_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+              <folding>
+                <element signature="e#48#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/params.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-439">
-              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+            <state relative-caret-position="164">
+              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
               <folding>
                 <element signature="e#48#77#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/output_train.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="1094">
+              <caret line="706" column="62" selection-start-line="706" selection-start-column="62" selection-end-line="706" selection-end-column="62" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/data_generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="110" column="37" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+              <folding>
+                <element signature="e#48#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/output_all_prepro.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="-782">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
           </provider>
         </entry>
       </file>
@@ -181,12 +175,12 @@
       <find>text_process</find>
       <find>LSTMP</find>
       <find>save_transformers</find>
-      <find>nan</find>
       <find>self.data_len</find>
       <find>Racist</find>
       <find>split_data</find>
       <find>predict</find>
       <find>mata hithaganna ba</find>
+      <find>nan</find>
     </findStrings>
     <replaceStrings>
       <replace>preprocess</replace>
@@ -207,8 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/main.py" />
-        <option value="$PROJECT_DIR$/web/templates/home.html" />
         <option value="$PROJECT_DIR$/web/templates/about.html" />
         <option value="$PROJECT_DIR$/web/templates/template.html" />
         <option value="$PROJECT_DIR$/web/static/css/template.css" />
@@ -251,13 +243,15 @@
         <option value="$PROJECT_DIR$/data/data_loader.py" />
         <option value="$PROJECT_DIR$/data/data_generator.py" />
         <option value="$PROJECT_DIR$/main/model.py" />
-        <option value="$PROJECT_DIR$/data/output_test.csv" />
-        <option value="$PROJECT_DIR$/data/output_train.csv" />
-        <option value="$PROJECT_DIR$/params.py" />
         <option value="$PROJECT_DIR$/data/output_train2.csv" />
         <option value="$PROJECT_DIR$/data/output_train3.csv" />
         <option value="$PROJECT_DIR$/main/neural_net.py" />
+        <option value="$PROJECT_DIR$/data/rnd_datagen.py" />
+        <option value="$PROJECT_DIR$/data/output_train.csv" />
+        <option value="$PROJECT_DIR$/data/output_test.csv" />
+        <option value="$PROJECT_DIR$/main/gru_model.py" />
         <option value="$PROJECT_DIR$/main/lstm_model.py" />
+        <option value="$PROJECT_DIR$/params.py" />
       </list>
     </option>
   </component>
@@ -292,6 +286,18 @@
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="save" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
@@ -370,7 +376,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="extract_dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="gru_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -378,32 +384,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/extract_dict.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Singlish-Recism-Detection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/graph.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/gru_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -469,6 +454,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/neural_net.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rnd_datagen" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/rnd_datagen.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -550,16 +556,16 @@
       <item itemvalue="Python.data_generator" />
       <item itemvalue="Python.svm" />
       <item itemvalue="Python.multinomial_db" />
-      <item itemvalue="Python.extract_dict" />
-      <item itemvalue="Python.graph" />
+      <item itemvalue="Python.rnd_datagen" />
+      <item itemvalue="Python.gru_model" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.gru_model" />
         <item itemvalue="Python.data_generator" />
+        <item itemvalue="Python.rnd_datagen" />
         <item itemvalue="Python.multinomial_db" />
         <item itemvalue="Python.svm" />
-        <item itemvalue="Python.graph" />
-        <item itemvalue="Python.extract_dict" />
       </list>
     </recent_temporary>
   </component>
@@ -819,7 +825,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556990544843</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="updates - Fold limit, log print">
+      <created>1558260457629</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1558260457629</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -874,12 +887,12 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32899627" />
       <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32611173" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49924242" weight="0.37742302" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.70817846" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.37742302" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.42303306" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.41961232" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" visible="true" weight="0.29532498" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.29532498" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.31784385" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -954,7 +967,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../Singlish-Racism-Detection" />
     </ignored-roots>
-    <MESSAGE value="Docker integration" />
     <MESSAGE value="Docker integration - update" />
     <MESSAGE value="Added model files in order to create docker image" />
     <MESSAGE value="Absolute path fix&#10;apk -&gt; api" />
@@ -979,7 +991,8 @@
     <MESSAGE value="Enable and disable n-gram&#10;Json Helper" />
     <MESSAGE value="Added Graphs&#10;Reset models after every fold" />
     <MESSAGE value="Performance test added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Performance test added" />
+    <MESSAGE value="updates - Fold limit, log print" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates - Fold limit, log print" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1031,35 +1044,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/preprocess/sinhala_preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="33" column="95" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/result.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/templates/template.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/logs/Neural_net.log" />
-    <entry file="file://$PROJECT_DIR$/APP/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-670" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/logs/snn.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/logs/mnb.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
@@ -1179,16 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/extract_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="53" />
-          <folding>
-            <element signature="e#48#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/pickel_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1247,32 +1221,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-          <folding>
-            <element signature="e#48#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/tagging_tool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
           <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
           <folding>
             <element signature="e#48#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/data_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
-          <folding>
-            <element signature="e#48#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1307,43 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/logs/lstm-model.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-5187">
-          <caret line="464" column="36" selection-start-line="464" selection-start-column="36" selection-end-line="464" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/output_test.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/params.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-439">
-          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding>
-            <element signature="e#48#77#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="77" column="19" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="19" />
-          <folding>
-            <element signature="e#48#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/output_train1.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="51">
@@ -1369,14 +1286,67 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/output_train3.csv">
+    <entry file="file://$PROJECT_DIR$/data/extract_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="53" />
+          <folding>
+            <element signature="e#48#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_train_rnd.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="374">
+          <caret line="1042" column="14" selection-start-line="1042" selection-end-line="1042" selection-end-column="54" />
         </state>
       </provider>
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_train3.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/save/graphs/lstm-graph-fold-0.png.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/save/graphs/LSTM-perf-test.png.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="178" column="20" selection-start-line="178" selection-start-column="20" selection-end-line="178" selection-end-column="20" />
+          <folding>
+            <element signature="e#97#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/rnd_datagen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="e#48#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/logs/lstm-model.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-1228">
+          <caret line="1740" column="13" lean-forward="true" selection-start-line="1740" selection-start-column="13" selection-end-line="1740" selection-end-column="13" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/output_all.csv">
@@ -1394,10 +1364,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="110" column="37" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
+          <folding>
+            <element signature="e#48#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/output_all_prepro.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="-782">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
       <provider editor-type-id="csv-table-editor">
@@ -1409,22 +1389,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_train.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="1094">
+          <caret line="706" column="62" selection-start-line="706" selection-start-column="62" selection-end-line="706" selection-end-column="62" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="e#48#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/logs/gru-model.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="5100">
+          <caret line="300" selection-start-line="300" selection-end-line="300" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="e#48#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/output_test.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="376">
+          <caret line="276" column="54" selection-start-line="276" selection-start-column="54" selection-end-line="276" selection-end-column="54" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/gru_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="e#48#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="250" column="75" selection-start-line="250" selection-start-column="75" selection-end-line="250" selection-end-column="75" />
+        <state relative-caret-position="-16">
+          <caret line="256" column="50" selection-start-line="256" selection-start-column="50" selection-end-line="256" selection-end-column="50" />
           <folding>
             <element signature="e#49#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+    <entry file="file://$PROJECT_DIR$/params.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
+        <state relative-caret-position="164">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
           <folding>
-            <element signature="e#97#121#0" expanded="true" />
+            <element signature="e#48#77#0" expanded="true" />
           </folding>
         </state>
       </provider>

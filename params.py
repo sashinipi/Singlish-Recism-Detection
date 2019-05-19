@@ -40,12 +40,12 @@ class MISC:
     TAG_SAVE_COUNT = 5
     CLASSES = ['Racist', 'Neutral']
 
-class LSTMP:
+class GRUP:
     LSTM_MAX_WORD_COUNT     = 60
     FOLDS_COUNT             = 4
     VALIDATION_TEST_SIZE    = 0.2
-    MAX_EPOCHS              = 25
-    BATCH_SIZE              = 1
+    MAX_EPOCHS              = 15
+    BATCH_SIZE              = 4
     DICT_SIZE               = -1
     OUTPUT_DIR              = 'save'
     N_GRAM_LEN              = 1
@@ -53,12 +53,36 @@ class LSTMP:
         'Neutral': [0, 1],
         'Racist': [1, 0]
     }
-    BREAK_AFTER_FOLD        = 1
+    BREAK_AFTER_FOLD        = -1
+
+    DICTIONARY_FILENAME = 'gru_dict'
+    MODEL_FILENAME = 'gru_model.h5'
+    MODEL_FILENAME_ACC = 'gru_model_{}.h5'
+    LOG_FILE_NAME = 'gru-model'
+    GRAPH_NAME              = 'gru-graph'
+    PERF_TEST_NAME          = 'GRU'
+
+class LSTMP:
+    LSTM_MAX_WORD_COUNT     = 60
+    FOLDS_COUNT             = 4
+    VALIDATION_TEST_SIZE    = 0.2
+    MAX_EPOCHS              = 15
+    BATCH_SIZE              = 4
+    DICT_SIZE               = -1
+    OUTPUT_DIR              = 'save'
+    N_GRAM_LEN              = 1
+    DATA_SET_CLASSES = {
+        'Neutral': [0, 1],
+        'Racist': [1, 0]
+    }
+    BREAK_AFTER_FOLD        = -1
 
     DICTIONARY_FILENAME = 'lstm_dict'
     MODEL_FILENAME = 'lstm_model.h5'
     MODEL_FILENAME_ACC = 'lstm_model_{}.h5'
     LOG_FILE_NAME = 'lstm-model'
+    GRAPH_NAME = 'lstm-graph'
+    PERF_TEST_NAME = 'LSTM'
 
 
 class SNN:
@@ -70,7 +94,8 @@ class SNN:
 class NN:
     FOLDS_COUNT             = 5
     VALIDATION_TEST_SIZE    = 0.2
-    MAX_EPOCHS              = 20
+    MAX_EPOCHS              = 10
+    BATCH_SIZE              = 10
     OUTPUT_DIR              = 'save'
     LOG_FILE_NAME           = 'neural-net'
     DATA_SET_CLASSES = {

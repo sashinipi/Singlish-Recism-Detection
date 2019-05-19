@@ -20,6 +20,8 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import train_test_split
 
 from params import LSTMP
+# from params import GRUP as LSTMP
+
 from main.model import Model
 from params import FILES, MISC
 from main.preprocess.singlish_preprocess import singlish_preprocess
@@ -37,8 +39,8 @@ class LSTMModel(Model):
         self.dictionary = None
         self.pre_pro = singlish_preprocess()
         self.logger = Logger.get_logger(LSTMP.LOG_FILE_NAME)
-        self.graph_obj_1 = Graph('lstm-graph')
-        self.perf_test_o = PerformanceTest('LSTM')
+        self.graph_obj_1 = Graph(LSTMP.GRAPH_NAME)
+        self.perf_test_o = PerformanceTest(LSTMP.PERF_TEST_NAME)
 
     def trandform_to_ngram(self, paragraph):
         if LSTMP.N_GRAM_LEN > 1:
@@ -60,9 +62,6 @@ class LSTMModel(Model):
     def transform_to_dictionary_values(self, corpus_token: list, dictionary: dict) -> list:
         x_corpus = []
         for para in corpus_token:
-            # processed_para = self.pre_pro.pre_process(para)
-            # n_gram_para = self.trandform_to_ngram(processed_para)
-            # x_corpus.append([dictionary[token] if token in self.dictionary else 1 for token in n_gram_para])
             x_corpus.append(self.transform_to_dictionary_values_one(para)[0])
 
         return x_corpus
@@ -100,7 +99,7 @@ class LSTMModel(Model):
                         else:
                             word_frequency[word] = 1
         except(AttributeError):
-            print(sentence)
+            print("SEN:{}".format(sentence))
             raise AttributeError
         frequencies = list(word_frequency.values())
         unique_words = list(word_frequency.keys())
@@ -151,7 +150,7 @@ class LSTMModel(Model):
         y_train_corpus = self.transform_class_to_one_hot_representation(y_train_corpus)
         dictionary_length = len(self.dictionary) + 2
 
-        print("Dictionary Length: {}".format(dictionary_length))
+        self.log_n_print("Dictionary Length: {}".format(dictionary_length))
 
         # self.model = self.create_model(dictionary_length)
 
@@ -184,7 +183,7 @@ class LSTMModel(Model):
 
             # for each epoch
             for epoch in range(LSTMP.MAX_EPOCHS):
-                print("Epoch: {}/{} | Fold {}/{}".format(epoch+1, LSTMP.MAX_EPOCHS, fold, LSTMP.FOLDS_COUNT))
+                self.log_n_print("Epoch: {}/{} | Fold {}/{}".format(epoch+1, LSTMP.MAX_EPOCHS, fold, LSTMP.FOLDS_COUNT))
                 history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=LSTMP.BATCH_SIZE, validation_data=(x_valid, y_valid),
                                     verbose=1, shuffle=False)
 
@@ -208,26 +207,26 @@ class LSTMModel(Model):
 
                 # select best epoch and save to disk
                 if accuracy >= best_accuracy and loss < best_loss + 0.01:
-                    self.logger.info("Saving model....")
+                    self.log_n_print("Saving model....")
                     self.model.save("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
                     best_accuracy = accuracy
                     best_loss = loss
                     best_epoch = epoch
 
                     evaluation = self.model.evaluate(x=x_test, y=y_test)
-                    logging.info(
+                    self.log_n_print(
                         "========== Fold {} : Accuracy for split test data =========".format(fold))
-                    logging.info("Accuracy: %f" % evaluation[1])
+                    self.log_n_print("Accuracy: %f" % evaluation[1])
 
 
             del self.model
             self.model = load_model("%s/model_fold_%d.h5" % (LSTMP.OUTPUT_DIR, fold))
-            logging.info(
+            self.log_n_print(
                 "========== Fold {} : Accuracy for test data set in data/output_test.csv =========".format(fold))
             total_acc = self.test_accuracy(self.feature_gen)
             if best_overall_accuracy < total_acc:
                 best_overall_accuracy = total_acc
-                self.logger.info("Model saved; Best accuracy: {}".format(best_overall_accuracy))
+                self.log_n_print("Model saved; Best accuracy: {}".format(best_overall_accuracy))
                 self.model.save("%s/%s" % (LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
 
             # self.test_accuracy_lstm(x_test_corpus, y_test_corpus)
@@ -254,6 +253,7 @@ class LSTMModel(Model):
 
         self.train_n_test(train_x, train_y, test_x, test_y)
 
+        self.model = load_model("%s/%s" % (LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME))
         acc = self.test_accuracy(self.feature_gen)
         self.model.save(osp.join(LSTMP.OUTPUT_DIR, LSTMP.MODEL_FILENAME_ACC.format(acc)))
 
@@ -264,7 +264,8 @@ class LSTMModel(Model):
         print(dictionary_length)
         self.model = self.create_model(dictionary_length)
         self.load_model(LSTMP.MODEL_FILENAME)
-
+        acc = self.test_accuracy(self.feature_gen)
+        print("Loaded Model Accuracy: {}".format(acc))
         # self.perf_test_o.perform_test(self.predict)
 
     def predict_cli(self):

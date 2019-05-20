@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SRD</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <form action = "/srd/webapi" method = "post" id="usrform">
+        <p>Enter the content here</p>
+        <textarea rows="4" cols="50" name="content" form="usrform">Enter text here...</textarea>
+        <br />Select prediction type:
+        <select name="type">
+            <option value="1">Simple Neural Network</option>
+            <option value="2">Support Vector Machine</option>
+            <option value="3">Multinomial Naive Bayes</option>
+        </select>
+         <p><input type = "submit" value = "check" /></p>
+    </form>
+    {% endblock %}
+  </body>
+</html>

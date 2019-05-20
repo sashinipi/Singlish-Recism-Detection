@@ -1,0 +1,5 @@
+APP/virtual
+APP/lib
+main/save/*
+main/logs
+!main/logs/readme.md

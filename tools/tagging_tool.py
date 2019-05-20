@@ -8,7 +8,7 @@ import pandas as pd
 import json
 
 from params import FILES, MISC, DICTIONARY
-from main.sinhala_preprocess import sinhala_preprocess
+from main.preprocess.sinhala_preprocess import sinhala_preprocess
 from data.data_loader import data_loader
 
 class tagging_tool(object):
@@ -28,6 +28,8 @@ class tagging_tool(object):
 
         return np.array(lines), np.array(tags)
 
+    def load_dict(self):
+        self.dictionary = self.data_loader_obj.load_dict(FILES.DICTIONARY_FILE_PATH)
 
     def save_dict(self):
         with open(FILES.TAG_DICT_FILENAME, 'w') as fp:
@@ -90,10 +92,11 @@ class tagging_tool(object):
 
 if __name__ == '__main__':
     tt = tagging_tool()
-    # # TODO First time
-    tt.data_loader_obj.load_dict(FILES.DICTIONARY_FILE_PATH)
+    # First time
+    tt.load_dict()
     tt.create_dict()
 
-    #TODO Tag now
-    tt.data_loader_obj.load_dict(FILES.DICTIONARY_FILE_PATH)
+    # Tag now
+    tt.load_dict()
     tt.tag()
+    tt.save_dict()

@@ -14,6 +14,8 @@ class data_loader(object):
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
 
+
+
     def load_dict(self, filename):
         if os.path.exists(filename):
             with open(filename, 'r') as fp:
@@ -38,13 +40,13 @@ class data_loader(object):
         logging.debug(y)
         return x, y
 
-    def load_data_from_excel(self, filename):
+    def load_data_from_excel(self, filename, text_col=1, tag_col=3):
         df = pd.read_excel(filename)
         lines = []
         tags = []
-        for line in df[df.columns[1]]:
+        for line in df[df.columns[text_col]]:
             lines.append(line)
-        for tag in df[df.columns[3]]:
+        for tag in df[df.columns[tag_col]]:
             tags.append(tag)
 
         return np.array(lines), np.array(tags)

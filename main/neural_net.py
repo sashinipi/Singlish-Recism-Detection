@@ -113,7 +113,7 @@ class NeuralNet(Model):
                 print("Epoch: {}/{} | Fold {}/{}".format(epoch + 1, NN.MAX_EPOCHS, fold, NN.FOLDS_COUNT))
                 self.logger.info("Epoch: {}/{} | Fold {}/{}".format(epoch + 1, NN.MAX_EPOCHS, fold, NN.FOLDS_COUNT))
 
-                history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=1,
+                history = self.model.fit(x=x_train, y=y_train, epochs=1, batch_size=NN.BATCH_SIZE,
                                          validation_data=(x_valid, y_valid),
                                          verbose=1, shuffle=False)
 
@@ -176,7 +176,7 @@ class NeuralNet(Model):
 
 if __name__ == '__main__':
     snn = NeuralNet()
-    is_train = True
+    is_train = False
     if is_train:
         snn.training_stage()
         snn.predict_cli()

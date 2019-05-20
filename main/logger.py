@@ -12,8 +12,10 @@ class Logger(object):
     def get_logger(name):
         logger = logging.getLogger(name)
         logger.setLevel(logging.DEBUG)
-
-        fh = logging.FileHandler(osp.join(DIR.LOGS_DIR, name + '.log'))
+        lof_file_name = osp.join(DIR.LOGS_DIR, name + '.log')
+        if not osp.exists(lof_file_name):
+            open(lof_file_name, 'a').close()
+        fh = logging.FileHandler(lof_file_name)
         fh.setLevel(logging.DEBUG)
 
         # create console handler with a higher log level

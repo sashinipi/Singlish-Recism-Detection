@@ -1,3 +1,4 @@
+#For CPU computation
 numpy==1.16.2
 nltk==3.4
 pandas==0.24.1
@@ -8,3 +9,5 @@ xlrd==1.2.0
 emoji==0.5.1
 Flask==1.0.2
 Werkzeug
+matplotlib==3.0.3
+Random-Word==1.0.4

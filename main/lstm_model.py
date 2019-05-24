@@ -131,7 +131,6 @@ class LSTMModel(Model):
         self.logger.info(model.summary())
         return model
 
-
     def transform_class_to_one_hot_representation(self, classes: list):
         return np.array([LSTMP.DATA_SET_CLASSES[cls] for cls in classes])
 
@@ -168,7 +167,7 @@ class LSTMModel(Model):
             y_test = y_train_corpus[test_indexes]
 
             x_train, x_valid, y_train, y_valid = train_test_split(x_train_n_validation, y_train_n_validation,
-                                                                  test_size=LSTMP.VALIDATION_TEST_SIZE, random_state=94)
+                                                                  test_size=LSTMP.VALIDATION_TEST_SIZE)#, random_state=94
 
             best_accuracy = 0
             best_loss = 100000
@@ -247,8 +246,8 @@ class LSTMModel(Model):
         return np.squeeze(self.model.predict([x_corpus_padded]))
 
     def train_now(self):
-        messages_train = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('train'), sep=',', names=["message", "label"], squeeze=True)
-        messages_test = pd.read_csv(FILES.SEP_CSV_FILE_PATHS.format('test'), sep=',', names=["message", "label"])
+        messages_train = self.load_csv(FILES.SEP_CSV_FILE_PATHS.format('train'))
+        messages_test = self.load_csv(FILES.SEP_CSV_FILE_PATHS.format('test'))
         train_x, train_y, test_x, test_y = messages_train["message"], messages_train["label"], messages_test["message"], messages_test["label"]
 
         self.train_n_test(train_x, train_y, test_x, test_y)

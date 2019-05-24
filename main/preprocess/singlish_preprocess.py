@@ -5,7 +5,7 @@ Created on Mar 31, 2019
 '''
 import numpy as np
 from main.preprocess.list_of_words import PRE_PRO
-
+import re
 from main.preprocess.preprocess import preprocess
 import logging
 
@@ -21,7 +21,8 @@ class singlish_preprocess(preprocess):
 
     def pre_process(self, sentence):
         # logging.debug('Before pre-processing:'+ sentence)
-        words = []
+
+        processed_sentence = ''
         for word in sentence.split():
             # remove words starting from this letters
             if self.is_words_starting(word, PRE_PRO.REMOVE_WORDS_STARTING) is not None:
@@ -57,17 +58,25 @@ class singlish_preprocess(preprocess):
             #remove emojies
             word = self.add_spaces_for_emojis(word, PRE_PRO.EMOTIONS)
             # create the list of words
+
             for _word in word.split():
                 _word = _word.strip()
-                words.append(_word)
+                processed_sentence += _word + ' '
 
         # logging.debug('After preprocessing:')
         # logging.debug(words)
         # Create a numpy and send
+
+        processed_sentence = re.sub(r'[^a-zA-Z0-9_]', ' ', processed_sentence)
+        words = []
+        for _word in processed_sentence.split():
+            _word = _word.strip()
+            words.append(_word)
+
         words_np = np.array(words)
 
         return words_np
 
 if __name__ == '__main__':
     singlish_preprocess_obj = singlish_preprocess()
-    print(singlish_preprocess_obj.pre_process('islam ammadya .. .. meh kattiya eksath rajadaniye therak nopawathinna #TooManyPakis #GTFO'))
+    print(singlish_preprocess_obj.pre_process('islam ammadya .. .. meh kattiya eksath rajadaniye therak nopawathinna #TooManyPakis #GTFO karanne.""" ™ ðÿ ™ '))

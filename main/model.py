@@ -14,6 +14,7 @@ from sklearn.metrics import confusion_matrix
 import pandas as pd
 import numpy as np
 from params import FILES
+import math
 
 
 class Model(object):
@@ -90,3 +91,15 @@ class Model(object):
               .format(mat[0][0], mat[0][1], mat[1][0], mat[1][1], total_acc))
         self.log_n_print(classification_report(predictions, test_y))
         return total_acc
+
+    def load_csv(self, filename):
+        messages = pd.read_csv(filename, sep=',', names=["message", "label"], squeeze=True)
+        new_messages = {"message":[], "label":[]}
+        for i, msg in enumerate(messages["message"]):
+            if not isinstance(msg, str):
+                print("{} - removed {}".format(msg, type(msg)))
+            else:
+                new_messages["message"].append(msg)
+                new_messages["label"].append(messages["label"][i])
+
+        return new_messages

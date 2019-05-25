@@ -14,17 +14,18 @@ from main.preprocess.sinhala_preprocess import sinhala_preprocess
 from params import DICTIONARY, FILES
 from data.data_loader import data_loader
 from params import MISC
-
+from main.logger import Logger
 
 
 class data_generator(object):
     def __init__(self):
-        self.output_basename = 'output_{}.csv'
+        self.output_basename = FILES.SEP_CSV_FILE_PATHS
         self.data_loader_obj = data_loader()
         self.dictionary = self.data_loader_obj.load_dict(FILES.DICTIONARY_FILE_PATH)
         self.sinhala_pre_process_o = sinhala_preprocess()
         self.singlish_pre_process_o = singlish_preprocess()
         self.type_count = None
+        self.logger = Logger.get_logger('data-gen.log')
 
     def delete_file(self, filename):
         if os.path.exists(filename):
@@ -47,9 +48,11 @@ class data_generator(object):
         if balanced is None:
             balanced = []
         totals = [np.count_nonzero(tags == MISC.CLASSES[0]), np.count_nonzero(tags == MISC.CLASSES[1])]
-        print(totals)
+        for i in [0,1]:
+            msg = "{:8} : {:4} - {}%".format(MISC.CLASSES[i], totals[i], (totals[i] / sum(totals))//0.01)
+            self.log_n_print(msg)
         self.type_count = {}
-        self.type_limit = {}
+        # self.type_limit = {}
         for type in split_dict.keys():
             self.type_count[type] = {}
             for i in range(2):
@@ -60,7 +63,7 @@ class data_generator(object):
                     self.type_count[type][MISC.CLASSES[i]]['limit'] = int(float(split_dict[type]) * int(totals[i]))
                 self.type_count[type][MISC.CLASSES[i]]['count'] = 0
 
-        logging.info(self.type_limit)
+        # self.log_n_print(self.type_limit)
 
     def get_type(self, clas):
         for key in self.type_count.keys():
@@ -94,6 +97,10 @@ class data_generator(object):
                 #
                 # self.write_to_csv([str(line), tags[i]], type='all_prepro')
 
+    def log_n_print(self, msg):
+        self.logger.info(msg)
+        print(msg)
+
     def split_data(self, split_dict = None):
         for key in split_dict.keys():
             self.delete_file(self.output_basename.format(key))
@@ -108,7 +115,7 @@ class data_generator(object):
         for i, line in enumerate(content):
             _type=self.get_type(tags[i])
             self.write_to_csv([line, tags[i]], type=_type)
-        logging.info(self.type_count)
+        self.log_n_print(self.type_count)
 
     def preprocess_csv(self):
         self.delete_file(self.output_basename.format('all_prepro'))
@@ -120,13 +127,14 @@ class data_generator(object):
 
     def data_dump(self):
         self.delete_file(self.output_basename.format('all'))
-        lines, tags = self.data_loader_obj.load_data_from_excel('final-data-set-singlish.xlsx',0,1)
+        lines, tags = self.data_loader_obj.load_data_from_excel(FILES.EXCEL_DATA_FILE_PATH,0,1)
         for line, tag in zip(lines, tags):
             self.write_to_csv([str(line), tag], type='all')
 
 
 
 if __name__ == '__main__':
+
     dg_obj = data_generator()
     # content, tags = dg_obj.load_sinhala_data()
     # content = ['යුදෙව්වන් යනු පරම්පරාවෙන් පැවත එන පරපෝෂිතයන් නිසා ඔවුන් විනාශ විය යුතුය. පෘථිවිය පිරිසිදු කිරීම සඳහා වූ ජාතික සමාජවාදය සාතන්ගේ නියෝගයෙන් නැවත නැඟිටින්න! 666blacksun.com']

@@ -21,16 +21,16 @@ class DICTIONARY:
 
 class DIR:
     DEF_SAV_LOC     = osp.join(ABS_PATH_TO_FILE, 'main/save')
-    GRAPH_SAV_LOC     = osp.join(ABS_PATH_TO_FILE, 'main/save/graphs')
+    GRAPH_SAV_LOC   = osp.join(ABS_PATH_TO_FILE, 'main/save/graphs')
     LOGS_DIR        = osp.join(ABS_PATH_TO_FILE, 'main/logs')
 
 class FILES:
     TAG_DATA_FILENAME_EXCEL = osp.join(ABS_PATH_TO_FILE, 'data/final-data-set.xlsx')
-    TAG_DICT_FILENAME = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
-    EXCEL_DATA_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/final-data-set.xlsx')
+    TAG_DICT_FILENAME       = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
+    EXCEL_DATA_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/xlsx/Simple-Data-Set.xlsx')
     DICTIONARY_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
-    CSV_FILE_PATH           = osp.join(ABS_PATH_TO_FILE, 'data/output.csv')
-    SEP_CSV_FILE_PATHS      = osp.join(ABS_PATH_TO_FILE, 'data/output_{}.csv')
+    CSV_FILE_PATH           = osp.join(ABS_PATH_TO_FILE, 'data/csv/output.csv')
+    SEP_CSV_FILE_PATHS      = osp.join(ABS_PATH_TO_FILE, 'data/csv/output_{}.csv')
     TEST_CSV_FILE_PATH      = osp.join(ABS_PATH_TO_FILE, 'tests/test_output.csv')
 
 class PREPRO:

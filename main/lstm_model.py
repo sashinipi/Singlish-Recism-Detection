@@ -263,8 +263,8 @@ class LSTMModel(Model):
         print(dictionary_length)
         self.model = self.create_model(dictionary_length)
         self.load_model(LSTMP.MODEL_FILENAME)
-        acc = self.test_accuracy(self.feature_gen)
-        print("Loaded Model Accuracy: {}".format(acc))
+        # acc = self.test_accuracy(self.feature_gen)
+        # print("Loaded Model Accuracy: {}".format(acc))
         # self.perf_test_o.perform_test(self.predict)
 
     def predict_cli(self):

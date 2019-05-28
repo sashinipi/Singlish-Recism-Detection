@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="Adding models - NN and LSTM&#10;Updates to prediction using LSTM and NN">
-      <change afterPath="$PROJECT_DIR$/APP/__init__.py" afterDir="false" />
+    <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/classify.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/classify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/multinomial_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/multinomial_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/srd.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/srd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/lstm_model.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="293" column="28" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="28" />
+            <state relative-caret-position="136">
+              <caret line="265" column="52" lean-forward="true" selection-start-line="265" selection-start-column="52" selection-end-line="266" selection-end-column="56" />
               <folding>
                 <element signature="e#49#67#0" expanded="true" />
               </folding>
@@ -31,11 +27,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/APP/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="65" lean-forward="true" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+            <state relative-caret-position="82">
+              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+              <folding>
+                <element signature="e#97#121#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,18 +56,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204" />
+            <state relative-caret-position="35">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/params.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="-253">
+              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding>
                 <element signature="e#48#77#0" expanded="true" />
               </folding>
@@ -67,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/srd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="14">
+              <caret line="31" column="26" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="26" />
               <folding>
                 <element signature="e#48#83#0" expanded="true" />
               </folding>
@@ -167,7 +180,6 @@
         <option value="$PROJECT_DIR$/Docker/Dockerfile" />
         <option value="$PROJECT_DIR$/APP/templates/home.html" />
         <option value="$PROJECT_DIR$/APP/templates/about.html" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/main/preprocess/sinhala_preprocess.py" />
         <option value="$PROJECT_DIR$/data/output_all.csv" />
         <option value="$PROJECT_DIR$/tools/tagging_tool.py" />
@@ -199,13 +211,14 @@
         <option value="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/data/data_generator.py" />
-        <option value="$PROJECT_DIR$/main/lstm_model.py" />
         <option value="$PROJECT_DIR$/APP/__init__.py" />
         <option value="$PROJECT_DIR$/params.py" />
         <option value="$PROJECT_DIR$/main/classify.py" />
         <option value="$PROJECT_DIR$/main/multinomial_db.py" />
         <option value="$PROJECT_DIR$/main/srd.py" />
         <option value="$PROJECT_DIR$/APP/app.py" />
+        <option value="$PROJECT_DIR$/main/lstm_model.py" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
       </list>
     </option>
   </component>
@@ -229,6 +242,11 @@
             <path>
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
+              <item name="APP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
@@ -292,7 +310,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Docker.Docker-build">
     <configuration name="Singlish-Recism-Detection" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -485,15 +503,15 @@
         <settings>
           <option name="buildCliOptions" value="" />
           <option name="command" value="" />
-          <option name="containerName" value="" />
+          <option name="containerName" value="sashini" />
           <option name="entrypoint" value="" />
-          <option name="imageTag" value="" />
+          <option name="imageTag" value="dev" />
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
                 <option name="containerPort" value="5000" />
-                <option name="hostIp" value="0.0.0.0" />
-                <option name="hostPort" value="443" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="5000" />
               </DockerPortBindingImpl>
             </list>
           </option>
@@ -823,7 +841,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559059127459</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fixes">
+      <created>1559065742622</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1559065742622</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -871,19 +896,19 @@
     <frame x="0" y="25" width="1366" height="692" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.2650782" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.2650782" />
       <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" order="0" weight="0.5074074" />
+      <window_info anchor="bottom" id="Docker" order="0" visible="true" weight="0.5055762" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32899627" />
       <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32611173" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.43866172" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49924242" weight="0.42007434" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.42303306" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.41961232" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.45539033" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.54460967" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.31698975" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -958,7 +983,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/../Singlish-Racism-Detection" />
     </ignored-roots>
-    <MESSAGE value="Updates" />
     <MESSAGE value="added models" />
     <MESSAGE value="pre-processing improved" />
     <MESSAGE value="updated models - snn acc: 82.65%" />
@@ -983,7 +1007,8 @@
     <MESSAGE value="Updates - installation" />
     <MESSAGE value="Improve pre-process&#10;Shuffle while training&#10;CSV load without nan" />
     <MESSAGE value="Adding models - NN and LSTM&#10;Updates to prediction using LSTM and NN" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding models - NN and LSTM&#10;Updates to prediction using LSTM and NN" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1035,13 +1060,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/logs/console-lstm.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="14943">
-          <caret line="879" selection-start-line="879" selection-end-line="879" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/logs/lstm-model-normal.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
@@ -1367,31 +1385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="293" column="28" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="28" />
-          <folding>
-            <element signature="e#49#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="177" column="19" selection-start-line="177" selection-start-column="10" selection-end-line="177" selection-end-column="19" />
-          <folding>
-            <element signature="e#97#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/APP/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1437,28 +1430,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/params.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="-253">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding>
             <element signature="e#48#77#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/APP/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/srd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="14">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="26" />
           <folding>
             <element signature="e#48#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#97#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/APP/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="65" lean-forward="true" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+        <state relative-caret-position="82">
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="265" column="52" lean-forward="true" selection-start-line="265" selection-start-column="52" selection-end-line="266" selection-end-column="56" />
+          <folding>
+            <element signature="e#49#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
         </state>
       </provider>
     </entry>

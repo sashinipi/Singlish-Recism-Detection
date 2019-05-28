@@ -3,8 +3,6 @@ import sys
 from flask import Flask, render_template, request, flash, jsonify
 from main.srd import SRD
 
-
-
 app = Flask(__name__)
 
 @app.route("/")

@@ -1,5 +1,9 @@
+import sys
+# sys.path.append('/home/dulan/learn/sashini-fyp/code/Singlish-Recism-Detection')
 from flask import Flask, render_template, request, flash, jsonify
 from main.srd import SRD
+
+
 
 app = Flask(__name__)
 
@@ -37,7 +41,7 @@ def web_apk():
 
 if __name__ == "__main__":
     srd_obj = SRD()
-    print("Test:", srd_obj.predict( {"content":"This is test - LSTM", "type":'0'}))
+    # print("Test:", srd_obj.predict( {"content":"This is test - LSTM", "type":'0'}))
     print("Test:", srd_obj.predict( {"content":"This is test - Simple NN", "type":'1'}))
     print("Test:", srd_obj.predict( {"content":"This is test - SVM", "type":'2'}))
     print("Test:", srd_obj.predict( {"content":"This is test - MNB", "type":'3'}))

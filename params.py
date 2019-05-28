@@ -11,10 +11,10 @@ ABS_PATH_TO_FILE = os.path.dirname(__file__)
 
 @unique
 class PRED_TYPE(Enum):
-    LSTM        = 0
-    NN          = 1
+    LSTM        = 1
+    NN          = 2
     # SIMPLE_NN   = 1
-    SVM         = 2
+    # SVM         = 2
     MNB         = 3
 
 class DICTIONARY:

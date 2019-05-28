@@ -5,7 +5,7 @@ Created on Mar 31, 2019
 '''
 from main.simple_nn import SimpleNN
 from main.multinomial_db import MultinomialNBC
-from main.svm import SVM
+# from main.svm import SVM
 from main.lstm_model import LSTMModel
 from main.neural_net import NeuralNet
 
@@ -20,11 +20,11 @@ class SRD(object):
         self.nn = NeuralNet()
         self.nn.load_values()
 
-        self.svm = SVM()
-        self.svm.load_models(SVMF)
+        # self.svm = SVM()
+        # self.svm.load_models(SVMF)
 
-        self.mnb = MultinomialNBC()
-        self.mnb.load_models(MNB)
+        # self.mnb = MultinomialNBC()
+        # self.mnb.load_models(MNB)
 
         self.lstm = LSTMModel()
         self.lstm.load_values()
@@ -35,10 +35,10 @@ class SRD(object):
             p_class, conf = "---", "---"
             if PRED_TYPE.NN.value == int(type):
                 p_class, conf = self.nn.predict_api(content)
-            elif PRED_TYPE.SVM.value == int(type):
-                p_class, conf = self.svm.predict_api(content)
-            elif PRED_TYPE.MNB.value == int(type):
-                p_class, conf = self.mnb.predict_api(content)
+            # elif PRED_TYPE.SVM.value == int(type):
+            #     p_class, conf = self.svm.predict_api(content)
+            # elif PRED_TYPE.MNB.value == int(type):
+            #     p_class, conf = self.mnb.predict_api(content)
             elif PRED_TYPE.LSTM.value == int(type):
                 p_class, conf = self.lstm.predict_api(content)
 

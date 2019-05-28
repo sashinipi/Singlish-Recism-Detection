@@ -278,11 +278,22 @@ class LSTMModel(Model):
             print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
 
     def predict_api(self, text):
-        x_corpus = self.transform_to_dictionary_values_one(text)
-        x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
-        prediction = np.squeeze(self.model.predict([x_corpus]))
-        max_id = int(np.argmax(prediction))
-        return MISC.CLASSES[max_id], prediction[max_id]
+        combined_pred = [0, 0]
+        sentences = [txt for txt in text.split('.') if len(txt) > 5]
+        no_of_sentences = len(sentences)
+        if not no_of_sentences ==0:
+            for sentence in sentences:
+                x_corpus = self.transform_to_dictionary_values_one(sentence)
+                x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+                prediction = np.squeeze(self.model.predict([x_corpus]))
+                print("Sen: {} Conf: {}".format(sentence, prediction))
+                combined_pred[0] += prediction[0]
+                combined_pred[1] += prediction[1]
+        else:
+            combined_pred = [0,0.51]
+            no_of_sentences = 1
+        max_id = int(np.argmax(combined_pred))
+        return MISC.CLASSES[max_id], combined_pred[max_id]/no_of_sentences
 
 if __name__ == '__main__':
     lstm_obj = LSTMModel()
@@ -292,4 +303,7 @@ if __name__ == '__main__':
         lstm_obj.predict_cli()
     else:
         lstm_obj.load_values()
-        lstm_obj.predict_cli()
+        print(lstm_obj.predict_api("hel. How are you?. Im fine. thanks."))
+        print(lstm_obj.predict_api(""))
+        # lstm_obj.predict_cli()
+        # lstm_obj.predict_cli()

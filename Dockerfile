@@ -18,6 +18,7 @@ RUN apt-get update \
     && apt-get -y install nano
 
 ENV PYTHONPATH="$PYTHONPATH:/root/SRD"
+#ENV PYTHONPATH="$PYTHONPATH:/root"
 
 WORKDIR $PROJECT_DIR
 COPY APP $PROJECT_DIR/APP

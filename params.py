@@ -11,7 +11,9 @@ ABS_PATH_TO_FILE = os.path.dirname(__file__)
 
 @unique
 class PRED_TYPE(Enum):
-    SIMPLE_NN   = 1
+    LSTM        = 0
+    NN          = 1
+    # SIMPLE_NN   = 1
     SVM         = 2
     MNB         = 3
 
@@ -27,7 +29,7 @@ class DIR:
 class FILES:
     TAG_DATA_FILENAME_EXCEL = osp.join(ABS_PATH_TO_FILE, 'data/final-data-set.xlsx')
     TAG_DICT_FILENAME       = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
-    EXCEL_DATA_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/xlsx/Simple-Data-Set.xlsx')
+    EXCEL_DATA_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/xlsx/Simple-Final-Data-Set.xlsx')
     DICTIONARY_FILE_PATH    = osp.join(ABS_PATH_TO_FILE, 'data/dict.json')
     CSV_FILE_PATH           = osp.join(ABS_PATH_TO_FILE, 'data/csv/output.csv')
     SEP_CSV_FILE_PATHS      = osp.join(ABS_PATH_TO_FILE, 'data/csv/output_{}.csv')
@@ -63,7 +65,7 @@ class GRUP:
     PERF_TEST_NAME          = 'GRU'
 
 class LSTMP:
-    LSTM_MAX_WORD_COUNT     = 60
+    LSTM_MAX_WORD_COUNT     = 30
     FOLDS_COUNT             = 4
     VALIDATION_TEST_SIZE    = 0.2
     MAX_EPOCHS              = 15

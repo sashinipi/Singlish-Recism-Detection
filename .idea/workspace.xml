@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="285daf29-ed55-4653-b048-4497328870ef" name="Default Changelist" comment="Improve pre-process&#10;Shuffle while training&#10;CSV load without nan">
-      <change afterPath="$PROJECT_DIR$/data/csv/output_train2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/csv/output_train3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/graphs/lstm-graph-fold-0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/lstm_dict.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/lstm_model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/nn_input.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/nn_model.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/save/nn_trans.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/final-data-set-singlish.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/xlsx/final-data-set-singlish.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/final-data-set.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/xlsx/final-data-set.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/mnb_bow.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_bow.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/mnb_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_input.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/mnb_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_model.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/mnb_tfidf.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/mnb_tfidf.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/singlish_lemmas.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/snn_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/snn_input.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/snn_model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/snn_model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/snn_trans.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/snn_trans.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/svm_bow.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_bow.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/svm_input.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_input.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/svm_model.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_model.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/save/svm_tfidf.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/main/save/svm_tfidf.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/classify.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/classify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/lstm_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/srd.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/srd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -34,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="116" column="38" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
+            <state relative-caret-position="570">
+              <caret line="293" column="28" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="28" />
               <folding>
                 <element signature="e#49#67#0" expanded="true" />
               </folding>
@@ -46,61 +36,65 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/csv/output_test.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="2146">
-              <caret line="182" selection-start-line="182" selection-end-line="182" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/data_generator.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/APP/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="136" selection-start-line="136" selection-end-line="136" />
+            <state relative-caret-position="119">
+              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding>
-                <element signature="e#48#58#0" expanded="true" />
+                <element signature="e#0#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/logger.py">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="-204" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="177" column="19" selection-start-line="177" selection-start-column="10" selection-end-line="177" selection-end-column="19" />
               <folding>
-                <element signature="e#48#62#0" expanded="true" />
+                <element signature="e#97#121#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/preprocess/singlish_preprocess.py">
+        <entry file="file://$PROJECT_DIR$/main/svm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+            <state relative-caret-position="210">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
-                <element signature="e#48#66#0" expanded="true" />
+                <element signature="e#49#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/model.py">
+        <entry file="file://$PROJECT_DIR$/main/srd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="78" selection-start-line="78" selection-end-line="80" selection-end-column="18" />
+            <state relative-caret-position="85">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/classify.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="119" column="56" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
               <folding>
-                <element signature="e#48#76#0" expanded="true" />
+                <element signature="e#49#68#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/params.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="12" />
+            <state relative-caret-position="95">
+              <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
               <folding>
                 <element signature="e#48#77#0" expanded="true" />
               </folding>
@@ -119,10 +113,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/__init__.py">
+        <entry file="file://$PROJECT_DIR$/data/data_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="177">
+              <caret line="147" selection-start-line="147" selection-end-line="147" />
+              <folding>
+                <element signature="e#48#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,17 +195,14 @@
         <option value="$PROJECT_DIR$/tools/tagging_tool.py" />
         <option value="$PROJECT_DIR$/main/preprocess/preprocess.py" />
         <option value="$PROJECT_DIR$/main/simple_nn.py" />
-        <option value="$PROJECT_DIR$/main/srd.py" />
         <option value="$PROJECT_DIR$/data/extract_dict.py" />
         <option value="$PROJECT_DIR$/main/pickel_helper.py" />
         <option value="$PROJECT_DIR$/main/preprocess/list_of_words.py" />
-        <option value="$PROJECT_DIR$/APP/app.py" />
         <option value="$PROJECT_DIR$/docs/README" />
         <option value="$PROJECT_DIR$/main/save/graph.py" />
         <option value="$PROJECT_DIR$/main/graph.py" />
         <option value="$PROJECT_DIR$/main/perfomance_test.py" />
         <option value="$PROJECT_DIR$/main/svm.py" />
-        <option value="$PROJECT_DIR$/main/classify.py" />
         <option value="$PROJECT_DIR$/main/multinomial_db.py" />
         <option value="$PROJECT_DIR$/data/data_loader.py" />
         <option value="$PROJECT_DIR$/data/output_train2.csv" />
@@ -224,20 +218,22 @@
         <option value="$PROJECT_DIR$/main/neural_net.py" />
         <option value="$PROJECT_DIR$/tests/embeddings.py.ipynb" />
         <option value="$PROJECT_DIR$/tests/embeddings.ipynb" />
-        <option value="$PROJECT_DIR$/main/lstm_model.py" />
         <option value="$PROJECT_DIR$/main/model.py" />
         <option value="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/params.py" />
         <option value="$PROJECT_DIR$/data/data_generator.py" />
+        <option value="$PROJECT_DIR$/main/classify.py" />
+        <option value="$PROJECT_DIR$/main/lstm_model.py" />
+        <option value="$PROJECT_DIR$/params.py" />
+        <option value="$PROJECT_DIR$/main/srd.py" />
+        <option value="$PROJECT_DIR$/APP/app.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1366" />
-    <option name="y" value="-2" />
-    <option name="width" value="1920" />
-    <option name="height" value="1031" />
+    <option name="y" value="25" />
+    <option name="width" value="1366" />
+    <option name="height" value="692" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -247,6 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,39 +251,17 @@
               <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
               <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="csv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Singlish-Recism-Detection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Singlish-Recism-Detection" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="BuildoutCfg" />
-    <property name="last_opened_file_path" value="$USER_HOME$/video-intent/POC/aaa_data/code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -318,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lstm_model">
+  <component name="RunManager" selected="Python.app">
     <configuration name="Singlish-Recism-Detection" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -336,6 +311,27 @@
       <option name="ipnbPort" value="8888" />
       <method v="2" />
     </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/APP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/APP/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="data_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -349,27 +345,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_generator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gru_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Singlish-Recism-Detection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/gru_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -400,6 +375,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="multinomial_db" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/multinomial_db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="neural_net" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <output_file path="$PROJECT_DIR$/main/logs/console-nn.log" />
       <module name="Singlish-Recism-Detection" />
@@ -414,48 +410,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/neural_net.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="params" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Singlish-Recism-Detection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/params.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="rnd_datagen" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Singlish-Recism-Detection" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/rnd_datagen.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -485,7 +439,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="singlish_preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="srd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Singlish-Recism-Detection" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -493,11 +447,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/preprocess" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/preprocess/singlish_preprocess.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/srd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="svm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Singlish-Recism-Detection" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/svm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -536,18 +511,18 @@
       <item itemvalue="Python.neural_net" />
       <item itemvalue="Python.lstm_model" />
       <item itemvalue="Python.data_generator" />
-      <item itemvalue="Python.rnd_datagen" />
-      <item itemvalue="Python.gru_model" />
-      <item itemvalue="Python.singlish_preprocess" />
-      <item itemvalue="Python.params" />
+      <item itemvalue="Python.multinomial_db" />
+      <item itemvalue="Python.svm" />
+      <item itemvalue="Python.srd" />
+      <item itemvalue="Python.app" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.srd" />
+        <item itemvalue="Python.svm" />
+        <item itemvalue="Python.multinomial_db" />
         <item itemvalue="Python.data_generator" />
-        <item itemvalue="Python.params" />
-        <item itemvalue="Python.singlish_preprocess" />
-        <item itemvalue="Python.gru_model" />
-        <item itemvalue="Python.rnd_datagen" />
       </list>
     </recent_temporary>
   </component>
@@ -887,22 +862,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-2" width="1920" height="1031" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="25" width="1366" height="692" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.18344755" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.67180616" visible="true" weight="0.2650782" />
       <window_info id="Structure" order="1" sideWeight="0.32819384" side_tool="true" weight="0.17795978" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" weight="0.5074074" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32899627" />
       <window_info anchor="bottom" id="TODO" order="3" sideWeight="0.49924242" weight="0.32611173" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.336374" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49924242" visible="true" weight="0.43122676" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.42303306" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.41961232" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.18129988" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49776787" weight="0.45539033" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.94271684" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.31698975" />
       <window_info anchor="bottom" id="Messages" order="12" />
@@ -1054,29 +1028,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/preprocess/lemmas.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/preprocess/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1191">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="e#48#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APP/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/logs/console-lstm-n-gram.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="272">
@@ -1111,33 +1062,6 @@
           <caret line="18" column="20" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="20" />
           <folding>
             <element signature="e#48#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/classify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="112" column="55" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="55" />
-          <folding>
-            <element signature="e#49#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/multinomial_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#48#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1268,14 +1192,14 @@
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1319,16 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="e#97#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/preprocess/sinhala_preprocess.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1336,14 +1250,14 @@
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-765">
-          <caret line="85" column="38" lean-forward="true" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2536">
           <caret line="428" column="24" selection-start-line="428" selection-start-column="24" selection-end-line="428" selection-end-column="24" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-765">
+          <caret line="85" column="38" lean-forward="true" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1364,14 +1278,14 @@
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="-204">
-          <caret line="777" column="51" lean-forward="true" selection-start-line="777" selection-start-column="51" selection-end-line="777" selection-end-column="51" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-4063">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="-204">
+          <caret line="777" column="51" lean-forward="true" selection-start-line="777" selection-start-column="51" selection-end-line="777" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1383,13 +1297,6 @@
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="3995">
           <caret line="235" column="19" selection-start-line="235" selection-start-column="19" selection-end-line="235" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1413,29 +1320,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="78" selection-start-line="78" selection-end-line="80" selection-end-column="18" />
-          <folding>
-            <element signature="e#48#76#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/data/csv/output_test.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/params.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="12" />
-          <folding>
-            <element signature="e#48#77#0" expanded="true" />
-          </folding>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="3094">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/logger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="238">
           <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding>
             <element signature="e#48#62#0" expanded="true" />
@@ -1445,7 +1342,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/preprocess/singlish_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
+        <state relative-caret-position="1190">
           <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
           <folding>
             <element signature="e#48#66#0" expanded="true" />
@@ -1453,32 +1350,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" selection-start-line="78" selection-end-line="80" selection-end-column="18" />
+          <folding>
+            <element signature="e#48#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        <state relative-caret-position="177">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
           <folding>
             <element signature="e#48#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/csv/output_test.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+    <entry file="file://$PROJECT_DIR$/main/multinomial_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#48#82#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="2146">
-          <caret line="182" selection-start-line="182" selection-end-line="182" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#49#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/lstm_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="116" column="38" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
+        <state relative-caret-position="570">
+          <caret line="293" column="28" selection-start-line="293" selection-start-column="17" selection-end-line="293" selection-end-column="28" />
           <folding>
             <element signature="e#49#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="177" column="19" selection-start-line="177" selection-start-column="10" selection-end-line="177" selection-end-column="19" />
+          <folding>
+            <element signature="e#97#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/params.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="111" column="6" selection-start-line="111" selection-start-column="6" selection-end-line="111" selection-end-column="6" />
+          <folding>
+            <element signature="e#48#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/classify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="119" column="56" selection-start-line="119" selection-start-column="56" selection-end-line="119" selection-end-column="56" />
+          <folding>
+            <element signature="e#49#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/srd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APP/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
           </folding>
         </state>
       </provider>

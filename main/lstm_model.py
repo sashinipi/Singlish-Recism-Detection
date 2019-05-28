@@ -118,7 +118,7 @@ class LSTMModel(Model):
         # ################## Deep Neural Network Model ###################### #
         model = Sequential()
         model.add(Embedding(input_dim=input_dim, output_dim=60, input_length=LSTMP.LSTM_MAX_WORD_COUNT))
-        model.add(LSTM(units=600))
+        model.add(LSTM(units=300))
         model.add(Dense(units=LSTMP.LSTM_MAX_WORD_COUNT, activation='tanh', kernel_regularizer=regularizers.l2(0.04),
                         activity_regularizer=regularizers.l2(0.015)))
         model.add(Dense(units=LSTMP.LSTM_MAX_WORD_COUNT, activation='relu', kernel_regularizer=regularizers.l2(0.01),
@@ -277,12 +277,16 @@ class LSTMModel(Model):
             print(prediction)
             print("Predicted: {} Confidence: {}".format(MISC.CLASSES[max_id], prediction[max_id]))
 
-
-
+    def predict_api(self, text):
+        x_corpus = self.transform_to_dictionary_values_one(text)
+        x_corpus = sequence.pad_sequences(x_corpus, maxlen=LSTMP.LSTM_MAX_WORD_COUNT)
+        prediction = np.squeeze(self.model.predict([x_corpus]))
+        max_id = int(np.argmax(prediction))
+        return MISC.CLASSES[max_id], prediction[max_id]
 
 if __name__ == '__main__':
     lstm_obj = LSTMModel()
-    train = True
+    train = False
     if train:
         lstm_obj.train_now()
         lstm_obj.predict_cli()

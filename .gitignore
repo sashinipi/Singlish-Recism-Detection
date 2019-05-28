@@ -1,5 +1,5 @@
 APP/virtual
 APP/lib
-main/save/*
+#main/save1
 main/logs
 !main/logs/readme.md

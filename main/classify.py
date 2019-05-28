@@ -89,6 +89,11 @@ class classify(object):
         ret = self.model.predict(messages_tfidf)[0]
         return ret
 
+    def predict_cli(self):
+        while(True):
+            text = input("Input:")
+            print("Predicted: {}".format(self.predict(text)))
+
     def predict_api(self, text):
         return self.predict(text), "--"
 
@@ -110,6 +115,7 @@ class classify(object):
             self.save_models(Names)
         else:
             self.load_models(Names)
-            self.perf_test_o.perform_test(self.predict)
+            self.predict_cli()
+            # self.perf_test_o.perform_test(self.predict)
             # print(self.predict([["Test prediction"]]))
             # print(self.predict([["thambiya"]]))
